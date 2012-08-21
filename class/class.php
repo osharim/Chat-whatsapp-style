@@ -39,14 +39,11 @@ class chat{
 		$MSG = $_POST['msg'];
 
 
- # My time zone
-$timezone = "Asia/Manila";
-
-# PHP 5
-date_default_timezone_set ($timezone);
+ 
+		$UNIX_TIME = parseInt(strtotime(date("Y-m-d H:i:s")))+3600;
 
 
-		$QUERY  = "INSERT INTO chat values(NULL,1,2,'$MSG' , '" . strtotime(date("Y-m-d H:i:s")) . "' )  ";
+		$QUERY  = "INSERT INTO chat values(NULL,1,2,'$MSG' , '" . $UNIX_TIME. "' )  ";
 
 		mysql_query( $QUERY , Conectar::con());
 
