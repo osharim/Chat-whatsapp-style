@@ -26,7 +26,10 @@
 	<!-- custom scrollbars plugin -->
 	<script src="js/scroll/jquery.mCustomScrollbar.js"></script>
 	<script type="text/javascript" src="js/init.js"></script>
-		<script type="text/javascript" src="js/chat.js"></script>
+
+	 <script type="text/javascript" src="js/framework/bindsme.js"></script>
+	<script type="text/javascript" src="js/chat.js"></script>
+	<script type="text/javascript" src="js/update_chat.js"></script>
 
 </head>
 <body>
