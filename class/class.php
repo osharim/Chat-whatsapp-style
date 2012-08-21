@@ -1,23 +1,23 @@
 <?php 
 include 'json.php';
-
+ini_set('date.timezone', 'America/Mexico_City');
 
 class Conectar {
 
      public static function con() {
 
 
-            date_default_timezone_set('America/Mexico_City');
+  
 
  
-     $conexion = mysql_connect("localhost", "iselcruc_omar", "nf9ckpg") or
-   //$conexion = mysql_connect("localhost", "root", "") or
+   $conexion = mysql_connect("localhost", "iselcruc_omar", "nf9ckpg") or
+   //  $conexion = mysql_connect("localhost", "root", "") or
                  
                   die("Error de conexion: " . mysql_error());
      
-     //   mysql_select_db("bindsme") or
+   //  mysql_select_db("bindsme") or
 
-mysql_select_db("iselcruc_ejemplo") or
+   mysql_select_db("iselcruc_ejemplo") or
       //     mysql_select_db("web_isel") or             
                   die("Error de conexion: " . mysql_error());
 

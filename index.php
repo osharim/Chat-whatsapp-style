@@ -53,7 +53,7 @@
  				
 
 	<!-- .user_current_chat -->
-	<span class="user_current_chat"> @MaryleMontserrat</span>
+	<span class="user_current_chat"> @MaryleHermosa</span>
 	<!-- /.user_current_chat -->
 
 
