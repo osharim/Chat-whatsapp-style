@@ -10,15 +10,15 @@ class Conectar {
   
 
  
-   $conexion = mysql_connect("localhost", "iselcruc_omar", "nf9ckpg") or
-    // $conexion = mysql_connect("localhost", "root", "") or
+   //  $conexion = mysql_connect("localhost", "iselcruc_omar", "nf9ckpg") or
+   $conexion = mysql_connect("localhost", "root", "") or
                  
                   die("Error de conexion: " . mysql_error());
      
-   // mysql_select_db("bindsme") or
+    mysql_select_db("bindsme") or
 
-    mysql_select_db("iselcruc_ejemplo") or
-      //     mysql_select_db("web_isel") or             
+   //  mysql_select_db("iselcruc_ejemplo") or
+                
                   die("Error de conexion: " . mysql_error());
 
           mysql_query("SET NAMES 'utf-8'");
@@ -113,6 +113,15 @@ class chat{
 
 }
 
+
+function parseInt($string) {
+// return intval($string);
+if(preg_match('/(\d+)/', $string, $array)) {
+return $array[1];
+} else {
+return 0;
+}
+} 
 
 
 
