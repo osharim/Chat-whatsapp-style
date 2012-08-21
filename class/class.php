@@ -38,7 +38,7 @@ class chat{
 
 		$MSG = $_POST['msg'];
 
-		$QUERY  = "INSERT INTO chat values(NULL,1,2,'$MSG' , '" . strtotime(date("Y-m-d H:i:s")) . "' )  ";
+		$QUERY  = "INSERT INTO chat values(NULL,1,2,'$MSG' , '" . strtotime(date("Y-m-d H:i:s"))+3600 . "' )  ";
 
 		mysql_query( $QUERY , Conectar::con());
 
