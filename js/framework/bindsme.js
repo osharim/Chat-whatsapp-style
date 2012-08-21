@@ -80,7 +80,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
  			}else{ // SI Y A SON MAS ENTONCES OSLO ESCROLEAMOS HACIA EL BOTTOM 
 
- 				if( LENGTH_COMMENTS >= 7)
+ 			 
 
  				 
  				setTimeout(function(){
@@ -88,9 +88,9 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
  						$("#content_1").mCustomScrollbar("scrollTo","bottom");
 
 
- 				 },300);
+ 				 },600);
 
- 			} 
+ 		 
  		},
 //************************************************************************************//*********//************************************************************************************//*********
  			sendMSGDB : function(MSG){  // SE ENVIA EL MENSAJE ESCRITO POR AJAX
@@ -172,7 +172,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
  						$("#content_1").mCustomScrollbar("scrollTo","bottom"); // SCROLEAMOS HASTA ABAJO DE LA CONVERSACION
 
 
- 				 },300);
+ 				 },600);
 
 
 
