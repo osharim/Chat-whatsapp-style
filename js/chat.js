@@ -18,7 +18,7 @@
 
   							LENGTH_COMMENTS =  $(".chat_content").children().length; // CONTAMOS CUANTOS COMENTARIOS TIENE EL CHAT
 
-							 if (  LENGTH_COMMENTS  >= 7 ){
+							 if (  LENGTH_COMMENTS  >= 6 ){
 
 							 Chat.activeScroll(LENGTH_COMMENTS);
 
@@ -86,7 +86,7 @@
 
 
 
- 			if(LENGTH_COMMENTS == 7 ){  // SI APENAS SON 7 COMENTARIOS ENTONCES ACTIVAMOS EL SCROLL POR PRIMERA VEZ
+ 			if(LENGTH_COMMENTS == 6 ){  // SI APENAS SON 7 COMENTARIOS ENTONCES ACTIVAMOS EL SCROLL POR PRIMERA VEZ
 
   
 				 $("#content_1").mCustomScrollbar({
@@ -97,7 +97,7 @@
 
  			}else{ // SI Y A SON MAS ENTONCES OSLO ESCROLEAMOS HACIA EL BOTTOM 
 
- 				if( LENGTH_COMMENTS >= 8)
+ 				if( LENGTH_COMMENTS >= 7)
 
  				 
  				setTimeout(function(){
