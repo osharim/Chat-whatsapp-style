@@ -10,14 +10,14 @@ class Conectar {
   
 
  
-   $conexion = mysql_connect("localhost", "iselcruc_omar", "nf9ckpg") or
-   //  $conexion = mysql_connect("localhost", "root", "") or
+   //   $conexion = mysql_connect("localhost", "iselcruc_omar", "nf9ckpg") or
+  $conexion = mysql_connect("localhost", "root", "") or
                  
                   die("Error de conexion: " . mysql_error());
      
-   //  mysql_select_db("bindsme") or
+    mysql_select_db("bindsme") or
 
-   mysql_select_db("iselcruc_ejemplo") or
+  //  mysql_select_db("iselcruc_ejemplo") or
       //     mysql_select_db("web_isel") or             
                   die("Error de conexion: " . mysql_error());
 
@@ -37,6 +37,14 @@ class chat{
 	public function append_into_db_msg(){
 
 		$MSG = $_POST['msg'];
+
+
+ # My time zone
+$timezone = "Asia/Manila";
+
+# PHP 5
+date_default_timezone_set ($timezone);
+
 
 		$QUERY  = "INSERT INTO chat values(NULL,1,2,'$MSG' , '" . strtotime(date("Y-m-d H:i:s")) . "' )  ";
 
