@@ -1,0 +1,163 @@
+.struct_contact{ /* CONTENEDOR DE LOS CONTACTOS */
+
+
+
+
+}
+
+
+.struct_groups , .struct_contact{ /* CONTENEDOR DE LOS GRUPS */
+
+ 
+    float: none;
+    height: 206px;
+    margin-left: 4%;
+    margin-top: 2%;
+    overflow-y: auto;
+    width: 23%;
+
+}
+
+
+
+.struct_chat{ /* CONTENEDOR DEL CHAt */
+
+
+
+float: right;
+    height: 90%;
+    margin-right: 2%;
+    margin-top: 2%;
+    width: 64%;
+
+
+
+
+}
+
+
+.struct_msg{ /* CNOTENEDOR DE DONDE ESCRIBIRMOS EL MENSAJE */
+
+}
+
+
+.struct_main{ /* CONTENEDOR PADRE */
+
+
+height: 100%;
+    overflow-y: auto;
+    width: 100%;
+
+}
+
+
+.message_chat{
+
+height: 82%;
+    width: 97%;
+}
+
+
+
+
+.message_chat , .struct_contact , .struct_groups , .chat_cmmt{
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.2);
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3) inset;
+    padding: 13px;
+overflow: hidden;
+}
+
+.chat_cmmt{
+background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.9) !important;
+
+    font-family: helvetica;
+    font-size: 12px;
+    height: 19px;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    padding: 10px;
+    resize: none;
+    text-shadow: 1px 1px #333333;
+    width: 97.4%;
+}
+
+
+.struct_msg{
+ 
+}
+
+
+body {
+
+	background: url("../../img/gbu.jpg") !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    overflow-x:hidden; 
+}
+
+.struct_menu{
+
+
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    bottom: 0;
+    height: 31px;
+    position: absolute;
+    width: 100%;
+
+}
+
+
+/* ****************************************************************************************************** */
+/* UI PARA EL CHAT DEL USUARIO */
+.user_current_chat{
+
+float: right;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 6px;
+
+}
+ul>:first-child{
+
+
+	float: left;
+
+}
+
+ul>:last-child{
+
+
+    float: right;
+
+}
+
+
+
+ul>li{
+
+margin: 5px;
+
+}
+
+
+.user_ui{
+	 overflow-y: auto;
+}
+
+.chat{
+  height: 95%;
+    overflow: hidden;
+    width: 99%;
+ 
+}
+
+.msg_chat{
+
+
+margin-top: -3px;
+
+
+}

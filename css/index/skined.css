@@ -1,0 +1,123 @@
+
+.struct_page{
+
+ border-radius: 4px 4px 4px 4px;
+    height: auto;
+    left: 50%;
+    margin-left: -30%;
+    position: absolute;
+    top: 10%;
+    width: 60%;
+
+}
+
+.logo {	/* 	estructura del logo */                       /* el contenedor del inicio de sesion */
+
+ background-image: url("../../img/binds.png");
+    background-repeat: no-repeat;
+    height: 85px;
+    margin: 10px auto;
+    width: 180px;
+}
+
+
+ 
+
+.login, .struct_session{
+
+ 
+    margin: 51px auto;
+    overflow-y: auto;
+    width: 100%;
+
+}
+
+
+.struct_session input{
+ border-color: #BBBBBB #DDDDDD #DDDDDD;
+    border-style: solid;
+    border-width: 1px;
+    color: #333333;
+    font-size: 11px;
+    height: 22px;
+    margin-left: 4%;
+    margin-top: 21px;
+    padding: 3px 5px 4px;
+    width: 84%;
+}
+
+
+/* border radius para todos los elementos */
+
+input , .button_gray , .button_blue { 
+
+
+
+	border-radius: 20px
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  BOTONES!!!!!!!!!!!!!!!! */
+
+
+.button_blue , .button_gray{
+
+
+   box-shadow: 0 1px #FFFFFF inset, 0 0 0 4px rgba(100, 100, 100, 0.1);
+    cursor: pointer;
+    float: left;
+    margin: 19px 19px 19px 10%;
+    padding: 11px 29px;
+    text-align: center;
+    width: 23%;
+}
+
+
+
+.button_blue{
+
+ 
+    background-image: -moz-linear-gradient(center top , #34BFF3, #074AA2);
+ 	color: white;
+
+}
+
+
+.button_gray{
+
+
+ 
+ background: -moz-linear-gradient(#F7F8F8, #CCCCCC) repeat scroll 0 0 transparent;
+  text-shadow: 0 1px 0 #FFFFFF;
+
+}
