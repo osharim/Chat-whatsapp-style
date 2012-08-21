@@ -112,24 +112,24 @@
 
 <!-- 	struct_groups -->
 
-	<div class="struct_groups">
-		
-		<span class="user_current_chat">Groups</span>
+<!-- 	<div class="struct_groups">
+	
+	<span class="user_current_chat">Groups</span>
 
 
-	</div>
+</div> -->
 
 <!--   struct_contact -->
 
-	<div class="struct_contact">
+<!-- 	<div class="struct_contact">
 
-		<span class="user_current_chat"> Contacts</span>
-
-
+	<span class="user_current_chat"> Contacts</span>
 
 
 
-	</div>
+
+
+</div> -->
 
 
 

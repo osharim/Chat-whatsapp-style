@@ -6,7 +6,7 @@
 //************************************************************************************
  // METODOS PARA CHAT
 
-
+$("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE ACTIVO EL SCROLL ( ESTO ES PARA QUE NO SALGAN VARIOS SCROLL AL MISMO TIEMPO)
 
 
 
@@ -60,10 +60,19 @@
 
  			if(LENGTH_COMMENTS == 6 ){  // SI APENAS SON 7 COMENTARIOS ENTONCES ACTIVAMOS EL SCROLL POR PRIMERA VEZ
 
-  
+  	
+
+  		if ( !$("document").data("activedScroll")){
+
+
 				 $("#content_1").mCustomScrollbar({
 					scrollButtons:{ enable:true }  
 				});
+
+
+
+
+  		}
 
 
 				$("#content_1").mCustomScrollbar("scrollTo","bottom");			
@@ -146,11 +155,29 @@
 			$(".chat_cmmt").val(""); // BORRAMOS EL COMENTARIO EN EL TEXT AREA
  
 
+			if( $(".chat_content").children().length >=7 ){
 
 
 					 $("#content_1").mCustomScrollbar({
 					scrollButtons:{ enable:true }  
 				});
+
+
+					 $("document").data({"activedScroll":true}); // ACTIVAMOS BANDERA
+
+
+
+ 				setTimeout(function(){
+
+ 						$("#content_1").mCustomScrollbar("scrollTo","bottom"); // SCROLEAMOS HASTA ABAJO DE LA CONVERSACION
+
+
+ 				 },300);
+
+
+
+			}
+
 
 
 			}
