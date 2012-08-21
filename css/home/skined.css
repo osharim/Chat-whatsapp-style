@@ -61,7 +61,7 @@ height: 82%;
 
 
 .message_chat , .struct_contact , .struct_groups , .chat_cmmt{
-  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.2);
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.7);
     border-radius: 3px 3px 3px 3px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3) inset;
     padding: 13px;
@@ -69,7 +69,7 @@ overflow: hidden;
 }
 
 .chat_cmmt{
-background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
+background: none repeat scroll 0 0 rgba(0, 0, 0, 0.7);
     border: 2px solid rgba(255, 255, 255, 0.3);
   color: rgba(255, 255, 255, 0.9) !important;
 
@@ -90,12 +90,28 @@ background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
 }
 
 
-body {
+/* body {
 
-	background: url("../../img/gbu.jpg") !important;
+    background: url("../../img/gbu.jpg") !important;
     color: rgba(255, 255, 255, 0.7) !important;
     overflow-x:hidden; 
+} */
+
+
+body{
+   background-attachment: scroll !important;
+    background-clip: border-box !important;
+    background-color: transparent !important;
+    background-image: url("https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-snc6/255744_218951038129106_4189186_n.jpg") !important;
+    background-origin: padding-box !important;
+    background-position: 1px -538px !important;
+    background-repeat: repeat !important;
+    background-size: 100% auto !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    overflow-x: hidden;
 }
+
+
 
 .struct_menu{
 
@@ -157,7 +173,7 @@ margin: 5px;
 .msg_chat{
 
 
-  font-size: 21px;
+  font-size: 18px;
     margin-top: 14px;
 
 }
