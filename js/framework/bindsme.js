@@ -90,7 +90,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
  				 },600);
 
- 		 
+ 			} 
  		},
 //************************************************************************************//*********//************************************************************************************//*********
  			sendMSGDB : function(MSG){  // SE ENVIA EL MENSAJE ESCRITO POR AJAX
