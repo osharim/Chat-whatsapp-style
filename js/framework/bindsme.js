@@ -83,12 +83,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
  			 
 
  				 
- 				setTimeout(function(){
-
- 						$("#content_1").mCustomScrollbar("scrollTo","bottom");
-
-
- 				 },600);
+ 				Chat.SCROLL_BOTTOM();
 
  			} 
  		},
@@ -167,12 +162,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
 
 
- 				setTimeout(function(){
-
- 						$("#content_1").mCustomScrollbar("scrollTo","bottom"); // SCROLEAMOS HASTA ABAJO DE LA CONVERSACION
-
-
- 				 },600);
+			Chat.SCROLL_BOTTOM();
 
 
 
@@ -197,8 +187,186 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
 
 
-	}		
+	},
 
+	DELETE_NOTIFY : function(){ // removemos la notificacion
+
+
+			$.ajax({
+
+			url : "class/chat/delete_notify.php" ,
+
+			data : { "writter" : 1 , "reader" : 1 },
+ 
+
+			type : "POST" });
+
+
+
+	},
+
+	UPDATE_NOTIFY :  function(){ // ACTUALIZAMOS LAS NOTIFICACIONES!!!!!!!!!!!! DE LOS CHATS SOLO SACAMOS SI HAY NOTIFICACIONES !! CUANTAS Y QUIEN!!!
+		                          // PARA SACAR LOS DATOS ESTA EL GET_UPDATE_NOTIFY()
+
+
+
+
+
+
+			$.ajax({
+
+			url : "class/chat/update_notify.php" ,
+
+			data : { "data" : 1 , "type" : "verify" },
+ 
+			dataType : "JSON",
+
+			type : "POST" ,
+
+			success : function(data){ // se hace append
+
+ 	
+				if (  data.response.length >0  ){
+
+
+
+				Chat.GET_UPDATE_NOTIFY(data);
+ 
+
+				}
+ 
+
+
+
+			}
+
+ 
+				,
+
+			beforeSend : function(){
+				// se ponen los loader
+		
+
+
+			}
+
+
+				});
+		
+
+ 	} ,
+
+ 	GET_UPDATE_NOTIFY :  function(data){ // OBTEIENE LOS DATOS! DE LAS NJOTIFUCACIONES OSEA TODAS LAS CONVERSACIONES
+
+
+ 			$("body").data("id_user_writer",1); 
+
+ 		  Chat.GET_LIMIT_MSG_CHAT(data);
+
+
+			$.ajax({
+
+			url : "class/chat/update_notify.php" ,
+
+			data : { "data" : 1  , "type" : "get_data" , "writtr_" : 1 , "lim_msg_cht" : $("body").data("limit_msg_chat_current_writter")  }, // data es el id_user_reader , y writtr_ es el id_user writter ,
+																						  // lim_msg_cht es la cantidad de mensajes en notificacion
+ 
+			dataType : "JSON",
+
+			type : "POST" ,
+
+			success : function(data){ // se hace append
+
+ 	
+				if (  data.response.length >0  ){
+
+ 
+		    	$(".chat_content").append( Chat.GET_STRUCT_MSG(data)     ); // AGREGAMOS EL NUEVO COMENTARIO EN LA CAJA DE CHAT
+ 			
+
+  		 			Chat.SCROLL_BOTTOM();
+  		 			console.log("ya borralo!")
+ 	           Chat.DELETE_NOTIFY();
+
+				}
+ 
+
+
+
+			}
+
+ 
+				,
+
+			beforeSend : function(){
+				// se ponen los loader
+		
+
+
+			}
+
+
+				});
+
+
+
+
+
+
+
+
+
+ 	}		
+,
+
+GET_LIMIT_MSG_CHAT : function(data){ // OBTENEMOS CUANTOS COMENTARIOS HAY QUE SACAR DE LA DB QUE SON NUEVOS!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ 
+
+	 $.each(data.response,function(i,data){
+
+	 
+
+		if (  data.id_user_writer  == $("body").data("id_user_writer")  ){ // regresamos el valor de each
+
+			
+
+			$("body").data("limit_msg_chat_current_writter" , data.notify) ;
+		 
+ 
+
+
+		}
+
+
+
+
+	});
+
+
+
+
+} ,
+
+
+SCROLL_BOTTOM : function(){
+
+
+
+	 				setTimeout(function(){
+
+ 						$("#content_1").mCustomScrollbar("scrollTo","bottom"); // SCROLEAMOS HASTA ABAJO DE LA CONVERSACION
+
+
+ 				 },600);
+
+
+
+
+
+
+}
 		
  
 
