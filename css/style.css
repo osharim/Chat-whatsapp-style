@@ -6,3 +6,10 @@ body{
     font-family: Helvetica, Arial;
 }
 
+.msg{
+ 
+     margin-left: 18%;
+    margin-top: 8px;
+    position: absolute;
+    color: #CA7486;
+}

@@ -286,7 +286,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
   		 			Chat.SCROLL_BOTTOM();
   		 			console.log("ya borralo!")
- 	           Chat.DELETE_NOTIFY();
+ 	          // Chat.DELETE_NOTIFY();
 
 				}
  
