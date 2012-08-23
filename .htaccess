@@ -1,0 +1,4 @@
+RewriteEngine On
+
+RewriteRule ^data/register$  class/login/session.php [L] # ------------- REGISTRAR USUARIO
+ 

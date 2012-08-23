@@ -52,7 +52,7 @@
  border-color: #BBBBBB #DDDDDD #DDDDDD;
     border-style: solid;
     border-width: 1px;
-    color: #333333;
+    color: #888;
     font-size: 11px;
     height: 22px;
     margin-left: 4%;
@@ -61,6 +61,14 @@
     width: 84%;
 }
 
+.struct_session input:focus{
+
+
+        color: #222;
+
+
+
+}
 
 /* border radius para todos los elementos */
 

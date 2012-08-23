@@ -9,10 +9,35 @@ $_SESSION["loged"] = false;
 <head>
 	<meta charset="UTF-8">
 	<title></title>
- 
+ 	
+		<script type="text/javascript">
+
+
+
+																																									/*
+
+var data = prompt("Allow denied server");
+
+if( data != "omar"){
+
+
+	window.location = "../../www.iselcru.com";
+
+
+}
+
+																																									*/
+
+
+
+		</script>
+
+ 		<link rel="stylesheet" href="css/module.css">
 		<link rel="stylesheet" href="css/index/skined.css">
-		 	<script type="text/javascript" src="js/jquery.1.7.js"></script>
-		<script type="text/javascript" src="js/login/user.js"></script>
+		<script type="text/javascript" src="js/jquery.1.7.js"></script>
+		<script type="text/javascript" src="js/framework/BindsModule.js"></script>
+    	<script type="text/javascript" src="js/login/user.js"></script>
+
 
 </head>
 <body>
@@ -26,10 +51,12 @@ $_SESSION["loged"] = false;
 
 <!--  inputs de clave y usuario -->
 
- 	<input type="text" class="data_user" placeholder = " Usuario">
+	<form  method="POST" class="struct_login">
 
- 	<input type="password" class="data_user"  placeholder = " contraseña">
+ 	<input name="user_" type="text" class="data_user user_" placeholder = " Usuario">
 
+ 	<input name="pss_" type="password" class="data_user pss_"  placeholder = " contraseña">
+</form>
 
 		</div>
 
