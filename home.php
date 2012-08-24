@@ -128,30 +128,39 @@ session_start();
 
  
 </div> 
+ 
+
+
+
+
  <!--   struct_contact -->
 
+	<div class="struct_contact">
+
+	<span class="user_current_chat"> Contacts <div class="notify blue">23</div>	</span>
 
 
+	<div class="container_data">
+		
+
+
+	</div>
+ 
+</div> 
+ <!--   struct_contact -->
 
 
 <!-- 	struct_groups -->
 
  	<div class="struct_groups">
 	
-	<span class="user_current_chat">Groups</span>
+	<span class="user_current_chat">Groups <div class="notify red">2</div></span>
 
 
-</div> 
+    </div> 
 
- <!--   struct_contact -->
 
-	<div class="struct_contact">
 
-	<span class="user_current_chat"> Contacts</span>
-
- 
-</div> 
- <!--   struct_contact -->
 
 </div>
 <!-- /.struct_left -->

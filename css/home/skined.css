@@ -15,6 +15,7 @@
     overflow-y: auto;
     padding: 7px;
     width: 100%;
+     height: auto;
 
 }
 
@@ -141,6 +142,7 @@ color: #FFFFFF;
     padding-left: 8px;
     padding-top: 4px;
     text-shadow: 1px 1px 0 #222222;
+    width: 89%;
 
 }
 ul>:first-child{
@@ -209,3 +211,39 @@ border-color: transparent #EFF4F3 transparent transparent;
 .date{
     margin-top: 2px; font-size: 11px; float: right; padding-top: 16px; color: rgb(119, 119, 119);
 }
+
+.container_data{
+       background: none repeat scroll 0 0 rgba(0, 0, 0, 0.25);
+    box-shadow: -1px 4px 9px #222222 inset;
+    float: left;
+    height: 100px;
+    margin-left: -12px;
+    margin-top: 14px;
+    width: 288px;
+     margin-bottom: -13px;
+}
+
+
+.notify{
+ 
+    border-radius: 100% 100% 100% 100%;
+ 
+    float: right;
+    font-size: 11px;
+    padding: 2px 8px;
+    text-align: center;
+    width: auto;
+}
+
+
+.blue{
+     background: -moz-linear-gradient(#34BFF3, #074AA2) repeat scroll 0 0 transparent; 
+      box-shadow: 0 2px #60CBFA inset, 0 0 2px 1px rgba(0, 0, 0, 0.3);
+}
+
+.red{
+
+ background: -moz-linear-gradient(#d65828,#C62020) repeat scroll 0 0 transparent; 
+      box-shadow: 0 2px #D08B8C inset, 0 0 2px 1px rgba(0, 0, 0, 0.3);
+
+    }
