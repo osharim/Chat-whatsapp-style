@@ -1,8 +1,7 @@
 <?php 
 session_start();
 $_SESSION["loged"] = false;	
-
-
+ 
  ?>
 <!DOCTYPE HTML>
 <html lang="en-US">
@@ -10,28 +9,7 @@ $_SESSION["loged"] = false;
 	<meta charset="UTF-8">
 	<title></title>
  	
-		<script type="text/javascript">
-
-
-
-																																									/*
-
-var data = prompt("Allow denied server");
-
-if( data != "omar"){
-
-
-	window.location = "../../www.iselcru.com";
-
-
-}
-
-																																									*/
-
-
-
-		</script>
-
+ 
  		<link rel="stylesheet" href="css/module.css">
 		<link rel="stylesheet" href="css/index/skined.css">
 		<script type="text/javascript" src="js/jquery.1.7.js"></script>

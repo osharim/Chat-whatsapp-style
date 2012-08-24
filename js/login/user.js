@@ -7,14 +7,40 @@
  	
  	INPUT_CONFIRM_PASSWORD =  '	<input type="password" class="data_user confr_"  placeholder = "confirmar contraseña"> ';
  	
- 	INPUT_EMAIL = '	<input type="text" class="data_user email_"  placeholder = "Ingresa tu email">';
+ 	INPUT_EMAIL = '	<input type="text" name ="email_" class="data_user email_"  placeholder = "Ingresa tu email">';
  	
  	MESSAGE_SING_UP = "<span class='msg' >! Gracias! Ahora Llena estos campos de registro   </span>";
 
 
+
+ 			bindsme.validate({ // PONEMOS EN LIVE LA VALIDACION PARA QUE EMPIEZE A MONITOREAR
+ 
+
+ 				onSend :  ".sing_in", // boton al hacerle click entra en accion
+
+ 				form : [{  action : "./data/login",
+
+ 						   object : ".struct_login"
+
+ 				}] ,
+
+
+ 				live : true ,
+ 
+ 				dataLive : [{ object: ".user_" , type : "validate" } ,
+
+ 						    { object:  ".pss_" , type :  "validate" }   ]
+
+ 			});
+
+
  	$(".sing_in").bind("click" , function(){ // LOGEARSE
 
- 			console.log("init session")
+ 		
+ 		console.log("here")
+
+ 
+
 
  	});
 

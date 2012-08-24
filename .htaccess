@@ -1,4 +1,11 @@
 RewriteEngine On
 
-RewriteRule ^data/register$  class/login/session.php [L] # ------------- REGISTRAR USUARIO
- 
+RewriteRule ^data/register$  class/login/class/rnsingup.php [L] # ------------- REGISTRAR USUARIO
+
+ RewriteRule ^data/login$  class/login/class/rnlogin.php [L] # ------------- INICIAR SESION
+
+
+RewriteRule ^(error)$       index.php?issue=$1 [L] // 	#pone url para redireccionar cuando hay error
+
+
+RewriteRule ^home$  home.php [L] # ------------- URL DE HOME
