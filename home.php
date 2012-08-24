@@ -60,10 +60,6 @@ session_start();
  			<div class="message_chat">
  				
 
-	<!-- .user_current_chat -->
-	<span class="user_current_chat"> @MaryleHermosa</span>
-	<!-- /.user_current_chat -->
-
 
 
 <!--   CONVERSACION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
@@ -155,7 +151,16 @@ session_start();
 
 
 
-<div class="struct_menu"></div>
+<div class="struct_menu">
+	
+
+
+	<!-- .user_current_chat -->
+	<span class="user_current_chat"> @ <?php echo $_SESSION["username"] ?></span>
+	<!-- /.user_current_chat -->
+
+
+</div>
 
 
 

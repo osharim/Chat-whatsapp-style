@@ -130,10 +130,11 @@ body{
 /* UI PARA EL CHAT DEL USUARIO */
 .user_current_chat{
 
-float: right;
-    font-size: 14px;
+ display: inline-block;
+    font-size: 13px;
     font-weight: bold;
-    margin-bottom: 6px;
+    padding-left: 8px;
+    padding-top: 4px;
 
 }
 ul>:first-child{
