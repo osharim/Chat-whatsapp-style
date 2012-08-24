@@ -139,7 +139,10 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
 			url : "class/chat/update_chat.php" ,
 
- 
+ 			type: "POST" ,
+ 			
+			data : { id_user_writer : window.USER_DATA.USER.id_user   } ,
+
 			dataType : "JSON",
 
 			success : function(data){ // se hace append
@@ -196,7 +199,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
 			url : "class/chat/delete_notify.php" ,
 
-			data : { "writter" : 1 , "reader" : 1 },
+			data : { "writter" : window.USER_DATA.USER.id_user , "reader" : 1 },
  
 
 			type : "POST" });
@@ -217,7 +220,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
 			url : "class/chat/update_notify.php" ,
 
-			data : { "data" : 1 , "type" : "verify" },
+			data : { "data" : window.USER_DATA.USER.id_user , "type" : "verify" },
  
 			dataType : "JSON",
 
@@ -268,7 +271,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
 			url : "class/chat/update_notify.php" ,
 
-			data : { "data" : 1  , "type" : "get_data" , "writtr_" : 1 , "lim_msg_cht" : $("body").data("limit_msg_chat_current_writter")  }, // data es el id_user_reader , y writtr_ es el id_user writter ,
+			data : { "data" : 1  , "type" : "get_data" , "writtr_" : window.USER_DATA.USER.id_user , "lim_msg_cht" : $("body").data("limit_msg_chat_current_writter")  }, // data es el id_user_reader , y writtr_ es el id_user writter ,
 																						  // lim_msg_cht es la cantidad de mensajes en notificacion
  
 			dataType : "JSON",

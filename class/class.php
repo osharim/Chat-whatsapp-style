@@ -107,7 +107,7 @@ public 	function session(){
    		$data[] = $parse;
 
    }
-
+ 
 
    if( $data[0]["is_available"]== 1 ){
 
@@ -121,7 +121,7 @@ public 	function session(){
    }else{
 
 
-   header("Location:   ../home?issue=error");
+   header("Location:   ../issue");
 
    }
 
@@ -182,7 +182,7 @@ class chat{
 		$id_last_msg = mysql_insert_id();
 
 
-	    chat::get_msg_from_db_by_limit("justOneMSG"); // obtenemos solo 1 msg
+	    chat::get_msg_from_db_by_limit("justOneMSG" , 1); // obtenemos solo 1 msg
 
 	    notify::set_notify(1,1,$id_last_msg); // metemos la notifycacion |||| pasamos ( user_writer , user_reader , id_chat); 
 
@@ -192,6 +192,9 @@ class chat{
 
 	public static function get_msg_from_db_by_limit($type){ // obtenemos n mensajes del chat
 
+		extract($_POST);
+ 
+
 
 		$QUERY =  "";
 
@@ -200,7 +203,7 @@ class chat{
 		
 		case 'justOneMSG': // obtenemos solo  1 mensaje
 
-		  $QUERY = "SELECT id_user_reader , msg ,( FROM_UNIXTIME(fecha ) ) as fecha from chat where id_user_writer = 1 ORDER BY fecha  DESC LIMIT 1 "; // (Id_user_reader, $limit_msg_chat )
+		  $QUERY = "SELECT id_user_reader , msg ,( FROM_UNIXTIME(fecha ) ) as fecha from chat where id_user_writer = $id_user_writer ORDER BY fecha  DESC LIMIT 1 "; // (Id_user_reader, $limit_msg_chat )
 		
 
 				break;
@@ -213,7 +216,7 @@ class chat{
 
 	    case 'all': // todos los mensajes
 	    	
-	    	$QUERY = "SELECT id_user_reader , msg ,( FROM_UNIXTIME(fecha ) ) as fecha from chat where id_user_writer = 1";
+	    	$QUERY = "SELECT id_user_reader , msg ,( FROM_UNIXTIME(fecha ) ) as fecha from chat where id_user_writer = $id_user_writer";
 
 
 	    	break;
@@ -227,6 +230,7 @@ class chat{
 
 
 //***********************************************************************************************************************************
+ 
 
 
 		$response = mysql_query( $QUERY , Conectar::con());
@@ -240,7 +244,22 @@ class chat{
 		}
 
 
-		echo json_encode(array('response' => $DATA ) );
+
+if( isset($DATA)   ){
+
+echo json_encode(array('response' => $DATA)); // si hay datos regresamos las notificaciones!!!
+
+
+} else{
+
+
+$response = array('response' => false );
+
+echo json_encode($response); // no regresamos nada!!!!
+
+
+
+}
 
 
 	}

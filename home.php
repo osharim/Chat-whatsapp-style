@@ -4,8 +4,6 @@ session_start();
 	if(!$_SESSION["loged"]   ){
 
 			header("Location:   ./");
-
-
 	}
 
  ?>
@@ -14,8 +12,6 @@ session_start();
 <head>
 	<meta charset="UTF-8">
 	<title></title>
- 
- 
 
 
 		<link rel="stylesheet" href="css/home/skined.css">
@@ -23,6 +19,11 @@ session_start();
 
  
  	<script type="text/javascript" src="js/jquery.1.7.js"></script>
+
+
+ 
+	 <script type="text/javascript" src="js/get_data.js"></script>
+
 
 
 	<!-- Get Google CDN's jQuery and jQuery UI with fallback to local -->

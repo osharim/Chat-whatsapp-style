@@ -3,8 +3,7 @@
         $("document").ready(function(){
 
 
-
-
+     
 						$(".chat_cmmt").bind("keyup", function(event){
 
 							 if (event.which == 13) {
