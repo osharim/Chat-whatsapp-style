@@ -35,11 +35,29 @@ bindsme.validate  = function(properties){
 
                                     data: [] ,	// AQUI LOS OBJETOS PARA VALIDAR
 
-                                    classError : "error_object"
+                                    classError : "error_object" , // CLASE QUE LE PONDRA A LOS INPUT CUANDO HAYA ERRORES
+
+                                
+
+                                    onSend : [] // ONSEND CPUEDE TENER
+
+//                                  onSend : [{   button : CLASE O ID DEL BOTTON A REALIZAR EL EVENTO CUANDO YA ESTE VALIDADO TODO ,
+
+
+//                                  action : function(){ ACTION QUE REALIZARA CUANDO YA ESTE TODO VALIDADO
+
+//                                  $(".struct_login").submit();
+
+//
+//                                  }
+//                                           }]  
+
+
  
                                     
                   },properties);
 
+ 
 //*********************************************************************************************************************
 //*****************************************************************************************************************************
 
@@ -64,7 +82,7 @@ bindsme.validate  = function(properties){
  	init : function(){
 
  
-
+   
 			validate.check_if_live_true();
 			validate.match_passwordgator();
 
@@ -77,7 +95,7 @@ bindsme.validate  = function(properties){
 
     			LENGTH_CURRENT_MATCH : 0 , // EN QUE MATCH VAMOS 
     			 
-
+          VALID_DATA : false , // FLAG QUE NOS DICE SI YA PODEMOS PROSEGUIR!!! OSEA SI ESTA MAL UN INPUT O TEXTAREA DEL JSON RECIVIDO ENTONCES SE PONE A FALSE Y SI TODO ESTA BIEN ES TRUE
     			
     			 B_MATCH : false // BANDERA QYUE NOS DICE SI COINCIDEN
 
@@ -87,8 +105,10 @@ bindsme.validate  = function(properties){
     		] 
  ,
 
+ 
+
 //-----------------------------------------------------------------------------------------------------------------------------
-    
+
  	removeWhiteSpace : function(obj){
 
 
@@ -209,13 +229,13 @@ bindsme.validate  = function(properties){
 
           		$(config.dataLive[i].object).live('focus', function(){
 
-          						validate.validateMail();
+          						
           				 
           		 }).blur(function(){
 
           		 	 
-							validate.removeWhiteSpace( $(this) );
-
+							 $(this).val(  $(this).val().trim() ); // LE QUITAMOS LOS ESPACIO 
+              validate.validateMail($(this));
 
           		 });
 
@@ -247,8 +267,31 @@ bindsme.validate  = function(properties){
 
  	validateMail : function(obj){ // ESTA HACE QUE TENGA UN EMAIL CORRECTO
 
-	 validate.remove_alert_if_empty(obj);
+ console.log("validate");
+        
+    re=/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/
+    
+   
+   if(    ! re.exec( $(obj).val() )  )    {
+     
+        
+        
+      $(obj).addClass(config.classError);   
+      
+      validate.conf[0].VALID_DATA = false; // CUANDO ESTA MAL!!!!!!!!!!!!!!!!!!!!!!!!!!
+      
+       }else{
 
+
+     $(obj).removeClass(config.classError); 
+     
+     validate.conf[0].VALID_DATA = true; // CUANDO ESTA BIENNNNN!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 
+          }
+           
+   
+   
+ 
 
 
  	},
@@ -334,12 +377,12 @@ match_password_if_true : function(obj){
 
  		if ( data[i] == ( ( (i+1)  == validate.conf[0].LIMIT_MATCH_INPUT ) ? data[i] : data[i+1]  )  )  {
 
-			console.log("son igaules")
+			validate.conf[0].VALID_DATA = true; // CUANDO ESTA bien!!!!!!!!!!!!!!!!!!!!!!!!!!
 			validate.conf[0].B_MATCH = true;
 
 		}else{
 
-			console.log("no lo son");
+      validate.conf[0].VALID_DATA = false; // CUANDO ESTA MAL!!!!!!!!!!!!!!!!!!!!!!!!!!
 			validate.conf[0].B_MATCH =false;
 
 		}
