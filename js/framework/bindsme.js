@@ -11,14 +11,22 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
 
  var Chat = { // RETORNA EL VALOR DEL MSG A ENVIAR
-
- 	VALUE_MSG : function(){
+	VALUE_MSG : function(){
 
 
  		return $(".chat_cmmt").val();
 
  	} ,
 
+
+ 	INIT_PAGE : function(){
+
+
+ 		$(".username").html( window.USER_DATA.USER.username);
+
+
+ 	}
+		,
  	GET_STRUCT_MSG :  function(data){   // METODO QUE FORMATEA UNA CADENA DE TEXTO A UNA STRUCTURA EN FORMA DE COMENTARIO
 
  		DATA =  "";

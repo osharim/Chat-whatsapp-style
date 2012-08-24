@@ -34,12 +34,11 @@ background: url("../../img/bg_st_left.png") repeat scroll 0 0 transparent;
 .struct_chat{ /* CONTENEDOR DEL CHAt */
 
 
-float: right;
-    height: 90%;
+ float: right;
+    height: 95%;
     margin-right: 2%;
-    margin-top: 2%;
+    margin-top: 0;
     width: 74%;
-
 
 
 }
@@ -61,7 +60,7 @@ background:url("../../img/dotp.png");
 
 
 .message_chat{
-  height: 82%;
+ height: 85%;
     width: 99%;
  
 }
@@ -176,7 +175,7 @@ margin: 5px;
 }
 
 .chat{
-height: 95%;
+height: 100%;
     overflow: hidden;
     width: 99%;
  
@@ -194,8 +193,20 @@ height: 95%;
     position: relative;
     width: 91%;
      background: none repeat scroll 0 0 #EFF4F3;
+        text-align: center;
 
 }
+
+ 
+
+
+.msg_chat img{
+
+    display: inline-block;
+
+
+}
+
 
 .tang{
 border-color: transparent #EFF4F3 transparent transparent;
@@ -209,7 +220,11 @@ border-color: transparent #EFF4F3 transparent transparent;
 }
 
 .date{
-    margin-top: 2px; font-size: 11px; float: right; padding-top: 16px; color: rgb(119, 119, 119);
+  color: #777777;
+    font-size: 11px;
+    margin-top: 2px;
+    position: absolute;
+    right: 8px;
 }
 
 .container_data{
@@ -219,7 +234,7 @@ border-color: transparent #EFF4F3 transparent transparent;
     height: 100px;
     margin-left: -12px;
     margin-top: 14px;
-    width: 288px;
+    width: 100%;
      margin-bottom: -13px;
 }
 

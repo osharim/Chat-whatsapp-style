@@ -124,7 +124,7 @@ session_start();
 
 	<div class="struct_contact">
 
-	<span class="user_current_chat">  binds @ <?php echo $_SESSION["username"] ?></span>
+	<span class="user_current_chat">  binds @ <span class="username"></span>	</span>
 
  
 </div> 
