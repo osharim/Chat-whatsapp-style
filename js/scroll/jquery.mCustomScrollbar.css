@@ -203,9 +203,13 @@
         .links{margin:10px 0 0 10px;}
         .links a{display:inline-block; padding:2px 10px; margin:10px; background:#C30; text-decoration:none; -webkit-border-radius:15px; -moz-border-radius:15px; border-radius:15px;}
         .links a:hover{background:#de4816;}
-        .content{height: 94%;
-    overflow: auto;
-    padding: 20px;
-    width: 100%;}
+        .content{
+
+height: 94%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 20px 0;
+    width: 100%;
+}
         .content p:nth-child(even){color:#999; font-family:Georgia,serif; font-size:17px; font-style:italic;}
         .content p:nth-child(3n+0){color:#c96;}

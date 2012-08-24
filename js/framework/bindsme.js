@@ -22,13 +22,18 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
  	GET_STRUCT_MSG :  function(data){   // METODO QUE FORMATEA UNA CADENA DE TEXTO A UNA STRUCTURA EN FORMA DE COMENTARIO
 
  		DATA =  "";
+ 		TRIANGLE = '<span class="tang"></span> ';
+
 
  		$.each(data.response,function(i,data){
 
+
+
  		DATA += '<ul class="user_ui">';
  		DATA += '<li><img src="img/user.jpg" alt="" width="46">	</li>';
- 		DATA += '<li class="msg_chat">'+data.msg+'</li>' ;
-	 	DATA += '<li>'+data.fecha+'</li>';
+ 		DATE = '<span clasS="date">'+data.fecha+'</span>'
+ 		DATA += '<li class="msg_chat">'+TRIANGLE+data.msg+DATE+'  </li>' ;
+ 
 		DATA += '</ul>';
 
 

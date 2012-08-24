@@ -121,7 +121,7 @@ public 	function session(){
    }else{
 
 
-   header("Location:   ../issue");
+   header("Location:   ../error");
 
    }
 

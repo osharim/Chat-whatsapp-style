@@ -7,29 +7,37 @@
 
 
 .struct_groups , .struct_contact{ /* CONTENEDOR DE LOS GRUPS */
-
- 
-    float: none;
-    height: 206px;
-    margin-left: 4%;
-    margin-top: 2%;
+ background: none repeat scroll 0 0 rgba(100, 100, 100, 0.2);
+    border-top: 1px solid #555555;
+    box-shadow: 1px 1px 1px #222222;
+    height: 25px;
+    margin-top: 1px;
     overflow-y: auto;
-    width: 23%;
+    padding: 7px;
+    width: 92%;
 
 }
 
 
+.struct_left{
+
+background: url("../../img/bg_st_left.png") repeat scroll 0 0 transparent;
+    box-shadow: -3px 11px 11px #000000;
+    float: left;
+    height: 100%;
+    overflow: hidden;
+    width: 21%;
+}
+
 
 .struct_chat{ /* CONTENEDOR DEL CHAt */
-
 
 
 float: right;
     height: 90%;
     margin-right: 2%;
     margin-top: 2%;
-    width: 96%;
-
+    width: 74%;
 
 
 
@@ -43,8 +51,8 @@ float: right;
 
 .struct_main{ /* CONTENEDOR PADRE */
 
-
-height: 100%;
+background: none repeat scroll 0 0 rgba(0, 0, 0, 0.4);
+    height: 100%;
     overflow-y: auto;
     width: 100%;
 
@@ -52,18 +60,16 @@ height: 100%;
 
 
 .message_chat{
-
-height: 82%;
-    width: 97%;
+  height: 82%;
+    width: 99%;
+ 
 }
 
 
 
 
 .message_chat , .struct_contact , .struct_groups , .chat_cmmt{
-  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.7);
-    border-radius: 3px 3px 3px 3px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3) inset;
+
     padding: 13px;
 overflow: hidden;
 }
@@ -99,12 +105,11 @@ background: none repeat scroll 0 0 rgba(0, 0, 0, 0.7);
 
 
 body{
-   background-attachment: scroll !important;
+    background-attachment: scroll !important;
     background-clip: border-box !important;
     background-color: transparent !important;
-    background-image: url("https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-snc6/255744_218951038129106_4189186_n.jpg") !important;
+    background-image: url("http://4.bp.blogspot.com/-YtrOHuHiohE/T32UVg4-doI/AAAAAAAAIb0/VOrfAAo9BXs/s1920/Winter_Morning_by_Shannon_Lucas.jpg") !important;
     background-origin: padding-box !important;
-    background-position: 1px -538px !important;
     background-repeat: repeat !important;
     background-size: 100% auto !important;
     color: rgba(255, 255, 255, 0.7) !important;
@@ -129,18 +134,22 @@ body{
 /* ****************************************************************************************************** */
 /* UI PARA EL CHAT DEL USUARIO */
 .user_current_chat{
-
- display: inline-block;
-    font-size: 13px;
+color: #FFFFFF;
+    display: inline-block;
+    font-size: 14px;
     font-weight: bold;
     padding-left: 8px;
     padding-top: 4px;
+    text-shadow: 1px 1px 0 #222222;
 
 }
 ul>:first-child{
 
-
-	float: left;
+ border-radius: 100% 100% 100% 100%;
+    float: left;
+    height: 46px;
+    margin: 6px;
+    overflow: hidden;
 
 }
 
@@ -165,7 +174,7 @@ margin: 5px;
 }
 
 .chat{
-  height: 95%;
+height: 95%;
     overflow: hidden;
     width: 99%;
  
@@ -173,8 +182,29 @@ margin: 5px;
 
 .msg_chat{
 
-
-  font-size: 18px;
+ background: none repeat scroll 0 0 #EFF4F3;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 1px 1px 3px #222222;
+    color: #444444;
+    float: left;
+    font-size: 18px;
     margin-top: 14px;
+    padding: 7px;
+    width: 91%;
 
+}
+
+.tang{
+    border-color: transparent #EFF4F3 transparent transparent;
+    border-style: solid;
+    border-width: 11px 15px 10px;
+    height: 0;
+    left: 42px;
+    margin-top: -3px;
+    position: absolute;
+    width: 1px;
+}
+
+.date{
+    margin-top: 2px; font-size: 11px; float: right; padding-top: 16px; color: rgb(119, 119, 119);
 }

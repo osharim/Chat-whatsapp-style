@@ -114,28 +114,47 @@ session_start();
 		</div>
 	</div>
 
+
+<!-- .struct_left -->
+<div class="struct_left">
+
+
+
+ <!--   struct_contact -->
+
+	<div class="struct_contact">
+
+	<span class="user_current_chat">  binds @ <?php echo $_SESSION["username"] ?></span>
+
+ 
+</div> 
+ <!--   struct_contact -->
+
+
+
+
+
 <!-- 	struct_groups -->
 
-<!-- 	<div class="struct_groups">
+ 	<div class="struct_groups">
 	
 	<span class="user_current_chat">Groups</span>
 
 
-</div> -->
+</div> 
 
-<!--   struct_contact -->
+ <!--   struct_contact -->
 
-<!-- 	<div class="struct_contact">
+	<div class="struct_contact">
 
 	<span class="user_current_chat"> Contacts</span>
 
+ 
+</div> 
+ <!--   struct_contact -->
 
-
-
-
-</div> -->
-
-
+</div>
+<!-- /.struct_left -->
 
 
 
@@ -156,7 +175,7 @@ session_start();
 
 
 	<!-- .user_current_chat -->
-	<span class="user_current_chat"> @ <?php echo $_SESSION["username"] ?></span>
+	<span class="user_current_chat"> </span>
 	<!-- /.user_current_chat -->
 
 
