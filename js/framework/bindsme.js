@@ -146,7 +146,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
  			type: "POST" ,
  			
-			data : { id_user_writer : USER_DATA.USER.id_user   } ,
+			data : { id_user_writer : window.USER_DATA.USER.id_user   } ,
 
 			dataType : "JSON",
 

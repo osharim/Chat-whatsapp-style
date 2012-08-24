@@ -160,6 +160,18 @@ session_start();
     </div> 
 
 
+<!-- 	struct_groups -->
+
+ 	<div class="struct_groups">
+	
+	<span class="user_current_chat">other <div class="notify gray">1</div></span>
+
+
+    </div> 
+
+
+
+
 
 
 </div>

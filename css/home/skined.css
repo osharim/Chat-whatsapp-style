@@ -233,17 +233,23 @@ border-color: transparent #EFF4F3 transparent transparent;
     padding: 2px 8px;
     text-align: center;
     width: auto;
+    border:1px solid #222;
 }
 
 
 .blue{
      background: -moz-linear-gradient(#34BFF3, #074AA2) repeat scroll 0 0 transparent; 
-      box-shadow: 0 2px #60CBFA inset, 0 0 2px 1px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 2px #60CBFA inset, 0 1px #777777;
 }
 
 .red{
 
- background: -moz-linear-gradient(#d65828,#C62020) repeat scroll 0 0 transparent; 
-      box-shadow: 0 2px #D08B8C inset, 0 0 2px 1px rgba(0, 0, 0, 0.3);
+ background: -moz-linear-gradient(#E03C3C,#C62323) repeat scroll 0 0 transparent; 
+      box-shadow: 0 2px #E65858 inset,  0 1px #777777;
 
     }
+
+.gray{
+   background: -moz-linear-gradient(#727B88,#383D44) repeat scroll 0 0 transparent; 
+      box-shadow: 0 2px #848C97 inset,  0 1px #777777;
+}
