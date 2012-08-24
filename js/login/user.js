@@ -42,11 +42,19 @@
 
  			$(".sing_up").html("Registrarme");
 
- 			 $(".struct_login").attr("action","./data/register");
+ 		//	 $(".struct_login").attr("action","./data/register");
 
 
 
  			bindsme.validate({ // PONEMOS EN LIVE LA VALIDACION PARA QUE EMPIEZE A MONITOREAR
+
+ 				onSend :  ".sing_up", // boton al hacerle click entra en accion
+
+ 				form : [{  action : "./data/register",
+
+ 						   object : ".struct_login"
+
+ 				}] ,
 
  				live : true ,
 
@@ -70,15 +78,7 @@
 
  
 
- 		}else{ // VALIDAR Y REGISTRAR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
- 			$(".struct_login").submit();
-
-
-
-
- 		}
+ 		} 
 
 
  

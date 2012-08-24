@@ -27,6 +27,17 @@ bindsme.validate  = function(properties){
                   
                   var config = $.extend({
 			
+
+                                    onSend : "", // BOTON QUE AL HACERLE CLICK HARA EL SUBMIT
+                                    
+                                    form : [], // TIENE LA FORMA
+
+                                   // form : [{  action : "URL a donde apunta el form",
+
+                                  //          object : "CLASE O ID del FORM"
+
+                                  //        }] ,
+
                                     match_password: false, // BOEEANO QUE DECIDE SI SE TIENE QUE HACER COINCIDIR OSEA COMPARAR CON OTRA CLAVE ESO ES PARA LOS REGISTROS EN 
                                     						// INGRESA CLAVE Y CONFIRMAR CLAVE
                                     live: false,            // SI ES LIVE ENTONCES MONITOREA TODOS LOS INPUTS O TEXT AREA EN REALTIME Y TE DICE SI ESTA BIEN O MAL
@@ -36,23 +47,6 @@ bindsme.validate  = function(properties){
                                     data: [] ,	// AQUI LOS OBJETOS PARA VALIDAR
 
                                     classError : "error_object" , // CLASE QUE LE PONDRA A LOS INPUT CUANDO HAYA ERRORES
-
-                                
-
-                                    onSend : [] // ONSEND CPUEDE TENER
-
-//                                  onSend : [{   button : CLASE O ID DEL BOTTON A REALIZAR EL EVENTO CUANDO YA ESTE VALIDADO TODO ,
-
-
-//                                  action : function(){ ACTION QUE REALIZARA CUANDO YA ESTE TODO VALIDADO
-
-//                                  $(".struct_login").submit();
-
-//
-//                                  }
-//                                           }]  
-
-
  
                                     
                   },properties);
@@ -82,7 +76,7 @@ bindsme.validate  = function(properties){
  	init : function(){
 
  
-   
+      validate.submit();
 			validate.check_if_live_true();
 			validate.match_passwordgator();
 
@@ -104,8 +98,69 @@ bindsme.validate  = function(properties){
 
     		] 
  ,
+//-----------------------------------------------------------------------------------------------------------------------------
+
+ submit : function(){
+
+console.log("here")
+
+   
+
+
+  $(config.onSend).click(function(){
+
+
+    validate.check_input_empty(); // VERIFICAMOS SI TODO TIENE DATOS
+
+    NUMBER_ERRORS =   $(config.form[0].object ).find(".error_object").length ;
+    
+    if(validate.conf[0].VALID_DATA &&  NUMBER_ERRORS === 0  ){
+
+      console.log("todo bien!!")
+
+
+    }
+
+
+  });
+
+
+ },
+
+//-----------------------------------------------------------------------------------------------------------------------------
+
+ check_input_empty : function(){
+
+
+     $.each(config.dataLive ,  function(i){ // CONTAMOS CUANTOS MATCH TIENEN QUE SER
+
+
+
+      if( $(config.dataLive[i].object).val().length >2 ){
 
  
+   
+             validate.conf[0].VALID_DATA = true; // CUANDO ESTA BIENNNNN!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+      }else{
+
+
+         $(  config.dataLive[i].object ).addClass(config.classError);
+
+
+
+      }
+
+    });
+ 
+
+
+
+ }
+
+ ,
+
 
 //-----------------------------------------------------------------------------------------------------------------------------
 
@@ -209,7 +264,7 @@ bindsme.validate  = function(properties){
           				 
           		 }).blur(function(){
 
-          		 	console.log("blur")
+          		 
 
 				validate.removeWhiteSpace( $(this) );
 				 validate.match_password_if_true( $(this));
@@ -278,14 +333,14 @@ bindsme.validate  = function(properties){
         
       $(obj).addClass(config.classError);   
       
-      validate.conf[0].VALID_DATA = false; // CUANDO ESTA MAL!!!!!!!!!!!!!!!!!!!!!!!!!!
+      
       
        }else{
 
 
      $(obj).removeClass(config.classError); 
      
-     validate.conf[0].VALID_DATA = true; // CUANDO ESTA BIENNNNN!!!!!!!!!!!!!!!!!!!!!!!!!!
+
  
           }
            
@@ -343,7 +398,7 @@ match_password_if_true : function(obj){
  		validate.conf[0].LENGTH_CURRENT_MATCH++;
  	
  	}
-		console.dir(validate.conf);
+ 
  
  //-------------------------------------------------------------------------------------------
  
@@ -377,12 +432,12 @@ match_password_if_true : function(obj){
 
  		if ( data[i] == ( ( (i+1)  == validate.conf[0].LIMIT_MATCH_INPUT ) ? data[i] : data[i+1]  )  )  {
 
-			validate.conf[0].VALID_DATA = true; // CUANDO ESTA bien!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 			validate.conf[0].B_MATCH = true;
 
 		}else{
 
-      validate.conf[0].VALID_DATA = false; // CUANDO ESTA MAL!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 			validate.conf[0].B_MATCH =false;
 
 		}
