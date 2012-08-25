@@ -20,12 +20,29 @@
 }
 
 
+.struct_groups:hover,.struct_contact:hover{
+
+
+    cursor: pointer;
+
+}
+
+
+.struct_groups:active,.struct_contact:active{
+
+  background: none repeat scroll 0 0 rgba(100, 100, 100, 0.4);
+
+}
+
+
+
 .struct_left{
 
-background: url("../../img/bg_st_left.png") repeat scroll 0 0 transparent;
+ background: url("../../img/bg_st_left.png") repeat scroll 0 0 transparent;
     box-shadow: -3px 11px 11px #000000;
     float: left;
     height: 100%;
+    margin-top: 35px;
     overflow: hidden;
     width: 21%;
 }
@@ -33,11 +50,10 @@ background: url("../../img/bg_st_left.png") repeat scroll 0 0 transparent;
 
 .struct_chat{ /* CONTENEDOR DEL CHAt */
 
-
- float: right;
+    float: right;
     height: 95%;
     margin-right: 2%;
-    margin-top: 0;
+    margin-top: 36px;
     width: 74%;
 
 
@@ -51,8 +67,8 @@ background: url("../../img/bg_st_left.png") repeat scroll 0 0 transparent;
 
 .struct_main{ /* CONTENEDOR PADRE */
 
-background:url("../../img/dotp.png");
-    height: 100%;
+/* background:url("../../img/dotp.png");
+     */    height: 100%;
     overflow-y: auto;
     width: 100%;
 
@@ -120,12 +136,11 @@ body{
 
 .struct_menu{
 
-
-	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.2);
+ background: url("../../img/bg_st_left.png") repeat scroll 0 0 transparent;
     border-top: 1px solid rgba(255, 255, 255, 0.15);
-    bottom: 0;
-    height: 31px;
+    box-shadow: -3px 2px 2px #111111;
     position: absolute;
+    top: 0;
     width: 100%;
 
 }
@@ -209,12 +224,12 @@ height: 100%;
 
 
 .tang{
-border-color: transparent #EFF4F3 transparent transparent;
+  border-color: transparent #EFF4F3 transparent transparent;
     border-style: solid;
-    border-width: 11px 21px 10px;
+    border-width: 5px 9px 5px 0;
     height: 0;
-    left: -29px;
-    margin-top: -3px;
+    left: -10px;
+    margin-top: -2px;
     position: absolute;
     width: 1px;
 }
@@ -228,14 +243,14 @@ border-color: transparent #EFF4F3 transparent transparent;
 }
 
 .container_data{
-       background: none repeat scroll 0 0 rgba(0, 0, 0, 0.25);
+     background: none repeat scroll 0 0 rgba(0, 0, 0, 0.25);
     box-shadow: -1px 4px 9px #222222 inset;
     float: left;
-    height: 100px;
+    height: auto;
+    margin-bottom: -13px;
     margin-left: -12px;
     margin-top: 14px;
     width: 100%;
-     margin-bottom: -13px;
 }
 
 
@@ -267,4 +282,102 @@ border-color: transparent #EFF4F3 transparent transparent;
 .gray{
    background: -moz-linear-gradient(#727B88,#383D44) repeat scroll 0 0 transparent; 
       box-shadow: 0 2px #848C97 inset,  0 1px #777777;
+}
+
+.struct_search{
+
+      background: none repeat scroll 0 0 rgba(0, 0, 0, 0.3);
+      border: 1px solid #111111;
+      border-radius: 11px 11px 11px 11px;
+      box-shadow: 0 1px #777777;
+      margin: 2%;
+      padding: 5px 5px 5px 16px;
+      width: 86%;
+      color:white !important;
+      font-weight:bold;
+}
+
+ 
+.struct_bttn{
+ float: right;
+    overflow-y: auto;
+    width: 720px;
+
+
+}
+
+
+
+/*  NOTA : ESTO ES SOLO PARA LOS INPUT */
+
+
+    /*  BOTONES
+    _________________________________________________________________________________ */
+
+.uibutton.add:before {
+background-position: -408px -95px !important;
+}
+
+.uibutton.upload_video:before{
+
+  background-position:  -432px -47px !important;
+}
+
+.uibutton.config:before{
+
+  background-position:  -432px 1px !important;
+}
+
+
+.uibutton.upload_image:before{
+  background-position:     -457px -47px !important
+}
+
+
+.uibutton.add_group:before{
+  background-position:    -72px -119px !important;
+}
+
+
+
+
+ 
+.uibutton.icon:before {
+background: url("../../img/icon/wicn.png") no-repeat scroll 99px 99px transparent;
+    content: " ";
+    float: left;
+    height: 14px;
+    margin: 1px 0.5em 1px 8px;
+    padding-left: 0;
+    position: relative;
+    top: 1px;
+    width: 13px;
+}
+.uibutton {
+    opacity: .7;
+    -moz-opacity: .7;
+    filter:alpha(opacity=.77);
+    cursor: pointer;
+    float: left;
+    font-size: 12px;
+    margin: 5px;
+    padding: 2px 7px 2px 11px;
+}
+
+
+.uibutton:hover{
+
+    opacity: .8;
+    -moz-opacity: .8;
+    filter:alpha(opacity=.88);
+
+}
+
+.uibutton:active{
+
+
+    opacity: 1;
+    -moz-opacity: 1;
+    filter:alpha(opacity=1);
+
 }

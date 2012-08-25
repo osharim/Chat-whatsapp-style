@@ -16,7 +16,7 @@ session_start();
 
 		<link rel="stylesheet" href="css/home/skined.css">
 		<link rel="stylesheet" href="js/scroll/jquery.mCustomScrollbar.css">
-
+		<link rel="stylesheet" href="js/framework/css/binds.css">
  
  	<script type="text/javascript" src="js/jquery.1.7.js"></script>
 
@@ -38,10 +38,17 @@ session_start();
 	 <script type="text/javascript" src="js/framework/bindsme.js"></script>
 	<script type="text/javascript" src="js/chat.js"></script>
 	<script type="text/javascript" src="js/update_chat.js"></script>
+	<script type="text/javascript" src="js/contact/contact_module.js"></script>
+	<script type="text/javascript" src="js/framework/binds.js"></script>
+	<script type="text/javascript" src="js/contact/add_contact.js"></script>
+
 
 </head>
 <body>
-	
+			binds.notify({
+         content : "Ahroa espera a que te Acepte :)"
+        });  
+
 
 
 <!--   struct_main -->
@@ -119,30 +126,27 @@ session_start();
 <div class="struct_left">
 
 
-
- <!--   struct_contact -->
-
-	<div class="struct_contact">
-
-	<span class="user_current_chat">  binds @ <span class="username"></span>	</span>
-
  
-</div> 
- 
-
-
 
 
  <!--   struct_contact -->
 
 	<div class="struct_contact">
 
-	<span class="user_current_chat"> Contacts <div class="notify blue">23</div>	</span>
+	<span class="user_current_chat"> Contactos <div class="notify blue">23</div>	</span>
 
 
-	<div class="container_data">
+	<div class="container_data data_contact">
 		
 
+<!-- CONTENIDO --> 
+
+     <!-- .search -->
+ 
+	
+ 
+
+	<!-- /.search -->	
 
 	</div>
  
@@ -154,7 +158,7 @@ session_start();
 
  	<div class="struct_groups">
 	
-	<span class="user_current_chat">Groups <div class="notify red">2</div></span>
+	<span class="user_current_chat">Grupos <div class="notify red">2</div></span>
 
 
     </div> 
@@ -164,7 +168,7 @@ session_start();
 
  	<div class="struct_groups">
 	
-	<span class="user_current_chat">other <div class="notify gray">1</div></span>
+	<span class="user_current_chat">Albumes <div class="notify gray">1</div></span>
 
 
     </div> 
@@ -193,12 +197,22 @@ session_start();
 
 <div class="struct_menu">
 	
+	<div class="struct_bttn">
+		
+<div class="add_contact uibutton icon add"> Agregar Contacto</div>
+
+<div class="add_contact uibutton icon add_group"> Crear grupo</div>
+	
+<div class="add_contact uibutton icon upload_image"> Agregar imagen</div>
+	
+<div class="add_contact uibutton icon upload_video">Agregar video</div>
+
+<div class="add_contact uibutton icon config"> Configurar @ <span class="username"></span> </div>
 
 
-	<!-- .user_current_chat -->
-	<span class="user_current_chat"> </span>
-	<!-- /.user_current_chat -->
-
+	</div>		
+ 
+	
 
 </div>
 
