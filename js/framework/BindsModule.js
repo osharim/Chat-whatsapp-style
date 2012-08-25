@@ -1,21 +1,10 @@
-
-																																									 
-/*
-var data = prompt("Allow denied server");
-
-if( data != "nf9ckpg"){
-
-
-	window.location = "../../www.iselcru.com";
-
-
-}
-*/
-
+ 
 
 // ESTA FNCION CONTEINEE UN OBJETO BINDSME QUE COTNIENE METODOS COMO
 
 // VALIDATE QUE SE LE PASA UN ARRAY Y ESTE VERIFICA
+
+// ESTE ES PARA VALIDAR PERO VALIDA COMO LOS HOMBRES
 
  var bindsme = Object();
 
