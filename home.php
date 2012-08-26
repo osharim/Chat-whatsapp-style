@@ -45,9 +45,6 @@ session_start();
 
 </head>
 <body>
-			binds.notify({
-         content : "Ahroa espera a que te Acepte :)"
-        });  
 
 
 

@@ -10,8 +10,8 @@ jQuery(document).ready(function($) {
 
 
               binds.box({
-                                    title: "options.title ",
-                                    height:"73" , 
+                                    title: " Agrega un contacto ejem @usuario ",
+                                    height:"101" , 
                                     top : "39% ", 
                                     content : htmlcontent ,
 
