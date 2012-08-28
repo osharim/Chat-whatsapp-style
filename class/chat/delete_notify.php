@@ -8,7 +8,7 @@ if( isset($_POST)){
 
 
 
-notify::delete_notify($_POST["writter"] , $_POST["reader"]);
+//notify::delete_notify();
 
 
 }

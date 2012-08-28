@@ -15,6 +15,8 @@
     overflow-y: auto;
     padding: 7px;
     width: 100%;
+    position: relative;
+    
      height: auto;
 
 }
@@ -27,12 +29,7 @@
 
 }
 
-
-.struct_groups:active,.struct_contact:active{
-
-  background: none repeat scroll 0 0 rgba(100, 100, 100, 0.4);
-
-}
+ 
 
 
 
@@ -42,7 +39,7 @@
     box-shadow: -3px 11px 11px #000000;
     float: left;
     height: 100%;
-    margin-top: 70px;
+    margin-top: 34px;
     overflow: hidden;
     width: 21%;
 }
@@ -120,13 +117,12 @@ overflow: hidden;
 
 
 body{
-    background-attachment: scroll !important;
+ background-attachment: scroll !important;
     background-clip: border-box !important;
     background-color: transparent !important;
     background-image: url("../../img/body.jpg") !important;
     background-origin: padding-box !important;
     background-repeat: repeat !important;
-    background-size: 100% auto !important;
     color: rgba(255, 255, 255, 0.7) !important;
     overflow-x: hidden;
 }
@@ -255,14 +251,15 @@ height: 100%;
 
 .notify{
  
-    border-radius: 100% 100% 100% 100%;
- 
-    float: right;
+border-radius: 100% 100% 100% 100%;
+    display: none;
     font-size: 11px;
     padding: 2px 8px;
+    position: absolute;
+    right: 11%;
     text-align: center;
+    top: 26%;
     width: auto;
-    border:1px solid #222;
 }
 
 
@@ -284,7 +281,7 @@ height: 100%;
 }
 
 .struct_search{
- background: url("../../img/icon/bicn.png") no-repeat scroll 6px 4px #FFFFFF;
+ /* background: url("../../img/icon/bicn.png") no-repeat scroll 6px 4px #FFFFFF; */
     border: 1px solid #EEEEEE;
     border-radius: 31px 31px 31px 31px;
     box-shadow: 0 0 0 rgba(0, 0, 0, 0.2) inset, 0 1px 0 rgba(255, 255, 255, 0.7), 0 1px 2px rgba(0, 0, 0, 0.4) inset, 0 0 6px rgba(255, 255, 255, 0.5);
@@ -301,7 +298,7 @@ height: 100%;
 .struct_bttn{
  float: right;
     overflow-y: auto;
-    width: 720px;
+    width: auto;
 
 
 }
@@ -380,4 +377,76 @@ background: url("../../img/icon/wicn.png") no-repeat scroll 99px 99px transparen
     -moz-opacity: 1;
     filter:alpha(opacity=1);
 
+}
+/* 
+____________________________________________________________________ */
+/* 
+lista de contacto */
+
+
+.conctact_list_data{
+ border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px #333333;
+    height: auto;
+    margin-top: 1px;
+    overflow: hidden;
+    padding-bottom: 10px;
+    padding-top: 11px;
+    width: auto;
+}
+
+
+.conctact_list_data > li{
+
+float: left ;
+ margin-left: 12px;
+
+}
+
+
+.conctact_list_data li:last-child{
+
+ 
+float: right;
+
+}
+
+.contact_user{
+    font-size: 12px;
+    font-weight: bold;
+}
+ 
+
+.conctact_list_data li:last-child , .contact_user{
+margin-top: 17px;
+
+
+
+}
+
+.conctact_list_data:hover{
+
+background: none repeat scroll 0 0 rgba(0, 0, 0, 0.2);
+ 
+
+
+}
+
+.conctact_list_data:active{
+
+background: none repeat scroll 0 0 rgba(0, 0, 0, 0.4);
+ 
+
+
+}
+
+.name_contact_chat{
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.3);
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 1px 1px rgba(255, 255, 255, 0.6);
+    float: none;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 16px;
+    padding: 4px;
 }

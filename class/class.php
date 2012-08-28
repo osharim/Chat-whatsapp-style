@@ -136,6 +136,39 @@ public 	function check_user_available(){
 
 
 
+ $key =  $_POST["key"];
+$QUERY =  "SELECT id_user ,user_pic , username FROM user where username = '$key' ";
+
+
+		$response = mysql_query( $QUERY , Conectar::con());
+
+
+		while ( $parse = mysql_fetch_assoc($response)  ) {
+		
+			$DATA[]  = $parse;
+
+
+		}
+
+
+
+if( isset($DATA)   ){
+
+echo json_encode(array('response' => $DATA)); // si hay datos regresamos las notificaciones!!!
+
+$_SESSION["user_exist"] = true;
+$_SESSION["user_id_added"] = $DATA[0]["id_user"];
+
+} else{
+
+
+$response = array('response' => false );
+
+echo json_encode($response); // no regresamos nada!!!!
+
+$_SESSION["user_exist"] = false;
+
+}
 
 
 
@@ -164,16 +197,80 @@ public 	function check_user_available(){
 class chat{
 
  
+	public static function append_into_contact_list(){ // guardamos el contacto en nuestra lista
+
+
+    $id_added_user = $_SESSION["user_id_added"]; // usuario que acabamos de agregar
+	$current_user_id = $_SESSION["id_user"]; // este soy yo osea el que agrega
+
+	$QUERY  = "INSERT INTO contact values(NULL,$current_user_id ,$id_added_user)  ";
+
+
+	 mysql_query( $QUERY , Conectar::con());
+
+
+
+	}
+
+
+//***********************************************************************************************************************************
+
+	public static function get_contact_list(){
+
+
+   extract($_POST);
+
+	$QUERY  = "SELECT DISTINCT id_current_user , user.id_user , user.username, user.user_pic
+ 			   FROM   contact  , user
+ 			   WHERE  id_current_user = $current_user_id
+ 			   and user.id_user = id_added_user";
+
+ 
+		$response = mysql_query( $QUERY , Conectar::con());
+
+
+		while ( $parse = mysql_fetch_assoc($response)  ) {
+		
+			$DATA[]  = $parse;
+
+
+		}
+
+
+
+if( isset($DATA)   ){
+
+echo json_encode(array('response' => $DATA)); // si hay datos regresamos las notificaciones!!!
+
+
+} else{
+
+
+$response = array('response' => false );
+
+echo json_encode($response); // no regresamos nada!!!!
+
+
+
+}
+
+
+
+	}
+
+
+
+//***********************************************************************************************************************************
 	public function append_into_db_msg(){
 
-		$MSG = $_POST['msg'];
+ 
 
-
+		extract($_POST);
  
 		$UNIX_TIME = parseInt(strtotime(date("Y-m-d H:i:s")))+3600;
 
 
-		$QUERY  = "INSERT INTO chat values(NULL,1,1,'$MSG' , '" . $UNIX_TIME. "' )  ";
+		$QUERY  = "INSERT INTO chat values(NULL, $id_user_writer ,$id_user_otherside ,'$msg' , '" . $UNIX_TIME. "' )  ";
 
 		mysql_query( $QUERY , Conectar::con());
 
@@ -182,9 +279,9 @@ class chat{
 		$id_last_msg = mysql_insert_id();
 
 
-	    chat::get_msg_from_db_by_limit("justOneMSG" , 1); // obtenemos solo 1 msg
+	    chat::get_msg_from_db_by_limit("justOneMSG" , $id_user_writer); // obtenemos solo 1 msg
 
-	    notify::set_notify(1,1,$id_last_msg); // metemos la notifycacion |||| pasamos ( user_writer , user_reader , id_chat); 
+	    notify::set_notify($id_last_msg); // metemos la notifycacion |||| pasamos ( user_writer , user_reader , id_chat); 
 
 	}
 
@@ -203,7 +300,18 @@ class chat{
 		
 		case 'justOneMSG': // obtenemos solo  1 mensaje
 
-		  $QUERY = "SELECT id_user_reader , msg ,( FROM_UNIXTIME(fecha ) ) as fecha from chat where id_user_writer = $id_user_writer ORDER BY fecha  DESC LIMIT 1 "; // (Id_user_reader, $limit_msg_chat )
+		  $QUERY = "SELECT DISTINCT id_user_reader as id_user_reader, msg ,( FROM_UNIXTIME(chat.fecha ) ) as fecha , user.username
+
+ from chat , user
+
+ where 
+
+ ( ( id_user_reader = $id_user_otherside AND  id_user_writer = $id_user_writer) AND user.id_user =  id_user_writer)
+
+
+
+ 
+ORDER BY FROM_UNIXTIME(chat.fecha ) DESC LIMIT 1"; // (Id_user_reader, $limit_msg_chat )
 		
 
 				break;
@@ -216,7 +324,21 @@ class chat{
 
 	    case 'all': // todos los mensajes
 	    	
-	    	$QUERY = "SELECT id_user_reader , msg ,( FROM_UNIXTIME(fecha ) ) as fecha from chat where id_user_writer = $id_user_writer";
+	    	
+$QUERY  = "SELECT DISTINCT id_user_reader as id_user_reader, msg ,( FROM_UNIXTIME(chat.fecha ) ) as fecha , user.username
+
+ from chat , user
+
+ where 
+
+( (id_user_reader =$id_user_writer and   id_user_writer =$id_user_otherside) AND user.id_user =  id_user_writer ) ||
+
+ ( ( id_user_reader = $id_user_otherside AND  id_user_writer = $id_user_writer) AND user.id_user =  id_user_writer)
+
+ 
+ORDER BY FROM_UNIXTIME(chat.fecha ) ASC ";
+
+
 
 
 	    	break;
@@ -231,8 +353,7 @@ class chat{
 
 //***********************************************************************************************************************************
  
-
-
+ 
 		$response = mysql_query( $QUERY , Conectar::con());
 
 
@@ -303,13 +424,18 @@ class notify{
 
 
 
-public static function delete_notify ($id_user_writer , $id_user_reader){
+public static function delete_notify ($id_user_otherside){
 
 
 
 
-		 $QUERY  = " delete from notify where id_user_reader = $id_user_reader and id_user_writer=$id_user_writer "; // insertamos la notificacion
 
+		 $QUERY  = "UPDATE notify inner join chat on  
+
+		 (notify.id_chat = chat.id_chat and chat.id_user_writer = $id_user_otherside)
+										
+	
+		  set notified = 1"; // insertamos la notificacion
  
 
 		mysql_query( $QUERY , Conectar::con());
@@ -323,12 +449,12 @@ public static function delete_notify ($id_user_writer , $id_user_reader){
 //*****************************************************************************************
 
 
-public static function set_notify($user_writer, $user_reader , $id_chat){
+public static function set_notify( $id_chat){
 
 
 
 
-		 $QUERY  = "INSERT INTO notify values(NULL,'$user_writer', '$user_reader' ,'$id_chat' )  "; // insertamos la notificacion
+		 $QUERY  = "INSERT INTO notify values(NULL, '$id_chat', 0 )  "; // insertamos la notificacion | 0 es cuando aun no se lee la notificacion
 
 		mysql_query( $QUERY , Conectar::con());
 
@@ -339,14 +465,20 @@ public static function set_notify($user_writer, $user_reader , $id_chat){
 
 
 
-public function get_notify($id_user_reader){ // checamos las notificaciones
+public static function get_notify($id_user_reader){ // checamos las notificaciones
 
 
 
   //DONDE id_user_reader = al usuario actual !!!
 
 
-$QUERY = " SELECT count(id_chat)as notify , id_user_writer from notify where id_user_reader = $id_user_reader   group by id_user_writer";
+$QUERY = "SELECT count(notify.id_chat)as notify , chat.id_user_writer as id_user_otherside
+
+ from notify , chat  where chat.id_user_reader = $id_user_reader
+
+AND chat.id_chat= notify.id_chat
+
+ AND notify.notified = 0 group by id_user_writer";
 
  
 $response = mysql_query( $QUERY , Conectar::con());
@@ -384,10 +516,20 @@ echo json_encode($response); // no regresamos nada!!!!
 
 
 
-public function get_notify_data($id_user_writer , $id_user_reader , $limit_msg_chat ){ // OBTENEMOS LOS COMENTARIOS NUEVOS!!!!!
+public function get_notify_data(){ // OBTENEMOS LOS COMENTARIOS NUEVOS!!!!!
+
+
+extract($_POST);
+
+//$id_user_writer , $id_user_otherside , $limit_msg_chat
 
  
-$QUERY = "SELECT id_user_reader , msg ,( FROM_UNIXTIME(fecha ) ) as fecha from chat where id_user_writer = $id_user_writer ORDER BY fecha  DESC LIMIT $limit_msg_chat ";
+
+
+$QUERY = "SELECT user.username , user.user_pic , chat.msg , chat.fecha 
+from chat , user , notify
+
+WHERE chat.id_chat = notify.id_chat and id_user_writer = $id_user_otherside and user.id_user = id_user_writer";
 
  
 $response = mysql_query( $QUERY , Conectar::con());
@@ -406,6 +548,7 @@ if( isset($DATA)   ){
 
 echo json_encode(array('response' => $DATA)); // si hay datos regresamos las notificaciones!!!
 
+notify::delete_notify($id_user_otherside);
 
 } else{
 

@@ -5,7 +5,6 @@
 
 Chat.INIT_PAGE(); // Ponemos todos los datos dentro de los div etc...
 
- Chat.UPDATE_CHAT_BY_LIMIT(); // actualizamos el chat al iniciar pagina
 
 
  setInterval(function(){
