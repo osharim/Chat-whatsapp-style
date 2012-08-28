@@ -9,7 +9,6 @@
 $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE ACTIVO EL SCROLL ( ESTO ES PARA QUE NO SALGAN VARIOS SCROLL AL MISMO TIEMPO)
 
 
-
  var Chat = { // RETORNA EL VALOR DEL MSG A ENVIAR
 	VALUE_MSG : function(){
 
