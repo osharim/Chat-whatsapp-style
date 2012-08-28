@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-	if(!$_SESSION["loged"]   ){
+	if(!$_SESSION["loged"]  || !isset($_SESSION["loged"] ) ){
 
 			header("Location:   ./");
 	}
