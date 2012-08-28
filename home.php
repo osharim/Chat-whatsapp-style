@@ -57,7 +57,7 @@ session_start();
 <!--     struct_chat -->
 	<div class="struct_chat">
 
-
+<div class="user_current_chat current_user_chat">  </div>	
 
 
  			<!-- .message_chat ESTO CONTIENE LAS CONVERSACIONES -->
@@ -70,7 +70,7 @@ session_start();
 
 
 	<div class="chat">
-	<div class="user_current_chat current_user_chat"> </div>	
+	
 
 
 <div id="content_1" class="content ">

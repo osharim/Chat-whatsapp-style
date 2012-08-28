@@ -162,7 +162,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
  	GET_STRUCT_MSG :  function(data){   // METODO QUE FORMATEA UNA CADENA DE TEXTO A UNA STRUCTURA EN FORMA DE COMENTARIO
 
- 		$(".current_user_chat").html( $(data.response.username).hide().fadeIn() );
+ 		$(".current_user_chat").html( $("@"+data.response.username).hide().fadeIn() );
 
 
  		DATA =  "";
