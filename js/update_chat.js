@@ -30,7 +30,7 @@ console.dir(window.USER_DATA)
 
 
 //***************************************************************************
-chat.js
+//chat.js
 
 
 //***************************************************************************
@@ -40,7 +40,7 @@ chat.js
 
 
 
-        	$(".chat_cmmt").val(window.USER_DATA.USER.username+" escribe algún comentario ... ")
+        	$(".chat_cmmt").val(window.USER_DATA.USER.username+" escribe algún comentario ... ");
 
         	$(".chat_cmmt").focus(function(){
 
@@ -49,7 +49,7 @@ chat.js
 
         	}).blur(function(){
 
-        	$(".chat_cmmt").val(window.USER_DATA.USER.username+" escribe algún comentario .. ")
+        	$(".chat_cmmt").val(window.USER_DATA.USER.username+" escribe algún comentario .. ");
 
 
 
