@@ -134,15 +134,9 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
 	    Chat.load_id_contact_otherside($(this).attr("data"));// le mandamos el id del usuario que queremos cargar
 
+ 
 
-	 $("#content_1").mCustomScrollbar({
-					scrollButtons:{ enable:true }  
-				});
-
-
-
-	    $("div").removeClass("_mCS_1");
-
+	     
 		$(".current_user_chat").html( $(this).find(".contact_user").html()  );
 
 		$(".chat_content").html("");// vaciamos el anterior
