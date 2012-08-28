@@ -49,7 +49,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 			
 			STRUCT_CONTACT += '</li>';
 			STRUCT_CONTACT += '<li  class="contact_user"   >@'+data.username+'</li>';
-			STRUCT_CONTACT += '<li>witing accept</li>';
+			STRUCT_CONTACT += '<li>waiting accept</li>';
 			STRUCT_CONTACT += '</ul>';
  
 
