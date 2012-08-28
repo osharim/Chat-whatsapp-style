@@ -132,7 +132,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 	    Chat.load_id_contact_otherside($(this).attr("data"));// le mandamos el id del usuario que queremos cargar
 
 
-	  //  $(".message_chat").html("");
+		$(".current_user_chat").html( $(".load_contact_chat_by_id_user .contact_user").html()  );
 
 		$(".chat_content").html("");// vaciamos el anterior
 
@@ -162,7 +162,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
  	GET_STRUCT_MSG :  function(data){   // METODO QUE FORMATEA UNA CADENA DE TEXTO A UNA STRUCTURA EN FORMA DE COMENTARIO
 
- 		$(".current_user_chat").html( $("@"+data.response.username).hide().fadeIn() );
+
 
 
  		DATA =  "";
