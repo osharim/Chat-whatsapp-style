@@ -22,8 +22,9 @@ session_start();
 
 
  
-	 <script type="text/javascript" src="js/get_data.js"></script>
-
+		<script type="text/javascript" src="js/update_chat.js"></script>
+ <script type="text/javascript" src="js/framework/bindsme.js"></script>
+	<script type="text/javascript" src="js/chat.js"></script>
 
 
 	<!-- Get Google CDN's jQuery and jQuery UI with fallback to local -->
@@ -35,9 +36,8 @@ session_start();
 	<script src="js/scroll/jquery.mCustomScrollbar.js"></script>
 	<script type="text/javascript" src="js/init.js"></script>
 
-	 <script type="text/javascript" src="js/framework/bindsme.js"></script>
-	<script type="text/javascript" src="js/chat.js"></script>
-	<script type="text/javascript" src="js/update_chat.js"></script>
+	
+
 	<script type="text/javascript" src="js/contact/contact_module.js"></script>
 	<script type="text/javascript" src="js/framework/binds.js"></script>
 	<script type="text/javascript" src="js/contact/add_contact.js"></script>
@@ -45,7 +45,11 @@ session_start();
 
 </head>
 <body>
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> bdcf9e509b4f17b951a823be1e344980d924d628
 
 
 <!--   struct_main -->
@@ -57,7 +61,7 @@ session_start();
 <!--     struct_chat -->
 	<div class="struct_chat">
 
-
+<div class="user_current_chat current_user_chat">  </div>	
 
 
  			<!-- .message_chat ESTO CONTIENE LAS CONVERSACIONES -->
@@ -70,7 +74,7 @@ session_start();
 
 
 	<div class="chat">
-		
+	
 
 
 <div id="content_1" class="content ">
@@ -130,7 +134,7 @@ session_start();
 
 	<div class="struct_contact">
 
-	<span class="user_current_chat"> Contactos <div class="notify blue">23</div>	</span>
+	<span class="user_current_chat"> Contactos <div class="notify red notify_contacts">0</div>	</span>
 
 
 	<div class="container_data data_contact">
@@ -140,7 +144,6 @@ session_start();
 
      <!-- .search -->
  
-	
  
 
 	<!-- /.search -->	
@@ -155,7 +158,7 @@ session_start();
 
  	<div class="struct_groups">
 	
-	<span class="user_current_chat">Grupos <div class="notify red">2</div></span>
+	<span class="user_current_chat">Grupos <div class="notify blue">0</div></span>
 
 
     </div> 
@@ -165,7 +168,7 @@ session_start();
 
  	<div class="struct_groups">
 	
-	<span class="user_current_chat">Albumes <div class="notify gray">1</div></span>
+	<span class="user_current_chat">Albumes <div class="notify gray">0</div></span>
 
 
     </div> 
@@ -194,6 +197,9 @@ session_start();
 
 <div class="struct_menu">
 	
+<span class="loader"><img src="img/loader/p5.gif" alt=""></span>
+
+
 	<div class="struct_bttn">
 		
 <div class="add_contact uibutton icon add"> Agregar Contacto</div>

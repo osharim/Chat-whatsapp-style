@@ -41,7 +41,7 @@
 
 
 
-	$UPDATE_CHAT_NOTIFY->get_notify_data($_POST["data"],$_POST["writtr_"],$_POST["lim_msg_cht"]);
+	$UPDATE_CHAT_NOTIFY->get_notify_data();
 
 
 

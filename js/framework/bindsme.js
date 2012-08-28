@@ -20,14 +20,152 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
 
  	INIT_PAGE : function(){
+  
 
+ 		$(".username").html(  USER_DATA.USER.username);
+        
+         Chat.Load_contact_list(); // cargamos toda nuestra lista de contactos
 
- 		$(".username").html( window.USER_DATA.USER.username);
+ 	//	 Chat.UPDATE_CHAT_BY_LIMIT(); // actualizamos el chat al iniciar pagina
+ 		
 
 
  	}
 		,
+ 	append_into_contact_list : function(data){ // agregamos el nuevo contacto a la lista de contactos
+
+
+ 		STRUCT_CONTACT = " ";
+
+
+	$.each(data.response,function(i,data){
+
+
+			STRUCT_CONTACT += '<ul class="conctact_list_data load_contact_chat_by_id_user"  data="'+data.id_user+'"  >';
+			STRUCT_CONTACT += '	<li>';
+			
+			STRUCT_CONTACT += '<img width="46" alt="" src="'+data.user_pic+'">';
+			
+			
+			STRUCT_CONTACT += '</li>';
+			STRUCT_CONTACT += '<li  class="contact_user"   >@'+data.username+'</li>';
+			STRUCT_CONTACT += '<li>waiting accept</li>';
+			STRUCT_CONTACT += '</ul>';
+ 
+
+ 		});
+
+
+ 		return STRUCT_CONTACT;
+
+
+
+
+ 	} ,
+//**********************************************************************************************************************
+//**********************************************************************************************************************
+//**********************************************************************************************************************
+// LISTA DE CONTACTOS
+
+ 	Load_contact_list : function(){
+
+
+
+
+
+			$.ajax({
+
+			url : "class/contact/get_contact_list.php" ,
+
+
+			type: "POST",
+
+
+			data : { "current_user_id" : window.USER_DATA.USER.id_user , "type" : "verify" },
+
+
+			dataType : "JSON",
+
+			success : function(data){ // se hace append
+
+
+					$(".loader").hide();		
+
+				 if(data.response.length > 0){
+    			
+    			    $(".data_contact").append(Chat.append_into_contact_list(data) );
+    				 Chat.load_contact_chat_by_id_user(); // preparamos cuando haga click en algun contacto se cargara su pantalla
+
+    			} 
+
+			}
+				,
+
+			beforeSend : function(){
+				
+
+				$(".loader").show();		
+
+
+			}
+
+
+				});
+
+
+
+
+ 	},
+
+//**********************************************************************************************************************
+//**********************************************************************************************************************
+ 	load_contact_chat_by_id_user : function(){
+
+
+ 		// cuando se le da click al boton contactos
+
+ $(".load_contact_chat_by_id_user").live("click",function(){
+
+
+
+	    Chat.load_id_contact_otherside($(this).attr("data"));// le mandamos el id del usuario que queremos cargar
+
+ 
+
+	    $("div").removeClass("_mCS_1");
+
+		$(".current_user_chat").html( $(this).find(".contact_user").html()  );
+
+		$(".chat_content").html("");// vaciamos el anterior
+
+		Chat.UPDATE_CHAT_BY_LIMIT();
+
+ }); // END  $(".struct_contact").click(function(){
+
+
+
+
+
+
+ 	},
+
+ 	load_id_contact_otherside : function(id_user_otherside){
+
+
+
+ 			$("body").data("id_user_otherside",id_user_otherside); 
+
+
+ 	},
+
+//**********************************************************************************************************************
+//**********************************************************************************************************************
+//**********************************************************************************************************************
+
  	GET_STRUCT_MSG :  function(data){   // METODO QUE FORMATEA UNA CADENA DE TEXTO A UNA STRUCTURA EN FORMA DE COMENTARIO
+
+
+
 
  		DATA =  "";
  		TRIANGLE = '<span class="tang"></span> ';
@@ -39,6 +177,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
  		DATA += '<ul class="user_ui">';
  		DATA += '<li><img src="img/user.jpg" alt="" width="46">	</li>';
+ 		DATA +=  '<li> <span class="name_contact_chat">'+data.username+'</span><li> ';
  		DATE = '<span clasS="date">'+data.fecha+'</span>'
  		DATA += '<li class="msg_chat">'+TRIANGLE+data.msg+DATE+'  </li>' ;
  
@@ -114,7 +253,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 			type: "POST",
 
 
-			data : { "msg" : MSG } ,
+			data : { "msg" : MSG.replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\"/g,"&quot;") , id_user_writer : USER_DATA.USER.id_user , id_user_otherside :$("body").data("id_user_otherside")  } ,
 
 
 			dataType : "JSON",
@@ -122,6 +261,8 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 			success : function(data){ // se hace append
 
  
+				$(".loader").hide();
+
 			$(".chat_content").append( Chat.GET_STRUCT_MSG( data ) ); // AGREGAMOS EL NUEVO COMENTARIO EN LA CAJA DE CHAT
 
 			$(".chat_cmmt").val(""); // BORRAMOS EL COMENTARIO EN EL TEXT AREA
@@ -133,7 +274,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 			beforeSend : function(){
 				// se ponen los loader
 		
-
+				$(".loader").show();
 
 			}
 
@@ -154,12 +295,13 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
  			type: "POST" ,
  			
-			data : { id_user_writer : window.USER_DATA.USER.id_user   } ,
+			data : { id_user_writer : window.USER_DATA.USER.id_user , id_user_otherside : $("body").data("id_user_otherside") } ,
 
 			dataType : "JSON",
 
 			success : function(data){ // se hace append
 
+           $(".loader").hide();
  
 			$(".chat_content").append( Chat.GET_STRUCT_MSG( data ) ); // AGREGAMOS EL NUEVO COMENTARIO EN LA CAJA DE CHAT
 
@@ -182,6 +324,26 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
 
 
+			}else{
+
+ //si el div hijo el que contiene los comentarios ya es mas grande que el padre entonces activamos scroll
+
+ if(  $(".chat_content").height() > $(".message_chat").height() ){
+
+
+
+					 $("#content_1").mCustomScrollbar({
+					scrollButtons:{ enable:true }  
+				});
+
+
+ $("document").data({"activedScroll":true}); // ACTIVAMOS BANDERA
+ 	Chat.SCROLL_BOTTOM();
+
+ }
+
+
+
 			}
 
 
@@ -191,7 +353,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
 			beforeSend : function(){
 				// se ponen los loader
-		
+		$(".loader").show();
 
 
 			}
@@ -212,10 +374,10 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
 			url : "class/chat/delete_notify.php" ,
 
-			data : { "writter" : window.USER_DATA.USER.id_user , "reader" : 1 },
+			data : { "id_user_otherside" : $("body").data("id_user_otherside")  , "id_user_reader" :  window.USER_DATA.USER.id_users },
  
 
-			type : "POST" });
+			type : "POST" ,});
 
 
 
@@ -240,9 +402,11 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 			type : "POST" ,
 
 			success : function(data){ // se hace append
-
+			
+			$(".loader").hide();
  	
 				if (  data.response.length >0  ){
+
 
 
 
@@ -262,7 +426,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 			beforeSend : function(){
 				// se ponen los loader
 		
-
+				$(".loader").show();
 
 			}
 
@@ -275,17 +439,22 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
  	GET_UPDATE_NOTIFY :  function(data){ // OBTEIENE LOS DATOS! DE LAS NJOTIFUCACIONES OSEA TODAS LAS CONVERSACIONES
 
 
- 			$("body").data("id_user_writer",1); 
 
  		  Chat.GET_LIMIT_MSG_CHAT(data);
 
+ 		  	if( $("body").data("CHATTING_WITH_OTHERSIDE_OBJECT") ){
 
 			$.ajax({
 
 			url : "class/chat/update_notify.php" ,
 
-			data : { "data" : 1  , "type" : "get_data" , "writtr_" : window.USER_DATA.USER.id_user , "lim_msg_cht" : $("body").data("limit_msg_chat_current_writter")  }, // data es el id_user_reader , y writtr_ es el id_user writter ,
-																						  // lim_msg_cht es la cantidad de mensajes en notificacion
+			data : { "id_user_otherside" : $("body").data("id_user_otherside") , "type" : "get_data" , 
+
+					"writtr_" : window.USER_DATA.USER.id_user , "lim_msg_cht" : $("body").data("limit_msg_chat_current_reader_otherside")  }, 
+
+					// data es el id_user_otherside , y writtr_ es el id_user writter ,
+					
+					 // lim_msg_cht es la cantidad de mensajes en notificacion
  
 			dataType : "JSON",
 
@@ -294,6 +463,9 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 			success : function(data){ // se hace append
 
  	
+
+				$(".loader").hide();
+
 				if (  data.response.length >0  ){
 
  
@@ -301,14 +473,11 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
  			
 
   		 			Chat.SCROLL_BOTTOM();
-  		 			console.log("ya borralo!")
- 	          // Chat.DELETE_NOTIFY();
+  		 
+ 	         // Chat.DELETE_NOTIFY();
 
 				}
  
-
-
-
 			}
 
  
@@ -317,6 +486,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 			beforeSend : function(){
 				// se ponen los loader
 		
+		   $(".loader").show();
 
 
 			}
@@ -325,7 +495,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 				});
 
 
-
+}
 
 
 
@@ -338,24 +508,33 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 GET_LIMIT_MSG_CHAT : function(data){ // OBTENEMOS CUANTOS COMENTARIOS HAY QUE SACAR DE LA DB QUE SON NUEVOS!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
- 
+ 	COUNT_NOTIFY = 0;
+
+ 	$("body").data("CHATTING_WITH_OTHERSIDE_OBJECT",false);
+
 
 	 $.each(data.response,function(i,data){
 
-	 
+ 
 
-		if (  data.id_user_writer  == $("body").data("id_user_writer")  ){ // regresamos el valor de each
+		if (  data.id_user_otherside  == $("body").data("id_user_otherside")  ){ // regresamos el valor de each
 
 			
 
-			$("body").data("limit_msg_chat_current_writter" , data.notify) ;
+			$("body").data("limit_msg_chat_current_reader_otherside" , data.notify) ;
 		 
- 
+ 			$("body").data("CHATTING_WITH_OTHERSIDE_OBJECT", true); //CHATTING_WITH_OTHERSIDE_OBJECT si estamos conversando ahorita con el que trabjo actualizaciones
 
+
+		} else{
+
+
+
+			COUNT_NOTIFY += parseInt(data.notify);
 
 		}
 
-
+		Chat.SET_NOTIFY_CONTACT(COUNT_NOTIFY);
 
 
 	});
@@ -364,6 +543,33 @@ GET_LIMIT_MSG_CHAT : function(data){ // OBTENEMOS CUANTOS COMENTARIOS HAY QUE SA
 
 
 } ,
+
+
+SET_NOTIFY_CONTACT : function(data){
+
+
+		
+		$(".notify_contacts").html(data) // ponemos cuantos hay
+		$(".notify_contacts").show();
+	
+		$(".notify_contacts").animate({
+     
+      marginTop: '+=5',
+    
+    }, 100, function() {
+    
+        $('.notify_contacts').animate({
+          marginTop: '-=5',
+        }, 100, function() {
+            
+        });
+    
+
+    }); // mostramos el icono de notificacion
+
+},
+
+
 
 
 SCROLL_BOTTOM : function(){

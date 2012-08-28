@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 24-08-2012 a las 20:36:36
+-- Tiempo de generación: 28-08-2012 a las 04:11:39
 -- Versión del servidor: 5.5.24-log
 -- Versión de PHP: 5.3.13
 
@@ -33,30 +33,7 @@ CREATE TABLE IF NOT EXISTS `chat` (
   `msg` text COLLATE utf8_spanish_ci NOT NULL,
   `fecha` int(11) NOT NULL,
   PRIMARY KEY (`id_chat`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=18 ;
-
---
--- Volcado de datos para la tabla `chat`
---
-
-INSERT INTO `chat` (`id_chat`, `id_user_writer`, `id_user_reader`, `msg`, `fecha`) VALUES
-(1, 1, 2, 'Hola amor de mi vida buenos dias\n', 1345570568),
-(2, 1, 2, 'apenas es un prototipo pero ya podremos conversar! :) te amo preciosa\n', 1345570583),
-(3, 1, 2, 'Hola desde el iPod \n', 1345573028),
-(4, 1, 2, 'A lo que salga se le suma 1 hora\n', 1345573160),
-(5, 1, 2, 'ya llegue a casa\n', 1345587550),
-(6, 1, 2, 'y ahora que sigue=\n', 1345587556),
-(7, 1, 2, 'todo funciona bien , pero solo platico yo\n', 1345587566),
-(8, 1, 2, 'hola\n', 1345588035),
-(9, 1, 2, 'como estas preciosa\n', 1345588217),
-(10, 1, 2, 'hola\n', 1345588447),
-(11, 1, 2, 's\n', 1345591851),
-(12, 1, 2, 'p\n', 1345595827),
-(13, 1, 2, 'desde a\n', 1345611272),
-(14, 1, 1, 'desde b\n', 1345795152),
-(15, 1, 1, 'apenas es un prototipo pero ya podremos conversar! :) te amo preciosa , apenas es un prototipo pero ya podremos conversar! :) te amo preciosa \n', 1345835665),
-(16, 1, 1, '<img src="http://www.forodefotos.com/attachments/naturaleza/12983d1281113830-fotos-de-paisaje-fotos-de-paisaje.jpg">\n', 1345842827),
-(17, 1, 1, '<img src="http://www.journalduloft.com/wp-content/immobilier-loft/2010/08/wassabi-design-agency.jpg"\n>', 1345844150);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -93,11 +70,10 @@ CREATE TABLE IF NOT EXISTS `group` (
 
 CREATE TABLE IF NOT EXISTS `notify` (
   `id_notify` int(11) NOT NULL AUTO_INCREMENT,
-  `id_user_writer` int(11) NOT NULL,
-  `id_user_reader` int(11) NOT NULL,
   `id_chat` int(11) NOT NULL,
+  `notified` int(1) NOT NULL,
   PRIMARY KEY (`id_notify`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_spanish_ci AUTO_INCREMENT=37 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -124,18 +100,20 @@ CREATE TABLE IF NOT EXISTS `user` (
   `password` varchar(35) COLLATE utf8_spanish_ci NOT NULL,
   `fecha` int(11) NOT NULL,
   `email` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
+  `user_pic` varchar(40) COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci COMMENT='usuarios' AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci COMMENT='usuarios' AUTO_INCREMENT=9 ;
 
 --
 -- Volcado de datos para la tabla `user`
 --
 
-INSERT INTO `user` (`id_user`, `username`, `password`, `fecha`, `email`) VALUES
-(1, 'omar', '73a00e10b9223edc807c3a96cc6a2077', 1345784327, 'oamr@df.cm'),
-(4, 'sdf', 'd9729feb74992cc3482b350163a1a010', 1345784675, 'oamr@df.cm'),
-(5, 'sdfsdf', 'd58e3582afa99040e27b92b13c8f2280', 1345784698, 'oamr@df.cm'),
-(6, 'marile', '73a00e10b9223edc807c3a96cc6a2077', 1345784740, 'oamr@df.cm');
+INSERT INTO `user` (`id_user`, `username`, `password`, `fecha`, `email`, `user_pic`) VALUES
+(1, 'omar', '73a00e10b9223edc807c3a96cc6a2077', 1345784327, 'oamr@df.cm', 'img/user.jpg'),
+(4, 'sdf', 'd9729feb74992cc3482b350163a1a010', 1345784675, 'oamr@df.cm', 'img/user.jpg'),
+(5, 'sdfsdf', 'd58e3582afa99040e27b92b13c8f2280', 1345784698, 'oamr@df.cm', 'img/user.jpg'),
+(6, 'marile', '73a00e10b9223edc807c3a96cc6a2077', 1345784740, 'oamr@df.cm', 'img/user.jpg'),
+(8, 'demo', '73a00e10b9223edc807c3a96cc6a2077', 1346106995, 'omar@gmail.com', 'img/user.jpg');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
