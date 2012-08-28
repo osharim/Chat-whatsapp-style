@@ -209,9 +209,16 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
   		if ( !$("document").data("activedScroll")){
 
 
-				 $("#content_1").mCustomScrollbar({
+
+		   if ( $(".mCustomScrollbar").length == 0 ){
+
+			 $("#content_1").mCustomScrollbar({
 					scrollButtons:{ enable:true }  
 				});
+
+
+				}
+
 
 
 
@@ -219,7 +226,8 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
   		}
 
 
-				$("#content_1").mCustomScrollbar("scrollTo","bottom");			
+			
+			Chat.SCROLL_BOTTOM();		
 
 
  			}else{ // SI Y A SON MAS ENTONCES OSLO ESCROLEAMOS HACIA EL BOTTOM 
@@ -303,10 +311,16 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 			if( $(".chat_content").children().length >=7 ){
 
 
-					 $("#content_1").mCustomScrollbar({
+				if ( $(".mCustomScrollbar").length == 0 ){
+
+			 $("#content_1").mCustomScrollbar({
 					scrollButtons:{ enable:true }  
 				});
 
+
+				}
+
+		
 
 					 $("document").data({"activedScroll":true}); // ACTIVAMOS BANDERA
 
@@ -324,9 +338,15 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
 
 
-					 $("#content_1").mCustomScrollbar({
+				if ( $(".mCustomScrollbar").length == 0 ){
+
+			 $("#content_1").mCustomScrollbar({
 					scrollButtons:{ enable:true }  
 				});
+
+
+				}
+
 
 
  $("document").data({"activedScroll":true}); // ACTIVAMOS BANDERA
