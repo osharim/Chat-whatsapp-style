@@ -132,7 +132,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 	    Chat.load_id_contact_otherside($(this).attr("data"));// le mandamos el id del usuario que queremos cargar
 
 
-		$(".current_user_chat").html( $(".load_contact_chat_by_id_user .contact_user").html()  );
+		$(".current_user_chat").html( $(this).find(".contact_user").html()  );
 
 		$(".chat_content").html("");// vaciamos el anterior
 
