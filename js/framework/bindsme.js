@@ -97,7 +97,12 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
 				 if(data.response.length > 0){
     			
-    			    $(".data_contact").append(Chat.append_into_contact_list(data) );
+
+
+    			  
+
+    			    $(".data_contact").append(  $(Chat.append_into_contact_list(data)).delay( 220).fadeTo('slow',1)    );
+    				
     				 Chat.load_contact_chat_by_id_user(); // preparamos cuando haga click en algun contacto se cargara su pantalla
 
     			} 
@@ -134,7 +139,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
  		$(".notified-"+$(this).attr("data")).hide(); // ocultamos las notificaciones si las tiene
 
 
- 		
+
 
 	    Chat.load_id_contact_otherside($(this).attr("data"));// le mandamos el id del usuario que queremos cargar
  

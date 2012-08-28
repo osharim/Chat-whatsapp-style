@@ -33,9 +33,18 @@ Chat.INIT_PAGE(); // Ponemos todos los datos dentro de los div etc...
 
 //***************************************************************************
 
+	setTimeout(function(){
+	$(".struct_left").animate({
 
 
+ 				marginLeft : 0
 
+
+ 			},300);
+
+
+	},200);
+ 		
 
 
         	$(".chat_cmmt").val(window.USER_DATA.USER.username+" escribe algún comentario ... ");
