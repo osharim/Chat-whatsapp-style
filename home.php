@@ -22,8 +22,9 @@ session_start();
 
 
  
-	 <script type="text/javascript" src="js/get_data.js"></script>
-
+		<script type="text/javascript" src="js/update_chat.js"></script>
+ <script type="text/javascript" src="js/framework/bindsme.js"></script>
+	<script type="text/javascript" src="js/chat.js"></script>
 
 
 	<!-- Get Google CDN's jQuery and jQuery UI with fallback to local -->
@@ -35,9 +36,8 @@ session_start();
 	<script src="js/scroll/jquery.mCustomScrollbar.js"></script>
 	<script type="text/javascript" src="js/init.js"></script>
 
-	 <script type="text/javascript" src="js/framework/bindsme.js"></script>
-	<script type="text/javascript" src="js/chat.js"></script>
-	<script type="text/javascript" src="js/update_chat.js"></script>
+	
+
 	<script type="text/javascript" src="js/contact/contact_module.js"></script>
 	<script type="text/javascript" src="js/framework/binds.js"></script>
 	<script type="text/javascript" src="js/contact/add_contact.js"></script>
