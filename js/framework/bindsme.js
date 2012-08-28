@@ -127,9 +127,17 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
  $(".load_contact_chat_by_id_user").live("click",function(){
 
 
- 
+ 	 $("#content_1").mCustomScrollbar({
+					scrollButtons:{ enable:false }  
+				});
+
 
 	    Chat.load_id_contact_otherside($(this).attr("data"));// le mandamos el id del usuario que queremos cargar
+
+
+	 $("#content_1").mCustomScrollbar({
+					scrollButtons:{ enable:true }  
+				});
 
 
 
