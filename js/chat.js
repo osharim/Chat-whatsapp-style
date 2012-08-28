@@ -3,6 +3,22 @@
         $("document").ready(function(){
 
 
+        	$(".chat_cmmt").val(window.USER_DATA.USER.username+" escribe algún comentario ... ")
+
+        	$(".chat_cmmt").focus(function(){
+
+        		$(".chat_cmmt").val("");
+        	
+
+        	}).blur(function(){
+
+        	$(".chat_cmmt").val(window.USER_DATA.USER.username+"escribe algún comentario .. ")
+
+
+
+        	})
+
+
      
 						$(".chat_cmmt").bind("keyup", function(event){
 
