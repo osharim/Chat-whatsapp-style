@@ -64,7 +64,7 @@ bindsme.validate  = function(properties){
 
  	init : function(){
 
-  console.log("ahi vaaa");
+ 
       validate.submit();
 			validate.check_if_live_true();
 			validate.match_passwordgator();

@@ -33,12 +33,20 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 		,
  	append_into_contact_list : function(data){ // agregamos el nuevo contacto a la lista de contactos
 
+ 			
+
+  
+ 		 colorNotify = [ "red"  , "blue" ,   "gray" ];
+
+ 			
+ 		
 
  		STRUCT_CONTACT = " ";
 
 
 	$.each(data.response,function(i,data){
 
+			colorSelected = parseInt(Math.random()*colorNotify.length);
 
 			STRUCT_CONTACT += '<ul class="conctact_list_data load_contact_chat_by_id_user"  data="'+data.id_user+'"  >';
 			STRUCT_CONTACT += '	<li>';
@@ -48,7 +56,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 			
 			STRUCT_CONTACT += '</li>';
 			STRUCT_CONTACT += '<li  class="contact_user"   >@'+data.username+'</li>';
-			STRUCT_CONTACT += '<li>waiting accept</li>';
+			STRUCT_CONTACT += '<li><div class="notify '+colorNotify[colorSelected]+'  notify_contacts notified-'+data.id_user+'">0</div></li>';
 			STRUCT_CONTACT += '</ul>';
  
 
@@ -123,6 +131,10 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
  $(".load_contact_chat_by_id_user").live("click",function(){
 
 
+ 		$(".notified-"+$(this).attr("data")).hide(); // ocultamos las notificaciones si las tiene
+
+
+ 		
 
 	    Chat.load_id_contact_otherside($(this).attr("data"));// le mandamos el id del usuario que queremos cargar
  
@@ -420,7 +432,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 				if (  data.response.length >0  ){
 
 
-
+					console.dir(data + " update notify")
 
 				Chat.GET_UPDATE_NOTIFY(data);
  
@@ -451,7 +463,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
  	GET_UPDATE_NOTIFY :  function(data){ // OBTEIENE LOS DATOS! DE LAS NJOTIFUCACIONES OSEA TODAS LAS CONVERSACIONES
 
 
-
+ 
  		  Chat.GET_LIMIT_MSG_CHAT(data);
 
  		  	if( $("body").data("CHATTING_WITH_OTHERSIDE_OBJECT") ){
@@ -485,8 +497,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
  			
 
   		 			Chat.SCROLL_BOTTOM();
-  		 
- 	         // Chat.DELETE_NOTIFY();
+  		  
 
 				}
  
@@ -518,10 +529,12 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 ,
 
 GET_LIMIT_MSG_CHAT : function(data){ // OBTENEMOS CUANTOS COMENTARIOS HAY QUE SACAR DE LA DB QUE SON NUEVOS!!!!!!!!!!!!!!!!!!!!!!!!!
-
+ 
+// aqui llega el objeto
 
  	COUNT_NOTIFY = 0;
 
+ 	
  	$("body").data("CHATTING_WITH_OTHERSIDE_OBJECT",false);
 
 
@@ -542,28 +555,49 @@ GET_LIMIT_MSG_CHAT : function(data){ // OBTENEMOS CUANTOS COMENTARIOS HAY QUE SA
 
 
 
-			COUNT_NOTIFY += parseInt(data.notify);
+			//COUNT_NOTIFY += parseInt(data.notify);
 
 		}
 
-		Chat.SET_NOTIFY_CONTACT(COUNT_NOTIFY);
+ 
+		
+		
 
 
 	});
 
 
-
+Chat.SET_NOTIFY_CONTACT(data);
 
 } ,
 
 
 SET_NOTIFY_CONTACT : function(data){
 
+ 
+	$(".notify_contacts").hide();	
+ 
+
+ $.each(data.response , function(i , data ){
+
+
+ 	if( parseInt(data.notify) != 0) {
+
+		$(".notified-"+data.id_user_otherside).html( parseInt(data.notify) ) // ponemos cuantos hay
+
+		$(".notified-"+data.id_user_otherside).show();
+
+ 	 }
 
 		
-		$(".notify_contacts").html(data) // ponemos cuantos hay
-		$(".notify_contacts").show();
-	
+
+ });
+
+ 
+
+
+		$(".notify_contacts").css({ marginTop : '0' })
+
 		$(".notify_contacts").animate({
      
       marginTop: '+=5',
@@ -571,10 +605,10 @@ SET_NOTIFY_CONTACT : function(data){
     }, 100, function() {
     
         $('.notify_contacts').animate({
+          
           marginTop: '-=5',
-        }, 100, function() {
-            
-        });
+        
+        }, 100 );
     
 
     }); // mostramos el icono de notificacion

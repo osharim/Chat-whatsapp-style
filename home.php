@@ -128,7 +128,7 @@ session_start();
 
 	<div class="struct_contact">
 
-	<span class="user_current_chat"> Contactos <div class="notify red notify_contacts">0</div>	</span>
+	<span class="user_current_chat"> Contactos  </span>
 
 
 	<div class="container_data data_contact">
@@ -152,7 +152,7 @@ session_start();
 
  	<div class="struct_groups">
 	
-	<span class="user_current_chat">Grupos <div class="notify blue">0</div></span>
+	<span class="user_current_chat">Grupos  </span>
 
 
     </div> 
@@ -162,7 +162,7 @@ session_start();
 
  	<div class="struct_groups">
 	
-	<span class="user_current_chat">Albumes <div class="notify gray">0</div></span>
+	<span class="user_current_chat">Albumes </span>
 
 
     </div> 
