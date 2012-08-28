@@ -8,9 +8,7 @@ jQuery(document).ready(function($) {
 
 Chat.INIT_PAGE(); // Ponemos todos los datos dentro de los div etc...
 
-console.dir(window.USER_DATA)
-
-
+  
  setInterval(function(){
 
 

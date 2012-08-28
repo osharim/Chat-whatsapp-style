@@ -88,6 +88,9 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
 			success : function(data){ // se hace append
 
+
+					$(".loader").hide();		
+
 				 if(data.response.length > 0){
     			
     			    $(".data_contact").append(Chat.append_into_contact_list(data) );
@@ -99,8 +102,9 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 				,
 
 			beforeSend : function(){
-				// se ponen los loader
-		
+				
+
+				$(".loader").show();		
 
 
 			}
@@ -254,6 +258,8 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 			success : function(data){ // se hace append
 
  
+				$(".loader").hide();
+
 			$(".chat_content").append( Chat.GET_STRUCT_MSG( data ) ); // AGREGAMOS EL NUEVO COMENTARIO EN LA CAJA DE CHAT
 
 			$(".chat_cmmt").val(""); // BORRAMOS EL COMENTARIO EN EL TEXT AREA
@@ -265,7 +271,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 			beforeSend : function(){
 				// se ponen los loader
 		
-
+				$(".loader").show();
 
 			}
 
@@ -292,6 +298,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
 			success : function(data){ // se hace append
 
+           $(".loader").hide();
  
 			$(".chat_content").append( Chat.GET_STRUCT_MSG( data ) ); // AGREGAMOS EL NUEVO COMENTARIO EN LA CAJA DE CHAT
 
@@ -343,7 +350,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
 			beforeSend : function(){
 				// se ponen los loader
-		
+		$(".loader").show();
 
 
 			}
@@ -367,7 +374,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 			data : { "id_user_otherside" : $("body").data("id_user_otherside")  , "id_user_reader" :  window.USER_DATA.USER.id_users },
  
 
-			type : "POST" });
+			type : "POST" ,});
 
 
 
@@ -392,7 +399,8 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 			type : "POST" ,
 
 			success : function(data){ // se hace append
-
+			
+			$(".loader").hide();
  	
 				if (  data.response.length >0  ){
 
@@ -415,7 +423,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 			beforeSend : function(){
 				// se ponen los loader
 		
-
+				$(".loader").show();
 
 			}
 
@@ -452,6 +460,9 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 			success : function(data){ // se hace append
 
  	
+
+				$(".loader").hide();
+
 				if (  data.response.length >0  ){
 
  
@@ -472,6 +483,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 			beforeSend : function(){
 				// se ponen los loader
 		
+		   $(".loader").show();
 
 
 			}

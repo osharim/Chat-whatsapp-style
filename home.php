@@ -193,6 +193,9 @@ session_start();
 
 <div class="struct_menu">
 	
+<span class="loader"><img src="img/loader/p5.gif" alt=""></span>
+
+
 	<div class="struct_bttn">
 		
 <div class="add_contact uibutton icon add"> Agregar Contacto</div>
