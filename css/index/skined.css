@@ -129,12 +129,11 @@ input , .button_gray , .button_blue {
 
 .button_blue{
 
- 
-    background: -webkit-linear-gradient(center top , #34BFF3, #074AA2);
-    background: -moz-linear-gradient(center top , #34BFF3, #074AA2);
-    background: -o-linear-gradient(center top , #34BFF3, #074AA2);
-    background: -ms-linear-gradient(center top , #34BFF3, #074AA2);
-    background: linear-gradient(center top , #34BFF3, #074AA2);
+   background: -webkit-linear-gradient(#34BFF3,  #074AA2) repeat scroll 0 0 transparent;
+    background: -moz-linear-gradient(#34BFF3,  #074AA2) repeat scroll 0 0 transparent;
+    background: -o-linear-gradient(#34BFF3,  #074AA2) repeat scroll 0 0 transparent;
+    background: -ms-linear-gradient(#34BFF3,  #074AA2) repeat scroll 0 0 transparent;
+    background: linear-gradient(#34BFF3,  #074AA2) repeat scroll 0 0 transparent;
     color: white;
 
 }
@@ -143,8 +142,8 @@ input , .button_gray , .button_blue {
 .button_gray{
 
 
- 
- background: -webkit-linear-gradient(#F7F8F8, #CCCCCC) repeat scroll 0 0 transparent;
+                
+    background: -webkit-linear-gradient(#F7F8F8, #CCCCCC) repeat scroll 0 0 transparent;
     background: -moz-linear-gradient(#F7F8F8, #CCCCCC) repeat scroll 0 0 transparent;
     background: -o-linear-gradient(#F7F8F8, #CCCCCC) repeat scroll 0 0 transparent;
     background: -ms-linear-gradient(#F7F8F8, #CCCCCC) repeat scroll 0 0 transparent;
@@ -165,9 +164,9 @@ input , .button_gray , .button_blue {
 }
 
 .button_blue:active{
-       background: -webkit-linear-gradient(center top , #074AA2, #074AA2);
-    background: -moz-linear-gradient(center top , #074AA2, #074AA2);
-    background: -o-linear-gradient(center top , #074AA2, #074AA2);
-    background: -ms-linear-gradient(center top , #074AA2, #074AA2);
-    background: linear-gradient(center top , #074AA2, #074AA2); 
+    background: -webkit-linear-gradient(#074AA2,  #074AA2) repeat scroll 0 0 transparent;
+    background: -moz-linear-gradient(#074AA2,  #074AA2) repeat scroll 0 0 transparent;
+    background: -o-linear-gradient(#074AA2,  #074AA2) repeat scroll 0 0 transparent;
+    background: -ms-linear-gradient(#074AA2,  #074AA2) repeat scroll 0 0 transparent;
+    background: linear-gradient(#074AA2,  #074AA2) repeat scroll 0 0 transparent;
 }
