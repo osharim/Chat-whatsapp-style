@@ -163,7 +163,8 @@ color: #FFFFFF;
 }
 ul>:first-child{
 
- border-radius: 100% 100% 100% 100%;
+ border-radius: 4px 4px 4px 4px;
+    box-shadow: 1px 1px 3px #222222;
     float: left;
     height: 46px;
     margin: 6px;
@@ -227,12 +228,12 @@ height: 100%;
 
 
 .tang{
-  border-color: transparent #EFF4F3 transparent transparent;
+border-color: transparent transparent rgba(255, 255, 255, 0.9);
     border-style: solid;
-    border-width: 5px 9px 5px 0;
+    border-width: 0 7px 9px;
     height: 0;
-    left: -10px;
-    margin-top: -2px;
+    left: 20px;
+    margin-top: -16px;
     position: absolute;
     width: 1px;
 }
