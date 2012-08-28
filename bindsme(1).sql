@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `notify` (
   `id_chat` int(11) NOT NULL,
   `notified` int(1) NOT NULL,
   PRIMARY KEY (`id_notify`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf16 COLLATE=utf16_spanish_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
