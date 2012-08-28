@@ -20,7 +20,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
 
  	INIT_PAGE : function(){
- 		console.log(   USER_DATA.USER.username )
+  
 
  		$(".username").html(  USER_DATA.USER.username);
         
@@ -439,7 +439,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
  			
 
   		 			Chat.SCROLL_BOTTOM();
-  		 			console.log("ya borralo!")
+  		 
  	         // Chat.DELETE_NOTIFY();
 
 				}
