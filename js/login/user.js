@@ -37,7 +37,7 @@
  	$(".sing_in").bind("click" , function(){ // LOGEARSE
 
  		
- 		console.log("here")
+  
 
  
 

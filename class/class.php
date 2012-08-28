@@ -11,14 +11,14 @@ class Conectar {
   
 
  
-    $conexion = mysql_connect("localhost", "iselcruc_omar", "nf9ckpg") or
-   // $conexion = mysql_connect("localhost", "root", "") or
+     $conexion = mysql_connect("localhost", "iselcruc_omar", "nf9ckpg") or
+    //$conexion = mysql_connect("localhost", "root", "") or
                  
                   die("Error de conexion: " . mysql_error());
      
-//  mysql_select_db("bindsme") or
+    //mysql_select_db("bindsme") or
 
-       mysql_select_db("iselcruc_ejemplo") or
+     mysql_select_db("iselcruc_ejemplo") or
                 
                   die("Error de conexion: " . mysql_error());
 
@@ -64,10 +64,11 @@ public 	function sing_up(){
  
 	extract($_POST);
 
+	$img = "img/user.jpg";
 
 	$pss_ = md5( $pss_);
 
-	$sql = "INSERT INTO user values(null , '$user_' , '$pss_' , '" . strtotime(date("Y-m-d H:i:s")) . " ', '$email_' ) ";
+	$sql = "INSERT INTO user values(null , '$user_' , '$pss_' , '" . strtotime(date("Y-m-d H:i:s")) . " ', '$email_','$img') ";
 
  
 	mysql_query($sql, Conectar::con());
@@ -78,7 +79,7 @@ public 	function sing_up(){
 	$_SESSION["username"] = $user_;
 	$_SESSION["id_user"] = $id_user;
 
-	header("Location:   ../home");
+	 header("Location:   ../home");
 
 
 }
