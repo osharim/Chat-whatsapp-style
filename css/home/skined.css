@@ -7,17 +7,18 @@
 
 
 .struct_groups , .struct_contact{ /* CONTENEDOR DE LOS GRUPS */
- background: none repeat scroll 0 0 rgba(100, 100, 100, 0.2);
+    background: none repeat scroll 0 0 rgba(100, 100, 100, 0.2);
     border-top: 1px solid #555555;
+    -webkit-box-shadow: 1px 1px 1px #222222;
     box-shadow: 1px 1px 1px #222222;
     height: 25px;
     margin-top: 1px;
+    -ms-overflow-y: auto;
     overflow-y: auto;
     padding: 7px;
     width: 100%;
     position: relative;
-    
-     height: auto;
+    height: auto;
 
 }
 
@@ -36,6 +37,7 @@
 .struct_left{
 
  background: url("../../img/bg_st_left.png") repeat scroll 0 0 transparent;
+    -webkit-box-shadow: -3px 11px 11px #000000;
     box-shadow: -3px 11px 11px #000000;
     float: left;
     height: 100%;
@@ -46,8 +48,7 @@
 
 
 .struct_chat{ /* CONTENEDOR DEL CHAt */
-
-  float: right;
+    float: right;
     height: 92%;
     margin-right: 2%;
     margin-top: 62px;
@@ -63,8 +64,7 @@
 
 
 .struct_main{ /* CONTENEDOR PADRE */
-
-height: 100%;
+    height: 100%;
     overflow: hidden;
     width: 100%;
 
@@ -97,6 +97,8 @@ overflow: hidden;
     margin-bottom: 1%;
     margin-top: 1%;
     padding: 10px;
+    -webkit-resize: none;
+    -moz-resize: none;
     resize: none;
     text-shadow: 1px 1px #333333;
     width: 97.4%;
@@ -118,12 +120,15 @@ overflow: hidden;
 
 body{
  background-attachment: scroll !important;
+    -webkit-background-clip: border-box !important;
+    -moz-background-clip: border-box !important;
     background-clip: border-box !important;
     background-color: transparent !important;
     background-image: url("../../img/body.jpg") !important;
     background-origin: padding-box !important;
     background-repeat: repeat !important;
     color: rgba(255, 255, 255, 0.7) !important;
+    -ms-overflow-x: hidden;
     overflow-x: hidden;
 }
 
@@ -133,6 +138,7 @@ body{
 
  background: url("../../img/bg_st_left.png") repeat scroll 0 0 transparent;
     border-top: 1px solid rgba(255, 255, 255, 0.15);
+    -webkit-box-shadow: -3px 2px 2px #111111;
     box-shadow: -3px 2px 2px #111111;
     position: absolute;
     top: 0;
@@ -194,6 +200,7 @@ height: 100%;
 .msg_chat{
 
     border-radius: 4px 4px 4px 4px;
+    -webkit-box-shadow: 1px 1px 3px #222222;
     box-shadow: 1px 1px 3px #222222;
     color: #444444;
     float: left;
@@ -202,8 +209,8 @@ height: 100%;
     padding: 7px;
     position: relative;
     width: 91%;
-     background: none repeat scroll 0 0 #EFF4F3;
-        text-align: center;
+    background: none repeat scroll 0 0 #EFF4F3;
+    text-align: center;
 
 }
 
@@ -239,6 +246,7 @@ height: 100%;
 
 .container_data{
      background: none repeat scroll 0 0 rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: -1px 4px 9px #222222 inset;
     box-shadow: -1px 4px 9px #222222 inset;
     float: left;
     height: auto;
@@ -255,7 +263,6 @@ border-radius: 100% 100% 100% 100%;
     display: none;
     font-size: 11px;
     padding: 2px 8px;
-  
     right: 11%;
     text-align: center;
     top: 26%;
@@ -264,26 +271,43 @@ border-radius: 100% 100% 100% 100%;
 
 
 .blue{
-     background: -moz-linear-gradient(#34BFF3, #074AA2) repeat scroll 0 0 transparent; 
-      box-shadow: 0 2px #60CBFA inset, 0 1px #777777;
+     background: -webkit-linear-gradient(#34BFF3, #074AA2) repeat scroll 0 0 transparent;
+    background: -moz-linear-gradient(#34BFF3, #074AA2) repeat scroll 0 0 transparent;
+    background: -o-linear-gradient(#34BFF3, #074AA2) repeat scroll 0 0 transparent;
+    background: -ms-linear-gradient(#34BFF3, #074AA2) repeat scroll 0 0 transparent;
+    background: linear-gradient(#34BFF3, #074AA2) repeat scroll 0 0 transparent;
+    -webkit-box-shadow: 0 2px #60CBFA inset, 0 1px #777777;
+    box-shadow: 0 2px #60CBFA inset, 0 1px #777777;
 }
 
 .red{
 
- background: -moz-linear-gradient(#E03C3C,#C62323) repeat scroll 0 0 transparent; 
-      box-shadow: 0 2px #E65858 inset,  0 1px #777777;
+ background: -webkit-linear-gradient(#E03C3C,#C62323) repeat scroll 0 0 transparent;
+    background: -moz-linear-gradient(#E03C3C,#C62323) repeat scroll 0 0 transparent;
+    background: -o-linear-gradient(#E03C3C,#C62323) repeat scroll 0 0 transparent;
+    background: -ms-linear-gradient(#E03C3C,#C62323) repeat scroll 0 0 transparent;
+    background: linear-gradient(#E03C3C,#C62323) repeat scroll 0 0 transparent;
+    -webkit-box-shadow: 0 2px #E65858 inset,  0 1px #777777;
+    box-shadow: 0 2px #E65858 inset,  0 1px #777777;
 
     }
 
 .gray{
-   background: -moz-linear-gradient(#727B88,#383D44) repeat scroll 0 0 transparent; 
-      box-shadow: 0 2px #848C97 inset,  0 1px #777777;
+   background: -webkit-linear-gradient(#727B88,#383D44) repeat scroll 0 0 transparent;
+    background: -moz-linear-gradient(#727B88,#383D44) repeat scroll 0 0 transparent;
+    background: -o-linear-gradient(#727B88,#383D44) repeat scroll 0 0 transparent;
+    background: -ms-linear-gradient(#727B88,#383D44) repeat scroll 0 0 transparent;
+    background: linear-gradient(#727B88,#383D44) repeat scroll 0 0 transparent;
+    -webkit-box-shadow: 0 2px #848C97 inset,  0 1px #777777;
+    box-shadow: 0 2px #848C97 inset,  0 1px #777777;
 }
 
 .struct_search{
- /* background: url("../../img/icon/bicn.png") no-repeat scroll 6px 4px #FFFFFF; */
+ /* background: url("../../img/icon/bicn.png") no-repeat scroll 6px 4px #FFFFFF;
+    */
     border: 1px solid #EEEEEE;
     border-radius: 31px 31px 31px 31px;
+    -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0.2) inset, 0 1px 0 rgba(255, 255, 255, 0.7), 0 1px 2px rgba(0, 0, 0, 0.4) inset, 0 0 6px rgba(255, 255, 255, 0.5);
     box-shadow: 0 0 0 rgba(0, 0, 0, 0.2) inset, 0 1px 0 rgba(255, 255, 255, 0.7), 0 1px 2px rgba(0, 0, 0, 0.4) inset, 0 0 6px rgba(255, 255, 255, 0.5);
     color: #888888;
     display: table-caption;
@@ -386,6 +410,7 @@ lista de contacto */
 
 .conctact_list_data{
  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 1px 1px #333333;
     box-shadow: 1px 1px #333333;
     height: auto;
     margin-top: 1px;
@@ -443,6 +468,7 @@ background: none repeat scroll 0 0 rgba(0, 0, 0, 0.4);
 .name_contact_chat{
     background: none repeat scroll 0 0 rgba(0, 0, 0, 0.3);
     border-radius: 5px 5px 5px 5px;
+    -webkit-box-shadow: 1px 1px rgba(255, 255, 255, 0.6);
     box-shadow: 1px 1px rgba(255, 255, 255, 0.6);
     float: none;
     font-size: 14px;
