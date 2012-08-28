@@ -531,7 +531,7 @@ extract($_POST);
 $QUERY = "SELECT user.username , user.user_pic , chat.msg , chat.fecha 
 from chat , user , notify
 
-WHERE chat.id_chat = notify.id_chat and id_user_writer = $id_user_otherside and user.id_user = id_user_writer
+WHERE (chat.id_chat = notify.id_chat and id_user_writer = $id_user_otherside and user.id_user = id_user_writer and chat.id_user_reader=$writtr_)
 
 	and notify.notified =  0
 ";
