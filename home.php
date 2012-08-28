@@ -70,7 +70,7 @@ session_start();
 
 
 	<div class="chat">
-		
+	<div class="user_current_chat current_user_chat"> </div>	
 
 
 <div id="content_1" class="content ">

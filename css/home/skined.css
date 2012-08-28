@@ -457,3 +457,9 @@ background: none repeat scroll 0 0 rgba(0, 0, 0, 0.4);
       float: left;
     margin:9px 30px 0;
 }
+
+.current_user_chat{
+
+    float: right;
+    width: 172px;
+}

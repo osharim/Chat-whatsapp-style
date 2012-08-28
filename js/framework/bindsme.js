@@ -127,9 +127,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
  $(".load_contact_chat_by_id_user").live("click",function(){
 
 
-
-
- 	   console.log($(this).attr("data"))
+ 
 
 	    Chat.load_id_contact_otherside($(this).attr("data"));// le mandamos el id del usuario que queremos cargar
 
@@ -163,6 +161,9 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 //**********************************************************************************************************************
 
  	GET_STRUCT_MSG :  function(data){   // METODO QUE FORMATEA UNA CADENA DE TEXTO A UNA STRUCTURA EN FORMA DE COMENTARIO
+
+ 		$(".current_user_chat").html( $(data.response.username).hide().fadeIn() );
+
 
  		DATA =  "";
  		TRIANGLE = '<span class="tang"></span> ';
