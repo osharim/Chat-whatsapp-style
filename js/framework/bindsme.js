@@ -70,9 +70,6 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
  	Load_contact_list : function(){
 
 
-
-
-
 			$.ajax({
 
 			url : "class/contact/get_contact_list.php" ,
