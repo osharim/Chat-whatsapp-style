@@ -428,7 +428,7 @@ class notify{
 
 
 
-public static function delete_notify ($id_user_otherside){
+public static function delete_notify ($id_user_otherside , $id_user_reader){
 
 
 
@@ -436,11 +436,11 @@ public static function delete_notify ($id_user_otherside){
 
 		 $QUERY  = "UPDATE notify inner join chat on  
 
-		 (notify.id_chat = chat.id_chat and chat.id_user_writer = $id_user_otherside)
+		 (notify.id_chat = chat.id_chat and chat.id_user_writer = $id_user_otherside AND chat.id_user_reader = $id_user_reader)
 										
 	
 		  set notified = 1"; // insertamos la notificacion
- 
+
 
 		mysql_query( $QUERY , Conectar::con());
 
@@ -454,8 +454,6 @@ public static function delete_notify ($id_user_otherside){
 
 
 public static function set_notify( $id_chat){
-
-
 
 
 		 $QUERY  = "INSERT INTO notify values(NULL, '$id_chat', 0 )  "; // insertamos la notificacion | 0 es cuando aun no se lee la notificacion
@@ -533,7 +531,10 @@ extract($_POST);
 $QUERY = "SELECT user.username , user.user_pic , chat.msg , chat.fecha 
 from chat , user , notify
 
-WHERE chat.id_chat = notify.id_chat and id_user_writer = $id_user_otherside and user.id_user = id_user_writer";
+WHERE chat.id_chat = notify.id_chat and id_user_writer = $id_user_otherside and user.id_user = id_user_writer
+
+	and notify.notified =  0
+";
 
  
 $response = mysql_query( $QUERY , Conectar::con());
@@ -552,7 +553,7 @@ if( isset($DATA)   ){
 
 echo json_encode(array('response' => $DATA)); // si hay datos regresamos las notificaciones!!!
 
-notify::delete_notify($id_user_otherside);
+notify::delete_notify($id_user_otherside,$writtr_);
 
 } else{
 

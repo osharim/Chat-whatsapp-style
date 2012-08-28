@@ -45,13 +45,7 @@ session_start();
 
 </head>
 <body>
-<<<<<<< HEAD
-	
-=======
-
->>>>>>> bdcf9e509b4f17b951a823be1e344980d924d628
-
-
+ 
 <!--   struct_main -->
 
 
