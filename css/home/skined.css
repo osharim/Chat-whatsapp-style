@@ -459,7 +459,7 @@ background: none repeat scroll 0 0 rgba(0, 0, 0, 0.4);
 }
 
 .current_user_chat{
-
-    float: right;
-    width: 172px;
+ float: right;
+    padding-right: 22px;
+    width: auto;
 }
