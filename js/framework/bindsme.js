@@ -314,6 +314,26 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
 
 
+			}else{
+
+ //si el div hijo el que contiene los comentarios ya es mas grande que el padre entonces activamos scroll
+
+ if(  $(".chat_content").height() > $(".message_chat").height() ){
+
+
+
+					 $("#content_1").mCustomScrollbar({
+					scrollButtons:{ enable:true }  
+				});
+
+
+ $("document").data({"activedScroll":true}); // ACTIVAMOS BANDERA
+ 	Chat.SCROLL_BOTTOM();
+
+ }
+
+
+
 			}
 
 
