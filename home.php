@@ -122,6 +122,13 @@ session_start();
 
 
  
+ 	<div class="struct_groups">
+	
+	<span class="user_current_chat">Storyboard  </span>
+
+
+    </div> 
+
 
 
  <!--   struct_contact -->
@@ -152,7 +159,7 @@ session_start();
 
  	<div class="struct_groups">
 	
-	<span class="user_current_chat">Grupos  </span>
+	<span class="user_current_chat">Mis listas  </span>
 
 
     </div> 
@@ -162,12 +169,17 @@ session_start();
 
  	<div class="struct_groups">
 	
-	<span class="user_current_chat">Albumes </span>
+	<span class="user_current_chat">Suscripciones </span>
 
 
     </div> 
 
+	<div class="struct_groups">
+	
+	<span class="user_current_chat">Popular </span>
 
+
+    </div> 
 
 
 
@@ -193,12 +205,13 @@ session_start();
 	
 <span class="loader"><img src="img/loader/p5.gif" alt=""></span>
 
+<div class="logo"></div>
 
 	<div class="struct_bttn">
 		
 <div class="add_contact uibutton icon add"> Agregar Contacto</div>
 
-<div class="add_contact uibutton icon add_group"> Crear grupo</div>
+<div class="add_contact uibutton icon add_group"> Crear Topico</div>
 	
 <div class="add_contact uibutton icon upload_image"> Agregar imagen</div>
 	

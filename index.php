@@ -20,10 +20,27 @@ $_SESSION["loged"] = false;
 </head>
 <body>
 	
+<div class="struct_head">
+
+		<ul class="structmenu">
+			<li>Singup</li>
+			<li>Get started</li>
+			<li>How it works</li>
+		</ul>
 
 
 	<div class="struct_page">
+
+
+
+
+
 		<div class="logo"></div>
+		<div class="quote">binds is a plataform that connects people through interest and heavy
+building  data network.</div>
+
+
+
 		<div class="struct_session">
 			
 
@@ -52,10 +69,34 @@ $_SESSION["loged"] = false;
 	
 	</div>
 
+</div>
 
+<div class="stage_description">
+	
+
+	<div class="work_descriotion">
+		<span class="name_description"> HOW IT WORKS </span>
+		<ul class="steps">
+			<li>singup</li>
+			<li>subcribe insterest</li>
+			<li>share </li>
+			<li>enjoy</li>
+		</ul>
+	</div>
+
+
+</div>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
 <?php 
 
 	include("config_style.php");

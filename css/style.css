@@ -14,3 +14,9 @@ body{
     color: #CA7486;
 }
 
+.struct_head{
+
+background: -moz-radial-gradient(center center , ellipse farthest-corner, #394976 -19%, #0F1620 84%) repeat scroll 0 0 transparent;
+    height: 70%;
+    width: 100%;
+}
