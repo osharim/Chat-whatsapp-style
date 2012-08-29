@@ -163,13 +163,20 @@ session_start();
 
 
     </div> 
+	<div class="struct_groups">
+	
+	<span class="user_current_chat">Mis subscriptores </span>
 
+
+    </div> 
+
+ 
 
 <!-- 	struct_groups -->
 
  	<div class="struct_groups">
 	
-	<span class="user_current_chat">Suscripciones </span>
+	<span class="user_current_chat">Subscripciones </span>
 
 
     </div> 

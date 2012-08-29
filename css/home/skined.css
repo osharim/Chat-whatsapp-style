@@ -40,8 +40,9 @@ background: url("../../img/bg_st_left.png") repeat scroll 0 0 transparent;
     float: left;
     height: 100%;
     margin-left: -550px;
-    margin-top: 47px;
+    margin-top: 0;
     overflow: hidden;
+    opacity: 0;
     width: 21%;
 }
 
@@ -135,11 +136,13 @@ body{
 
 .struct_menu{
 
-background: url("../../img/bg_st_left.png") repeat scroll 0 0 transparent;
+  background: url("../../img/bg_st_left.png") repeat scroll 0 0 transparent;
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     position: absolute;
-    top: 0;
-    width: 100%;
+    right: 0;
+    opacity:0;
+ top: -18px;
+    width: 79%;
 }
 
 
@@ -481,9 +484,9 @@ background: none repeat scroll 0 0 rgba(0, 0, 0, 0.4);
 }
 
 .current_user_chat{
- float: right;
-    padding-right: 22px;
-    width: auto;
+ display: none;
+    float: left;
+    margin: 19px 119px 0;
 }
 
 .logo{
