@@ -11,14 +11,14 @@ class Conectar {
   
 
  
-  $conexion = mysql_connect("localhost", "iselcruc_omar", "nf9ckpg") or
-    //      $conexion = mysql_connect("localhost", "root", "") or
+      $conexion = mysql_connect("localhost", "iselcruc_omar", "nf9ckpg") or
+   //   $conexion = mysql_connect("localhost", "root", "") or
                  
                   die("Error de conexion: " . mysql_error());
      
-   //   mysql_select_db("bindsme") or
+  //      mysql_select_db("bindsme") or
 
-   mysql_select_db("iselcruc_ejemplo") or
+ mysql_select_db("iselcruc_ejemplo") or
                 
                   die("Error de conexion: " . mysql_error());
 
@@ -304,7 +304,7 @@ echo json_encode($response); // no regresamos nada!!!!
 		
 		case 'justOneMSG': // obtenemos solo  1 mensaje
 
-		  $QUERY = "SELECT DISTINCT id_user_reader as id_user_reader, msg ,( FROM_UNIXTIME(chat.fecha ) ) as fecha , user.username
+		  $QUERY = "SELECT DISTINCT id_user_reader as id_user_reader, msg ,( FROM_UNIXTIME(chat.fecha ) ) as fecha , user.username , user.user_pic
 
  from chat , user
 
@@ -329,7 +329,7 @@ ORDER BY FROM_UNIXTIME(chat.fecha ) DESC LIMIT 1"; // (Id_user_reader, $limit_ms
 	    case 'all': // todos los mensajes
 	    	
 	    	
-$QUERY  = "SELECT DISTINCT id_user_reader as id_user_reader, msg ,( FROM_UNIXTIME(chat.fecha ) ) as fecha , user.username
+$QUERY  = "SELECT DISTINCT id_user_reader as id_user_reader, msg ,( FROM_UNIXTIME(chat.fecha ) ) as fecha , user.username , user.user_pic
 
  from chat , user
 

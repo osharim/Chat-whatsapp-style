@@ -185,7 +185,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
 
  		DATA += '<ul class="user_ui">';
- 		DATA += '<li><img src="img/user.jpg" alt="" width="46">	</li>';
+ 		DATA += '<li><img src="'+data.user_pic+'" alt="" width="46">	</li>';
  		DATA +=  '<li> <span class="name_contact_chat">'+data.username+'</span><li> ';
  		DATE = '<span clasS="date">'+data.fecha+'</span>'
  		DATA += '<li class="msg_chat">'+TRIANGLE+data.msg+DATE+'  </li>' ;
