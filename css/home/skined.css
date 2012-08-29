@@ -485,9 +485,10 @@ background: none repeat scroll 0 0 rgba(0, 0, 0, 0.4);
 }
 
 .current_user_chat{
- display: none;
-    float: left;
-    margin: 19px 119px 0;
+ float: right;
+    font-size: 16px;
+    margin-right: 33px;
+    width: auto;
 }
 
 .logo{
