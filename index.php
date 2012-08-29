@@ -39,7 +39,7 @@ $_SESSION["loged"] = false;
 		<div class="quote">binds is a plataform that connects people through interest and heavy
 building  data network.</div>
 
-
+<div class="quote_snd " >We want change the way you manage and share your information </div>
 
 		<div class="struct_session">
 			

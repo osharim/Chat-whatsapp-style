@@ -49,9 +49,9 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 			colorSelected = parseInt(Math.random()*colorNotify.length);
 
 			STRUCT_CONTACT += '<ul class="conctact_list_data load_contact_chat_by_id_user"  data="'+data.id_user+'"  >';
-			STRUCT_CONTACT += '	<li>';
+			STRUCT_CONTACT += '	<li  class="image_contact"  >';
 			
-			STRUCT_CONTACT += '<img width="46" alt="" src="'+data.user_pic+'">';
+			STRUCT_CONTACT += '<img width="32" alt="" src="'+data.user_pic+'">';
 			
 			
 			STRUCT_CONTACT += '</li>';
@@ -134,11 +134,12 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
  		// cuando se le da click al boton contactos
 
  $(".load_contact_chat_by_id_user").live("click",function(){
-
+$(this).addClass("selected_tab");
 
  		$(".notified-"+$(this).attr("data")).hide(); // ocultamos las notificaciones si las tiene
 
-
+ 		
+ 		
 
 
 	    Chat.load_id_contact_otherside($(this).attr("data"));// le mandamos el id del usuario que queremos cargar

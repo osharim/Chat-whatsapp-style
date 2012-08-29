@@ -43,7 +43,7 @@ background: url("../../img/bg_st_left.png") repeat scroll 0 0 transparent;
     margin-top: 0;
     overflow: hidden;
     opacity: 0;
-    width: 21%;
+    width: 18%;
 }
 
 
@@ -142,7 +142,7 @@ body{
     right: 0;
     opacity:0;
  top: -18px;
-    width: 79%;
+    width: 82%;
 }
 
 
@@ -152,21 +152,24 @@ body{
  color: #FFFFFF;
     display: inline-block;
     font-size: 12px;
-    font-weight: bold;
+  font-weight: bold;
     padding-left: 8px;
     padding-top: 4px;
     text-shadow: 1px 1px 0 #222222;
     width: 89%;
 
 }
+
+
 ul>:first-child{
 
- border-radius: 4px 4px 4px 4px;
+border-radius: 4px 4px 4px 4px;
     box-shadow: 1px 1px 3px #222222;
     float: left;
-    height: 46px;
-    margin: 6px;
+    margin: 2px;
     overflow: hidden;
+     height: 43px;
+    width: 45px;
 
 }
 
@@ -408,14 +411,13 @@ lista de contacto */
 
 
 .conctact_list_data{
- border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 1px 1px #333333;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     box-shadow: 1px 1px #333333;
     height: auto;
     margin-top: 1px;
     overflow: hidden;
-    padding-bottom: 10px;
-    padding-top: 11px;
+    padding-bottom: 6px;
+    padding-top: 6px;
     width: auto;
 }
 
@@ -438,10 +440,12 @@ float: right;
 .contact_user{
     font-size: 12px;
     font-weight: bold;
+    margin-top: 6px; 
+    margin-bottom: 0px;
 }
  
 
-.conctact_list_data li:last-child , .contact_user{
+.conctact_list_data li:last-child ,  {
 margin-top: 17px;
 
 
@@ -506,4 +510,16 @@ background: none repeat scroll 0 0 rgba(0, 0, 0, 0.4);
     margin-top: 6px;
     position: absolute;
     width: 102px;
+}
+
+.image_contact{
+     height: 31px !important;
+     width: auto !important;
+   
+}
+
+.selected_tab{
+    background: #A65164 !important;
+    color: white;
+    text-shadow: 1px 1px #333333;
 }

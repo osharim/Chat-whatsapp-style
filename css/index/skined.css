@@ -24,6 +24,12 @@
 }
  
 
+.quote_snd{
+
+    font-weight: bold; color: white; text-align: center; font-size: 22px; margin-top: 27px;
+}
+
+
 .structmenu >li{
 
 
@@ -196,9 +202,8 @@ input , .button_gray , .button_blue {
 /**********************************************************************************/
 
 .stage_description{ /* COTNENEDOR DE LA DESCRIPCION DE COMO FUNCIONA */
-
- border-top: 1px solid white;
-    height: 800px;
+border-top: 1px solid white;
+    height: 23%;
     padding-top: 51px;
     text-align: center;
     width: 100%;
