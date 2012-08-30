@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 # Use PHP5.4 as default
 AddHandler application/x-httpd-php54 .php
+=======
+>>>>>>> e63fb4348c99054864a400b60659dfbafd2dfd97
 RewriteEngine On
 
 RewriteRule ^data/register$  class/login/class/rnsingup.php [L] # ------------- REGISTRAR USUARIO
@@ -10,4 +13,8 @@ RewriteRule ^data/register$  class/login/class/rnsingup.php [L] # ------------- 
 RewriteRule ^(error)$       index.php?issue=$1 [L] // 	#pone url para redireccionar cuando hay error
 
 
+<<<<<<< HEAD
 RewriteRule ^home$  home.php [L] # ------------- URL DE HOME
+=======
+RewriteRule ^home$  home.php [L] # ------------- URL DE HOME
+>>>>>>> e63fb4348c99054864a400b60659dfbafd2dfd97
