@@ -11,6 +11,9 @@ session_start();
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv='cache-control' content='no-cache'>
+	<meta http-equiv='expires' content='0'>
+	<meta http-equiv='pragma' content='no-cache'>
 	<title></title>
 
 
