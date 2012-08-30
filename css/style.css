@@ -15,8 +15,23 @@ body{
 }
 
 .struct_head{
+ background: -webkit-radial-gradient(center center , ellipse farthest-corner, #394976 -19%, #0F1620 84%) repeat scroll 0 0 transparent;
+	background: -moz-radial-gradient(center center , ellipse farthest-corner, #394976 -19%, #0F1620 84%) repeat scroll 0 0 transparent;
+	background: -o-radial-gradient(center center , ellipse farthest-corner, #394976 -19%, #0F1620 84%) repeat scroll 0 0 transparent;
+	background: -ms-radial-gradient(center center , ellipse farthest-corner, #394976 -19%, #0F1620 84%) repeat scroll 0 0 transparent;
+	background: radial-gradient(center center , ellipse farthest-corner, #394976 -19%, #0F1620 84%) repeat scroll 0 0 transparent;
+	height: 83%;
+	width: 100%;
+}
 
+
+<<<<<<< HEAD
 background: -moz-radial-gradient(center center , ellipse farthest-corner, #394976 -19%, #0F1620 84%) repeat scroll 0 0 transparent;
     height: 100%;
     width: 100%;
+=======
+/* ESTAN ESCONDIDOS LOS BOTONES!!! */
+.work_descriotion , .login{
+	display: none;
+>>>>>>> 911c80476f6a20e563d09a689681a033d5676324
 }
