@@ -7,9 +7,14 @@ $_SESSION["loged"] = false;
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv='cache-control' content='no-cache'>
-	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
-	<META HTTP-EQUIV="Expires" CONTENT="-1">
+<meta http-equiv="Expires" content="0">
+
+<meta http-equiv="Last-Modified" content="0">
+
+<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+
+<meta http-equiv="Pragma" content="no-cache">
+
 	<title></title>
  	
  
