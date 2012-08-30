@@ -1,0 +1,1 @@
+[30-Aug-2012 14:46:28] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'iselcruc_omr'@'localhost' (using password: YES) in /home4/bindsmec/public_html/class/class.php on line 14

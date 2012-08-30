@@ -1,0 +1,33 @@
+
+body{
+
+	background-image: url("../img/bgg.png"); /* imagen de fondo */
+    font-size: 11px;
+    font-family: Helvetica, Arial;
+}
+
+.msg{
+ 
+     margin-left: 7%;
+    margin-top: 8px;
+    position: absolute;
+    color: #CA7486;
+}
+
+.struct_head{
+ background: -webkit-radial-gradient(center center , ellipse farthest-corner, #394976 -19%, #0F1620 84%) repeat scroll 0 0 transparent;
+	background: -moz-radial-gradient(center center , ellipse farthest-corner, #394976 -19%, #0F1620 84%) repeat scroll 0 0 transparent;
+	background: -o-radial-gradient(center center , ellipse farthest-corner, #394976 -19%, #0F1620 84%) repeat scroll 0 0 transparent;
+	background: -ms-radial-gradient(center center , ellipse farthest-corner, #394976 -19%, #0F1620 84%) repeat scroll 0 0 transparent;
+	background: radial-gradient(center center , ellipse farthest-corner, #394976 -19%, #0F1620 84%) repeat scroll 0 0 transparent;
+	height: 100%;;
+	width: 100%;
+}
+
+
+ 
+/* ESTAN ESCONDIDOS LOS BOTONES!!! */
+.work_descriotion , .login{
+	display: none;
+ 
+}

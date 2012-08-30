@@ -1,0 +1,245 @@
+
+.struct_page{
+
+  border-radius: 4px 4px 4px 4px;
+    height: auto;
+    left: 50%;
+    margin-left: -201px;
+    position: absolute;
+    top: 19%;
+    width: 459px;
+
+}
+
+.logo { /*  estructura del logo */                       /* el contenedor del inicio de sesion */
+    background-image: url("../../img/logo/bnd_a.png");
+    background-repeat: no-repeat;
+    height: 50px;
+    margin: 10px auto;
+    width: 127px;
+}
+
+.quote , .structmenu >li{
+  color: rgba(255, 255, 255, 0.6);
+}
+ 
+
+.quote_snd{
+
+    font-weight: bold; color: white; text-align: center; font-size: 22px; margin-top: 27px;
+  margin-left: -66px;
+    margin-top: 76px;
+    padding-bottom: 11px;
+    width: 578px;
+}
+
+
+.structmenu >li{
+
+
+    float: right;
+    margin: 12px 15px 15px;
+
+
+}
+
+.structmenu{
+
+
+    position: absolute;
+    top: 4px;
+    
+    right:  40px;
+    
+}
+
+.login, .struct_session{
+
+ 
+    margin: 51px auto;
+    overflow-y: auto;
+    width: 100%;
+
+}
+
+.login{
+
+
+ width: 100%;
+
+
+}
+
+.struct_session{
+    margin-top: 99px;
+
+ width: 67%;
+
+}
+
+
+.struct_session input{
+      -webkit-box-shadow: 0 1px #FFFFFF inset, 0 0 0 2px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 1px #FFFFFF inset, 0 0 0 2px rgba(255, 255, 255, 0.2);
+    border-color: #BBBBBB #DDDDDD #DDDDDD;
+    border-style: solid;
+    border-width: 1px;
+    color: #888;
+    font-size: 11px;
+    height: 22px;
+    margin-left: 4%;
+    margin-top: 21px;
+    padding: 3px 5px 4px;
+    width: 84%;
+}
+
+.struct_session input:focus{
+
+
+        color: #222;
+
+
+
+}
+
+/* border radius para todos los elementos */
+
+input , .button_gray , .button_blue { 
+
+
+
+    border-radius: 20px
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  BOTONES!!!!!!!!!!!!!!!! */
+
+
+.button_blue , .button_gray{
+
+
+   -webkit-box-shadow: 0 1px #FFFFFF inset, 0 0 0 4px rgba(100, 100, 100, 0.1);
+    box-shadow: 0 1px #FFFFFF inset, 0 0 0 4px rgba(100, 100, 100, 0.1);
+    cursor: pointer;
+    float: left;
+    margin: 19px 19px 19px 10%;
+    padding: 11px 29px;
+    text-align: center;
+    width: 23%;
+}
+
+
+
+.button_blue{
+
+   background: -webkit-linear-gradient(#34BFF3,  #074AA2) repeat scroll 0 0 transparent;
+    background: -moz-linear-gradient(#34BFF3,  #074AA2) repeat scroll 0 0 transparent;
+    background: -o-linear-gradient(#34BFF3,  #074AA2) repeat scroll 0 0 transparent;
+    background: -ms-linear-gradient(#34BFF3,  #074AA2) repeat scroll 0 0 transparent;
+    background: linear-gradient(#34BFF3,  #074AA2) repeat scroll 0 0 transparent;
+    color: white;
+
+}
+
+
+.button_gray{
+
+
+                
+    background: -webkit-linear-gradient(#F7F8F8, #CCCCCC) repeat scroll 0 0 transparent;
+    background: -moz-linear-gradient(#F7F8F8, #CCCCCC) repeat scroll 0 0 transparent;
+    background: -o-linear-gradient(#F7F8F8, #CCCCCC) repeat scroll 0 0 transparent;
+    background: -ms-linear-gradient(#F7F8F8, #CCCCCC) repeat scroll 0 0 transparent;
+    background: linear-gradient(#F7F8F8, #CCCCCC) repeat scroll 0 0 transparent;
+    text-shadow: 0 1px 0 #FFFFFF;
+
+}
+
+.button_gray:active {
+
+ background: -webkit-linear-gradient(#CCCCCC, #CCCCCC) repeat scroll 0 0 transparent;
+    background: -moz-linear-gradient(#CCCCCC, #CCCCCC) repeat scroll 0 0 transparent;
+    background: -o-linear-gradient(#CCCCCC, #CCCCCC) repeat scroll 0 0 transparent;
+    background: -ms-linear-gradient(#CCCCCC, #CCCCCC) repeat scroll 0 0 transparent;
+    background: linear-gradient(#CCCCCC, #CCCCCC) repeat scroll 0 0 transparent;
+
+
+}
+
+.button_blue:active{
+    background: -webkit-linear-gradient(#074AA2,  #074AA2) repeat scroll 0 0 transparent;
+    background: -moz-linear-gradient(#074AA2,  #074AA2) repeat scroll 0 0 transparent;
+    background: -o-linear-gradient(#074AA2,  #074AA2) repeat scroll 0 0 transparent;
+    background: -ms-linear-gradient(#074AA2,  #074AA2) repeat scroll 0 0 transparent;
+    background: linear-gradient(#074AA2,  #074AA2) repeat scroll 0 0 transparent;
+}
+
+/**********************************************************************************/
+
+.stage_description{ /* COTNENEDOR DE LA DESCRIPCION DE COMO FUNCIONA */
+border-top: 1px solid white;
+    height: 8%;
+    padding-top: 51px;
+    text-align: center;
+    width: 100%;
+
+}
+
+.work_descriotion{ /* ESTE ES EL  TITULO "HOW IT WORKS" "" */
+
+font-weight: bold;
+
+font-size: 15px;
+
+color: #000;
+
+}
+
+.steps{ /* PASOS (instrucciones)*/
+    height: auto;
+    margin: 10px auto;
+    text-align: center;
+    width: 716px;
+
+
+}
+
+.steps >li { /* ESTRUCTURA DE CADA OPASO */
+
+color: #999999;
+    float: left;
+    font-size: 12px;
+    font-weight: normal;
+    margin: 43px 43px 43px 86px;
+
+}

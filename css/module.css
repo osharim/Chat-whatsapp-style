@@ -1,0 +1,7 @@
+.error_object{
+
+	color: #9B2E2E !important;
+	background: none repeat scroll 0 0 #FFBDBD;
+	-webkit-box-shadow: 1px 1px 2px #9B2E2E inset;
+	box-shadow: 1px 1px 2px #9B2E2E inset;
+}

@@ -1,0 +1,529 @@
+.struct_contact{ /* CONTENEDOR DE LOS CONTACTOS */
+
+
+
+
+}
+
+
+.struct_groups , .struct_contact{ /* CONTENEDOR DE LOS GRUPS */
+ border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+    height: auto;
+    margin-top: 1px;
+    overflow-y: auto;
+    padding: 7px;
+    position: relative;
+    width: 100%;
+
+}
+
+
+.struct_groups:hover,.struct_contact:hover{
+
+
+    cursor: pointer;
+
+}
+
+ 
+
+
+
+.struct_left{
+background: url("../../img/bg_st_left.png") repeat scroll 0 0 transparent;
+    box-shadow: -3px 11px 11px #000000;
+    float: left;
+    height: 95%;
+    margin-left: -550px;
+    margin-top: 0;
+    opacity: 0;
+    overflow: hidden;
+    width: 18%;
+
+    margin-top: 48px;
+ 
+    padding-top: 5%;
+}
+
+
+.struct_chat{ /* CONTENEDOR DEL CHAt */
+    float: right;
+    height: 92%;
+    margin-right: 2%;
+    margin-top: 62px;
+    width: 74%;
+
+
+}
+
+
+.struct_msg{ /* CNOTENEDOR DE DONDE ESCRIBIRMOS EL MENSAJE */
+
+}
+
+
+.struct_main{ /* CONTENEDOR PADRE */
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+
+}
+
+
+.message_chat{
+ height: 76%;
+    width: 99%;
+ 
+}
+
+
+
+
+.message_chat , .struct_contact , .struct_groups , .chat_cmmt{
+
+  padding: 7px;
+overflow: hidden;
+}
+
+.chat_cmmt{
+ background: url("../../img/bg_st_left.png") repeat scroll 0 0 transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px 5px 5px 5px;
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-family: helvetica;
+    font-size: 12px;
+    height: 19px;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    padding: 10px;
+    -webkit-resize: none;
+    -moz-resize: none;
+    resize: none;
+    text-shadow: 1px 1px #333333;
+    width: 97.4%;
+}
+
+
+.struct_msg{
+ 
+}
+
+
+/* body {
+
+    background: url("../../img/gbu.jpg") !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    overflow-x:hidden; 
+} */
+
+
+body{
+ background-attachment: scroll !important;
+    -webkit-background-clip: border-box !important;
+    -moz-background-clip: border-box !important;
+    background-clip: border-box !important;
+    background-color: transparent !important;
+    background-image: url("../../img/bg/alter.png") !important;
+    background-origin: padding-box !important;
+    background-repeat: repeat !important;
+    -webkit-background-size: 100% auto !important;
+    -moz-background-size: 100% auto !important;
+    background-size: 100% auto !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    -ms-overflow-x: hidden;
+    overflow-x: hidden;
+}
+
+
+
+.struct_menu{
+
+background: url("../../img/bg_st_left.png") repeat scroll 0 0 transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: -18px;
+    width: 100%;
+}
+
+
+/* ****************************************************************************************************** */
+/* UI PARA EL CHAT DEL USUARIO */
+.user_current_chat{
+ color: #FFFFFF;
+    display: inline-block;
+    font-size: 12px;
+  font-weight: bold;
+    padding-left: 8px;
+    padding-top: 4px;
+    text-shadow: 1px 1px 0 #222222;
+    width: 89%;
+
+}
+
+
+ul>:first-child{
+
+border-radius: 4px 4px 4px 4px;
+    box-shadow: 1px 1px 3px #222222;
+    float: left;
+    margin: 2px;
+    overflow: hidden;
+     height: 43px;
+    width: 45px;
+
+}
+
+ul>:last-child{
+
+
+    float: right;
+
+}
+
+
+
+ul>li{
+
+margin: 5px;
+
+}
+
+
+.user_ui{
+	 overflow-y: auto;
+}
+
+.chat{
+height: 100%;
+    overflow: hidden;
+    width: 99%;
+ 
+}
+
+.msg_chat{
+
+    border-radius: 4px 4px 4px 4px;
+    -webkit-box-shadow: 1px 1px 3px #222222;
+    box-shadow: 1px 1px 3px #222222;
+    color: #444444;
+    float: left;
+    font-size: 18px;
+    margin-top: 14px;
+    padding: 7px;
+    position: relative;
+    width: 91%;
+    background: none repeat scroll 0 0 #EFF4F3;
+    text-align: center;
+
+}
+
+ 
+
+
+.msg_chat img{
+
+    display: inline-block;
+
+
+}
+
+
+.tang{
+border-color: transparent transparent rgba(255, 255, 255, 0.9);
+    border-style: solid;
+    border-width: 0 7px 9px;
+    height: 0;
+    left: 20px;
+    margin-top: -16px;
+    position: absolute;
+    width: 1px;
+}
+
+.date{
+  color: #777777;
+    font-size: 11px;
+    margin-top: 2px;
+    position: absolute;
+    right: 8px;
+}
+
+.container_data{
+background: none repeat scroll 0 0 rgba(0, 0, 0, 0.22);
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.42) inset;
+    float: left;
+    height: auto;
+    margin-bottom: -13px;
+    margin-left: -7px;
+    margin-top: 14px;
+    width: 100%;
+}
+
+
+.notify{
+ 
+border-radius: 100% 100% 100% 100%;
+    display: none;
+    font-size: 11px;
+    padding: 2px 8px;
+    right: 11%;
+    text-align: center;
+    top: 26%;
+    width: auto;
+}
+
+
+.blue{
+     background: -webkit-linear-gradient(#34BFF3, #074AA2) repeat scroll 0 0 transparent;
+    background: -moz-linear-gradient(#34BFF3, #074AA2) repeat scroll 0 0 transparent;
+    background: -o-linear-gradient(#34BFF3, #074AA2) repeat scroll 0 0 transparent;
+    background: -ms-linear-gradient(#34BFF3, #074AA2) repeat scroll 0 0 transparent;
+    background: linear-gradient(#34BFF3, #074AA2) repeat scroll 0 0 transparent;
+    -webkit-box-shadow: 0 2px #60CBFA inset, 0 1px #777777;
+    box-shadow: 0 2px #60CBFA inset, 0 1px #777777;
+}
+
+.red{
+
+ background: -webkit-linear-gradient(#E03C3C,#C62323) repeat scroll 0 0 transparent;
+    background: -moz-linear-gradient(#E03C3C,#C62323) repeat scroll 0 0 transparent;
+    background: -o-linear-gradient(#E03C3C,#C62323) repeat scroll 0 0 transparent;
+    background: -ms-linear-gradient(#E03C3C,#C62323) repeat scroll 0 0 transparent;
+    background: linear-gradient(#E03C3C,#C62323) repeat scroll 0 0 transparent;
+    -webkit-box-shadow: 0 2px #E65858 inset,  0 1px #777777;
+    box-shadow: 0 2px #E65858 inset,  0 1px #777777;
+
+    }
+
+.gray{
+   background: -webkit-linear-gradient(#727B88,#383D44) repeat scroll 0 0 transparent;
+    background: -moz-linear-gradient(#727B88,#383D44) repeat scroll 0 0 transparent;
+    background: -o-linear-gradient(#727B88,#383D44) repeat scroll 0 0 transparent;
+    background: -ms-linear-gradient(#727B88,#383D44) repeat scroll 0 0 transparent;
+    background: linear-gradient(#727B88,#383D44) repeat scroll 0 0 transparent;
+    -webkit-box-shadow: 0 2px #848C97 inset,  0 1px #777777;
+    box-shadow: 0 2px #848C97 inset,  0 1px #777777;
+}
+
+.struct_search{
+ /* background: url("../../img/icon/bicn.png") no-repeat scroll 6px 4px #FFFFFF;
+    */
+    border: 1px solid #EEEEEE;
+    border-radius: 31px 31px 31px 31px;
+    -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0.2) inset, 0 1px 0 rgba(255, 255, 255, 0.7), 0 1px 2px rgba(0, 0, 0, 0.4) inset, 0 0 6px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.2) inset, 0 1px 0 rgba(255, 255, 255, 0.7), 0 1px 2px rgba(0, 0, 0, 0.4) inset, 0 0 6px rgba(255, 255, 255, 0.5);
+    color: #888888;
+    display: table-caption;
+    font-size: 14px;
+    height: 33px;
+    margin: 11px auto 11px 9%;
+    padding-left: 39px;
+    width: 335px;
+}
+
+ 
+.struct_bttn{
+float: right;
+    margin: 7px;
+    overflow-y: auto;
+    width: auto;
+
+}
+
+
+
+/*  NOTA : ESTO ES SOLO PARA LOS INPUT */
+
+
+    /*  BOTONES
+    _________________________________________________________________________________ */
+
+.uibutton.add:before {
+background-position: -408px -95px !important;
+}
+
+.uibutton.upload_video:before{
+
+  background-position:  -432px -47px !important;
+}
+
+.uibutton.config:before{
+
+  background-position:  -432px 1px !important;
+}
+
+
+.uibutton.upload_image:before{
+  background-position:     -457px -47px !important
+}
+
+
+.uibutton.add_group:before{
+  background-position:    -72px -119px !important;
+}
+
+
+
+
+ 
+.uibutton.icon:before {
+background: url("../../img/icon/wicn.png") no-repeat scroll 99px 99px transparent;
+    content: " ";
+    float: left;
+    height: 14px;
+    margin: 1px 0.5em 1px 8px;
+    padding-left: 0;
+    position: relative;
+    top: 1px;
+    width: 13px;
+}
+.uibutton {
+    opacity: .7;
+    -moz-opacity: .7;
+    filter:alpha(opacity=.77);
+    cursor: pointer;
+    float: left;
+    font-size: 12px;
+    margin: 5px;
+    padding: 2px 7px 2px 11px;
+}
+
+
+.uibutton:hover{
+
+    opacity: .8;
+    -moz-opacity: .8;
+    filter:alpha(opacity=.88);
+
+}
+
+.uibutton:active{
+
+
+    opacity: 1;
+    -moz-opacity: 1;
+    filter:alpha(opacity=1);
+
+}
+/* 
+____________________________________________________________________ */
+/* 
+lista de contacto */
+
+
+.conctact_list_data{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px rgba(255, 255, 255, 0.1);
+    height: auto;
+    margin-top: 1px;
+    overflow: hidden;
+    padding-bottom: 6px;
+    padding-top: 6px;
+    width: auto;
+}
+
+
+.conctact_list_data > li{
+
+float: left ;
+ margin-left: 12px;
+
+}
+
+
+.conctact_list_data li:last-child{
+
+ 
+float: right;
+
+}
+
+.contact_user{
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 6px; 
+    margin-bottom: 0px;
+}
+ 
+
+.conctact_list_data li:last-child ,  {
+margin-top: 17px;
+
+
+
+}
+
+.conctact_list_data:hover{
+
+background: none repeat scroll 0 0 rgba(0, 0, 0, 0.2);
+ 
+
+
+}
+
+.conctact_list_data:active{
+
+background: none repeat scroll 0 0 rgba(0, 0, 0, 0.4);
+ 
+
+
+}
+
+.name_contact_chat{
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.3);
+    border-radius: 5px 5px 5px 5px;
+    -webkit-box-shadow: 1px 1px rgba(255, 255, 255, 0.6);
+    box-shadow: 1px 1px rgba(255, 255, 255, 0.6);
+    float: none;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 16px;
+    padding: 4px;
+}
+
+.loader
+{
+    display: none;
+      float: left;
+    margin:15px 30px 0;
+     margin-left: 112px;
+}
+
+.current_user_chat{
+ float: right;
+    font-size: 16px;
+    margin-right: 33px;
+    width: auto;
+}
+
+.logo{
+  background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    background-image: url("../../img/logo/bnd_a.png");
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 84px auto;
+    content: " ";
+    height: 44px;
+    left: 18px;
+    margin-top: 6px;
+    position: absolute;
+    width: 102px;
+}
+
+.image_contact{
+     height: 31px !important;
+     width: auto !important;
+   
+}
+
+.selected_tab{
+    background:   rgba(0, 0, 0, 0.4) !important;
+    color: white;
+    text-shadow: 1px 1px #333333;
+}
