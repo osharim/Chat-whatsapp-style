@@ -16,6 +16,7 @@ bindsme.validate  = function(properties){
                   
                   var config = $.extend({
 			
+                                    onKeyPress : false , // para que  haga el submit al oprimir una tecla
 
                                     onSend : "", // BOTON QUE AL HACERLE CLICK HARA EL SUBMIT
                                     
@@ -64,8 +65,8 @@ bindsme.validate  = function(properties){
 
  	init : function(){
 
- 
-      validate.submit();
+      validate.keyPress();
+     
 			validate.check_if_live_true();
 			validate.match_passwordgator();
 
@@ -95,6 +96,44 @@ bindsme.validate  = function(properties){
 
   $(config.onSend).click(function(){
 
+   validate.do_validate();
+
+
+  });
+
+
+ },
+
+
+keyPress : function(){
+
+ if ( config.onKeyPress){
+
+$(config.onSend).bind("keyup", function(event){
+
+               if (event.which == 13) {
+                
+ 
+               
+    validate.do_validate();
+
+
+                }
+ 
+
+            });
+}else{
+
+ validate.submit(); // si no entonces que le de evento de click
+
+
+}
+
+},
+
+ do_validate : function(){
+
+
 
     validate.check_input_empty(); // VERIFICAMOS SI TODO TIENE DATOS
 
@@ -111,11 +150,10 @@ bindsme.validate  = function(properties){
     }
 
 
-  });
 
 
- },
-
+ }
+,
 //-----------------------------------------------------------------------------------------------------------------------------
 
  check_input_empty : function(){

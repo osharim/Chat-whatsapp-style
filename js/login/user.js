@@ -15,8 +15,9 @@
 
  			bindsme.validate({ // PONEMOS EN LIVE LA VALIDACION PARA QUE EMPIEZE A MONITOREAR
  
+ 				onKeyPress : true ,
 
- 				onSend :  ".sing_in", // boton al hacerle click entra en accion
+ 				onSend :  ".data_user", // boton al hacerle click entra en accion
 
  				form : [{  action : "./data/login",
 

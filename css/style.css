@@ -15,8 +15,13 @@ body{
 }
 
 .struct_head{
-
-background: -moz-radial-gradient(center center , ellipse farthest-corner, #394976 -19%, #0F1620 84%) repeat scroll 0 0 transparent;
-    height: 70%;
+ background: -moz-radial-gradient(center center , ellipse farthest-corner, #394976 -19%, #0F1620 84%) repeat scroll 0 0 transparent;
+    height: 83%;
     width: 100%;
+}
+
+
+/* ESTAN ESCONDIDOS LOS BOTONES!!! */
+.work_descriotion , .login{
+	display: none;
 }

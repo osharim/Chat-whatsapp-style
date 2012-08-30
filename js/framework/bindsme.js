@@ -134,7 +134,9 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
  		// cuando se le da click al boton contactos
 
  $(".load_contact_chat_by_id_user").live("click",function(){
-$(this).addClass("selected_tab");
+  
+ $(".selected_tab").removeClass("selected_tab");
+  $(this).addClass("selected_tab");
 
  		$(".notified-"+$(this).attr("data")).hide(); // ocultamos las notificaciones si las tiene
 
