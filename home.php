@@ -16,7 +16,7 @@ session_start();
 	<META HTTP-EQUIV="Expires" CONTENT="-1">
 	<title></title>
 
-
+		<link rel="shortcut icon" href="img/icon/power.ico" /> 
 		<link rel="stylesheet" href="css/home/skined.css">
 		<link rel="stylesheet" href="js/scroll/jquery.mCustomScrollbar.css">
 		<link rel="stylesheet" href="js/framework/css/binds.css">
