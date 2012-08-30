@@ -27,6 +27,10 @@
 .quote_snd{
 
     font-weight: bold; color: white; text-align: center; font-size: 22px; margin-top: 27px;
+  margin-left: -66px;
+    margin-top: 76px;
+    padding-bottom: 11px;
+    width: 578px;
 }
 
 
@@ -67,7 +71,7 @@
 }
 
 .struct_session{
-
+    margin-top: 99px;
 
  width: 67%;
 
