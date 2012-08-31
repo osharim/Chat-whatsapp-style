@@ -15,7 +15,7 @@ $_SESSION["loged"] = false;
 
 <meta http-equiv="Pragma" content="no-cache">
 
-	<title></title>
+	<title>binds</title>
  	
  		 <link rel="shortcut icon" href="img/icon/power.ico" /> 
  		<link rel="stylesheet" href="css/module.css">

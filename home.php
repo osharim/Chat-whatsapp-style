@@ -14,7 +14,7 @@ session_start();
 	<meta http-equiv='cache-control' content='no-cache'>
 	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
 	<META HTTP-EQUIV="Expires" CONTENT="-1">
-	<title></title>
+	<title>binds</title>
 
 		<link rel="shortcut icon" href="img/icon/power.ico" /> 
 		<link rel="stylesheet" href="css/home/skined.css">
