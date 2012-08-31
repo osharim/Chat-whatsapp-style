@@ -75,7 +75,7 @@ Chat.INIT_PAGE(); // Ponemos todos los datos dentro de los div etc...
 
         	}).blur(function(){
 
-        	$(".chat_cmmt").val(window.USER_DATA.USER.username+" escribe algún comentario .. ");
+        	//$(".chat_cmmt").val(window.USER_DATA.USER.username+" escribe algún comentario .. ");
 
 
 

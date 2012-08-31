@@ -114,7 +114,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 			Chat.config[0].mutual_exclusion =  false; // este proceso esta liberado
 			
 			
-			},3600)
+			},2600)
 			
 			
 
@@ -318,9 +318,15 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
  	append : function(){ // ESTA ESTRUCTURA HACE APPEND AL CHAT
 
 
+ if ( !  $(".chat_cmmt").val().trim().length == 0 ){
 
- 		
+ 		console.log(  $(".chat_cmmt").val().length )
+
  		this.sendMSGDB(Chat.VALUE_MSG() );
+
+ }
+ 		
+ 	
 
  
 
@@ -373,45 +379,45 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
 
 
-
-			$.ajax({
-
-			url : "class/chat/append_msg.php" ,
-
-
-			type: "POST",
-
-
-			data : { "msg" : MSG.replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\"/g,"&quot;") , id_user_writer : USER_DATA.USER.id_user , id_user_otherside :$("body").data("id_user_otherside")  } ,
-
-
-			dataType : "JSON",
-
-			success : function(data){ // se hace append
-
- 
+				
+				$.ajax({
+				
+				url : "class/chat/append_msg.php" ,
+				
+				
+				type: "POST",
+				
+				
+				data : { "msg" : MSG.replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\"/g,"&quot;") , id_user_writer : USER_DATA.USER.id_user , id_user_otherside :$("body").data("id_user_otherside")  } ,
+				
+				
+				dataType : "JSON",
+				
+				success : function(data){ // se hace append
+				
+				
 				$(".loader").hide();
-
-			$(".chat_content").append( Chat.GET_STRUCT_MSG( data ) ); // AGREGAMOS EL NUEVO COMENTARIO EN LA CAJA DE CHAT
-
-			$(".chat_cmmt").val(""); // BORRAMOS EL COMENTARIO EN EL TEXT AREA
- 
-
-			}
+				
+				$(".chat_content").append( Chat.GET_STRUCT_MSG( data ) ); // AGREGAMOS EL NUEVO COMENTARIO EN LA CAJA DE CHAT
+				
+				$(".chat_cmmt").val(""); // BORRAMOS EL COMENTARIO EN EL TEXT AREA
+				
+				
+				}
 				,
-
-			beforeSend : function(){
+				
+				beforeSend : function(){
 				// se ponen los loader
-		
+				
 				$(".loader").show();
-
-			}
-
-
+				
+				}
+				
+				
 				});
-
-
-			} ,
+				
+				
+				} ,
 
 	//************************************************************************************//*********//*****************************
 	UPDATE_CHAT_BY_LIMIT : function(){ // obtenemos n mensajes  ACTUALIZAMOS EL CHAT!!!!!!!!!!!!!!!!!

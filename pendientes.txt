@@ -60,3 +60,10 @@
 -------------------------------------------------------------------------------------------------------------------
 ** al dar click en contacto aparecer el nombre del usuario con el que se desea hacer un storyflow
 -------------------------------------------------------------------------------------------------------------------
+
+
+
+10 OKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOK
+-------------------------------------------------------------------------------------------------------------------
+** no se pueden enviar campos en blanco , se procesa val().trim().length == 0 en el text area
+-------------------------------------------------------------------------------------------------------------------
