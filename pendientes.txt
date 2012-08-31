@@ -12,6 +12,8 @@
 	porque parece que no esta cargando
 
 ** cuando se le da enter vaciar el valor que tiene el textarea del coment porque puede que se vuelva a enviar
+  	--------------------------------------------------------------------------------------------------------- ok
+
 
 ** cargar imagenes desde un binds.box() al flowstory actual;
 

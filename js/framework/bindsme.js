@@ -12,8 +12,10 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
  var Chat = { // RETORNA EL VALOR DEL MSG A ENVIAR
 	VALUE_MSG : function(){
 
-
- 		return $(".chat_cmmt").val();
+		MSG = $(".chat_cmmt").val();
+			$(".chat_cmmt").val("");
+ 		
+ 		return MSG;
 
  	} ,
 
