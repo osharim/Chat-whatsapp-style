@@ -12,7 +12,7 @@ if ( isset($_POST)){
  	case  "true":
 
 
-		 	$_SESSION["paginacion"] +=5;
+		 
  			$_SESSION["get_by_pagination"] = true;
 
   	    	$UPDATE_CHAT->get_msg_from_db_by_limit("all");

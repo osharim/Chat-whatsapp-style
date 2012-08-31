@@ -86,19 +86,19 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 					
 					if( top  <= 30 ){ // si el top es menor o igual a 30px entonces hacemos paginacion
 	 
+				 window.paginacion+=5;
 				
+
 						console.log("make pag")
  						Chat.config[0].mutual_exclusion =  true; // este proceso esta siendo utilizado
-
- 					
-
-		$.ajax({ // si me manda  type_rqs: true  entonces es paginacion.
+ 
+	    	$.ajax({ // si me manda  type_rqs: true  entonces es paginacion.
 
 			url : "class/chat/update_chat.php" ,
 
  			type: "POST" ,
  			
-			data : { type_rqs: true ,id_user_writer : window.USER_DATA.USER.id_user , id_user_otherside : $("body").data("id_user_otherside") } ,
+			data : { lmt_pg :  window.paginacion , type_rqs: true ,id_user_writer : window.USER_DATA.USER.id_user , id_user_otherside : $("body").data("id_user_otherside") } ,
 
 			dataType : "JSON",
 
@@ -106,8 +106,17 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 			
 			$(".chat_content").prepend( $( Chat.GET_STRUCT_MSG( data ) ).fadeIn("slow")  ); // AGREGAMOS EL NUEVO COMENTARIO EN LA CAJA DE CHAT
 
-
-
+			
+			
+			setTimeout( function(){
+			
+			
+			Chat.config[0].mutual_exclusion =  false; // este proceso esta liberado
+			
+			
+			},3600)
+			
+			
 
 
 					}
@@ -407,7 +416,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 	//************************************************************************************//*********//*****************************
 	UPDATE_CHAT_BY_LIMIT : function(){ // obtenemos n mensajes  ACTUALIZAMOS EL CHAT!!!!!!!!!!!!!!!!!
 
-
+			window.paginacion = 0;
 
 			$.ajax({
 
