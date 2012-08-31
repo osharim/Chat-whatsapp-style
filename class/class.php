@@ -368,7 +368,7 @@ if(UNIX_TIMESTAMP( ) - chat.fecha >= 86400 , chat.fecha , UNIX_TIMESTAMP( ) - ch
 ( ( id_user_reader = $id_user_otherside AND  id_user_writer = $id_user_writer) AND user.id_user =  id_user_writer)
 
  
-ORDER BY    chat.id_chat  ASC ";
+ORDER BY    FROM_UNIXTIME(chat.fecha ) DESC  LIMIT  15 ";
 
 
 
@@ -403,11 +403,13 @@ ORDER BY    chat.id_chat  ASC ";
 			$i++;
 		}
 
-
+ // invertimos el arreglo proque la consula saca primero el ultimo comentario que metimos
 
 if( isset($DATA)   ){
 
-echo json_encode(array('response' => $DATA)); // si hay datos regresamos las notificaciones!!!
+ 
+
+echo json_encode(  array(     'response' =>  array_reverse($DATA)         )); // si hay datos regresamos las notificaciones!!!
 
 
 } else{

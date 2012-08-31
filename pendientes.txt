@@ -17,6 +17,6 @@
 
 ** cargar imagenes desde un binds.box() al flowstory actual;
 
-** arreglar consultas que solo te saque los ultimos 30 coments en el flowstory
+** arreglar consultas que solo te saque los ultimos 15 coments en el flowstory ------------------------------ ok
 
 ** implementar paginacion en el flowstory
