@@ -12,14 +12,14 @@ class Conectar {
   
 
  
-   //    $conexion = mysql_connect("localhost", "bindsmec_omr", "nf9ckpg") or
-      $conexion = mysql_connect("localhost", "root", "") or
+  $conexion = mysql_connect("localhost", "bindsmec_omr", "nf9ckpg") or
+      //     $conexion = mysql_connect("localhost", "root", "") or
                  
                   die("Error de conexion: " . mysql_error());
      
-      mysql_select_db("bindsme") or
+     //  mysql_select_db("bindsme") or
 
- //  mysql_select_db("bindsmec_binds") or
+  mysql_select_db("bindsmec_binds") or
                 
                   die("Error de conexion: " . mysql_error());
 
