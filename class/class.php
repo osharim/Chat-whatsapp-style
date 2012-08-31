@@ -385,7 +385,7 @@ if(UNIX_TIMESTAMP( ) - chat.fecha >= 86400 , chat.fecha , UNIX_TIMESTAMP( ) - ch
 ( ( id_user_reader = $id_user_otherside AND  id_user_writer = $id_user_writer) AND user.id_user =  id_user_writer)
 
  
-ORDER BY    FROM_UNIXTIME(chat.fecha ) DESC  LIMIT  $limit   5 ";
+ORDER BY    FROM_UNIXTIME(chat.fecha ) DESC  LIMIT  $limit   10 ";
 
 
 
