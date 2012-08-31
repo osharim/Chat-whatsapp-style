@@ -508,3 +508,9 @@ background: none repeat scroll 0 0 rgba(0, 0, 0, 0.4);
     color: white;
     text-shadow: 1px 1px #333333;
 }
+
+.user_current_chat_os{
+    float: right;
+    font-size: 16px;
+    width: 107px;
+}

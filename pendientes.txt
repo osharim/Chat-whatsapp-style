@@ -53,3 +53,10 @@
 -------------------------------------------------------------------------------------------------------------------
 ** implementar paginacion en el flowstory
 -------------------------------------------------------------------------------------------------------------------
+
+
+
+9 OKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOK
+-------------------------------------------------------------------------------------------------------------------
+** al dar click en contacto aparecer el nombre del usuario con el que se desea hacer un storyflow
+-------------------------------------------------------------------------------------------------------------------

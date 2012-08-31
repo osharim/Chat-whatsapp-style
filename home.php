@@ -60,7 +60,7 @@ session_start();
 <!--     struct_chat -->
 	<div class="struct_chat">
 
-<div class="user_current_chat ">  </div>	
+<div class="user_current_chat user_current_chat_os ">  </div>	
 
 
  			<!-- .message_chat ESTO CONTIENE LAS CONVERSACIONES -->

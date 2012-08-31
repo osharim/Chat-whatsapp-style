@@ -19,6 +19,20 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
  	} ,
 
+ 	config  : [ 
+
+    			{ synchronized_ : false , // sincronizacion de los procesos
+
+    		 	  mutual_exclusion :  false
+    		 
+
+    			}
+
+    		] 
+ ,
+
+ 
+
 
  	INIT_PAGE : function(){
   
@@ -29,10 +43,85 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
  	//	 Chat.UPDATE_CHAT_BY_LIMIT(); // actualizamos el chat al iniciar pagina
  		
-
+ 			Chat.chat_pagination(); // activamos el scan para cuando el scroll este arriba del chat hagamos paginacion
 
  	}
 		,
+
+
+     chat_pagination : function(){ // este checa cuando de da click en el scroll del chat
+
+    	 $(window).scroll(function(){
+
+    	 	console.log("hola")
+
+
+    	 });
+
+
+					$(".mCSB_dragger").live(" mousedown" , function(){
+					
+
+	 						
+							Chat.active_pagination(  parseInt ( $(".mCSB_dragger").css("top") ) );
+	 	
+					
+					
+					}) 
+
+
+    },
+
+    active_pagination: function(top){ // este decide si se hara la paginacion o no.
+
+ 
+ 	if ( !Chat.config[0].mutual_exclusion ){ // hacer esto si solo ha entrado un proceso : es para evitar multiples paginaciones
+
+
+
+ 		
+
+    						setTimeout(function(){
+ 
+					
+					if( top  <= 30 ){ // si el top es menor o igual a 30px entonces hacemos paginacion
+	 
+				
+						console.log("make pag")
+ 						Chat.config[0].mutual_exclusion =  true; // este proceso esta siendo utilizado
+
+ 					
+
+		$.ajax({ // si me manda  type_rqs: true  entonces es paginacion.
+
+			url : "class/chat/update_chat.php" ,
+
+ 			type: "POST" ,
+ 			
+			data : { type_rqs: true ,id_user_writer : window.USER_DATA.USER.id_user , id_user_otherside : $("body").data("id_user_otherside") } ,
+
+			dataType : "JSON",
+
+			success : function(data){ // se hace append
+			
+			$(".chat_content").prepend( $( Chat.GET_STRUCT_MSG( data ) ).fadeIn("slow")  ); // AGREGAMOS EL NUEVO COMENTARIO EN LA CAJA DE CHAT
+
+
+
+
+
+					}
+			});
+			}		
+					
+					},400);
+
+ 	}
+
+
+    },
+
+
  	append_into_contact_list : function(data){ // agregamos el nuevo contacto a la lista de contactos
 
  			
@@ -136,8 +225,10 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
  		// cuando se le da click al boton contactos
 
  $(".load_contact_chat_by_id_user").live("click",function(){
+
+
   
- $(".selected_tab").removeClass("selected_tab");
+ $(".selected_tab").removeClass("selected_tab"); // ponemos la tab como activa
   $(this).addClass("selected_tab");
 
  		$(".notified-"+$(this).attr("data")).hide(); // ocultamos las notificaciones si las tiene
@@ -148,13 +239,17 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
 	    Chat.load_id_contact_otherside($(this).attr("data"));// le mandamos el id del usuario que queremos cargar
  
-		$(".current_user_chat").html( $(this).find(".contact_user").html()  );
+		$(".user_current_chat_os").html( $(this).find(".contact_user").html()  ); // este id nos sirve solo para poner el nombre con el que platicamos
 
 		$(".chat_content").html("");// vaciamos el anterior
 
 		Chat.UPDATE_CHAT_BY_LIMIT();
 
- }); // END  $(".struct_contact").click(function(){
+
+
+
+
+ }); // END  $(".load_contact_chat_by_id_user").live(function(){
 
 
 
@@ -320,7 +415,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
  			type: "POST" ,
  			
-			data : { id_user_writer : window.USER_DATA.USER.id_user , id_user_otherside : $("body").data("id_user_otherside") } ,
+			data : {  type_rqs: false , id_user_writer : window.USER_DATA.USER.id_user , id_user_otherside : $("body").data("id_user_otherside") } ,
 
 			dataType : "JSON",
 
@@ -330,7 +425,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
  
 			$(".chat_content").append( Chat.GET_STRUCT_MSG( data ) ); // AGREGAMOS EL NUEVO COMENTARIO EN LA CAJA DE CHAT
 
-			$(".chat_cmmt").val(""); // BORRAMOS EL COMENTARIO EN EL TEXT AREA
+			//$(".chat_cmmt").val(""); // BORRAMOS EL COMENTARIO EN EL TEXT AREA
  
 
 			if( $(".chat_content").children().length >=7 ){

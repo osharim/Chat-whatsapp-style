@@ -284,6 +284,8 @@ plugin home: http://manos.malihu.gr/jquery-custom-content-scroller
 					mCSB_dragger.add(mCSB_container).css("left",0);
 				}else{
 					mCSB_dragger.add(mCSB_container).css("top",0);
+
+
 				}
 				mCSB_scrollTools.css("display","none");
 				mCSB_container.addClass("mCS_no_scrollbar");
@@ -294,7 +296,10 @@ plugin home: http://manos.malihu.gr/jquery-custom-content-scroller
 			/*drag scrolling*/
 			if(!mCSB_dragger.hasClass("ui-draggable")){ /*apply drag function once*/
 				if($this.data("horizontalScroll")){
+
 					var draggableAxis="x";
+
+
 				}else{
 					var draggableAxis="y";
 				}
@@ -329,6 +334,7 @@ plugin home: http://manos.malihu.gr/jquery-custom-content-scroller
 							scrollToPos=mCSB_draggerContainer.height()-mCSB_dragger.height();
 						}
 						mCSB_dragger.css("top",scrollToPos);
+				
 						$this.mCustomScrollbar("scroll");
 					}
 				}
@@ -370,6 +376,19 @@ plugin home: http://manos.malihu.gr/jquery-custom-content-scroller
 							mCSB_dragger.css("top",mCSB_draggerContainerH-mCSB_draggerH);
 						}
 					}
+//**********************************************************************************************************
+//**********************************************************************************************************
+// PAGINACION ¨PARA BINDS
+//**********************************************************************************************************
+//**********************************************************************************************************
+
+	Chat.active_pagination(  parseInt ( mCSB_dragger.css("top") ) );
+ 
+//**********************************************************************************************************
+//**********************************************************************************************************
+//**********************************************************************************************************
+//**********************************************************************************************************
+
 					$this.mCustomScrollbar("scroll");
 				});
 			}
