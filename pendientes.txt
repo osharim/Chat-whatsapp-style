@@ -1,22 +1,55 @@
+1
+-------------------------------------------------------------------------------------------------------------------
 **reparar el bug SQL que saca todos los comentarios mas aparte todas las notificaciones
   --cuando se le da click al contacto carga todo el flowstory pero aparte carga todas las notificaciones
+-------------------------------------------------------------------------------------------------------------------
 
+
+2
+-------------------------------------------------------------------------------------------------------------------
 **reparar el icono de las notificaciones porque siempre se esta mostrando aunque se saque el comentario
+-------------------------------------------------------------------------------------------------------------------
 
 
+
+3 OKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOK
+-------------------------------------------------------------------------------------------------------------------
 **poner el icono de reloj en http://bindsme.com/css/home/../../img/icon/wicn.png y pasar las funciones de
-  fechas a este binds -------------------------------------------------------------------------------------- ok
+  fechas a este binds 
+-------------------------------------------------------------------------------------------------------------------  
 
 
+
+4
+-------------------------------------------------------------------------------------------------------------------
 ** ocultar el loader porque siempre se esta mostrando y poner uno cuando se le da click en contacto
 	porque parece que no esta cargando
+-------------------------------------------------------------------------------------------------------------------
 
+
+
+5 OKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOK
+-------------------------------------------------------------------------------------------------------------------
 ** cuando se le da enter vaciar el valor que tiene el textarea del coment porque puede que se vuelva a enviar
-  	--------------------------------------------------------------------------------------------------------- ok
+-------------------------------------------------------------------------------------------------------------------   
 
 
+
+6
+-------------------------------------------------------------------------------------------------------------------
 ** cargar imagenes desde un binds.box() al flowstory actual;
+-------------------------------------------------------------------------------------------------------------------
 
-** arreglar consultas que solo te saque los ultimos 15 coments en el flowstory ------------------------------ ok
 
+
+7  OKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOK
+-------------------------------------------------------------------------------------------------------------------
+** arreglar consultas que solo te saque los ultimos 15 coments en el flowstory      
+-------------------------------------------------------------------------------------------------------------------
+
+
+
+8
+-------------------------------------------------------------------------------------------------------------------
 ** implementar paginacion en el flowstory
+-------------------------------------------------------------------------------------------------------------------
