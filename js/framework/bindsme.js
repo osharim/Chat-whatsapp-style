@@ -86,7 +86,7 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 					
 					if( top  <= 30 ){ // si el top es menor o igual a 30px entonces hacemos paginacion
 	 
-				 window.paginacion+=5;
+				 window.paginacion+=10;
 				
 
 						console.log("make pag")
