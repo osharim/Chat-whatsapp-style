@@ -5,3 +5,47 @@
 	-webkit-box-shadow: 1px 1px 2px #9B2E2E inset;
 	box-shadow: 1px 1px 2px #9B2E2E inset;
 }
+
+ 
+
+
+.uiIcon.uiDate_icon:before{
+ background-position: -48px -23px !important;
+}
+
+
+
+
+ 
+.uiIcon.struct_icon:before {
+ background: url("../img/icon/wicn.png") repeat scroll 0 0 transparent;
+    content: " ";
+    float: left;
+    height: 14px;
+    margin: 1px 0.5em 1px 8px;
+    padding-left: 0;
+    position: relative;
+    top: 1px;
+    width: 13px;
+}
+
+
+.date{
+ 
+font-size: 11px;
+    margin-top: 2px;
+    position: absolute;
+ 
+}
+
+
+.name_contact_chat{
+ background: none repeat scroll 0 0 rgba(0, 0, 0, 0.3);
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 1px 1px rgba(255, 255, 255, 0.4);
+    float: none;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 16px;
+    padding: 4px;
+}

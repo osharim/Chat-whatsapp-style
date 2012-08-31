@@ -3,8 +3,9 @@
 
 **reparar el icono de las notificaciones porque siempre se esta mostrando aunque se saque el comentario
 
+
 **poner el icono de reloj en http://bindsme.com/css/home/../../img/icon/wicn.png y pasar las funciones de
-  fechas a este binds 
+  fechas a este binds -------------------------------------------------------------------------------------- ok
 
 
 ** ocultar el loader porque siempre se esta mostrando y poner uno cuando se le da click en contacto

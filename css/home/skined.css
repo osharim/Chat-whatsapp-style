@@ -242,13 +242,6 @@ border-color: transparent transparent rgba(255, 255, 255, 0.9);
     width: 1px;
 }
 
-.date{
-  color: #777777;
-    font-size: 11px;
-    margin-top: 2px;
-    position: absolute;
-    right: 8px;
-}
 
 .container_data{
 background: none repeat scroll 0 0 rgba(0, 0, 0, 0.22);
@@ -414,9 +407,9 @@ lista de contacto */
 
 
 .conctact_list_data{
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     box-shadow: 1px 1px rgba(255, 255, 255, 0.1);
-    height: auto;
+    height: 34px;
     margin-top: 1px;
     overflow: hidden;
     padding-bottom: 6px;
@@ -471,17 +464,6 @@ background: none repeat scroll 0 0 rgba(0, 0, 0, 0.4);
 
 }
 
-.name_contact_chat{
-    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.3);
-    border-radius: 5px 5px 5px 5px;
-    -webkit-box-shadow: 1px 1px rgba(255, 255, 255, 0.6);
-    box-shadow: 1px 1px rgba(255, 255, 255, 0.6);
-    float: none;
-    font-size: 14px;
-    font-weight: bold;
-    margin-left: 16px;
-    padding: 4px;
-}
 
 .loader
 {

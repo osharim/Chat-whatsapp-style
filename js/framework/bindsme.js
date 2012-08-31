@@ -185,14 +185,17 @@ $("document").data({"activedScroll":false}); // BANDERA PARA SABER CUANDO YA SE 
 
  		$.each(data.response,function(i,data){
 
-
+ 		DATE = '<span class="date uiDate_icon uiIcon struct_icon">  '+data.fecha+'</span>';	
 
  		DATA += '<ul class="user_ui">';
- 		DATA += '<li><img src="'+data.user_pic+'" alt="" width="46">	</li>';
- 		DATA +=  '<li> <span class="name_contact_chat">'+data.username+'</span><li> ';
- 		DATE = '<span clasS="date">'+data.fecha+'</span>'
- 		DATA += '<li class="msg_chat">'+TRIANGLE+data.msg+DATE+'  </li>' ;
+ 		DATA += '<li><img src="'+data.user_pic+'" alt="" width="46"> 	</li>';
+ 		DATA +=  '<li> <span class="name_contact_chat">'+data.username+'</span>  '+DATE+'  <li> ';
+ 		
+ 		
  
+ 		DATA += '<li class="msg_chat">'+TRIANGLE+data.msg +'  </li>' ;
+ 
+
 		DATA += '</ul>';
 
 

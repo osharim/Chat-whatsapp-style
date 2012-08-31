@@ -21,6 +21,8 @@ session_start();
 		<link rel="stylesheet" href="js/scroll/jquery.mCustomScrollbar.css">
 		<link rel="stylesheet" href="js/framework/css/binds.css">
  
+		<link rel="stylesheet" href="css/module.css">
+
  	<script type="text/javascript" src="js/jquery.1.7.js"></script>
 
 
@@ -227,7 +229,7 @@ session_start();
 	
 <div class="add_contact uibutton icon upload_video">Agregar video</div>
 
-<div class="add_contact uibutton icon config"> Configurar @ <span class="username"></span> </div>
+<div class="add_contact uibutton icon config"> @ <span class="username"></span> </div>
 
 
 	</div>		
