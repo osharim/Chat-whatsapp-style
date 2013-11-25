@@ -60,11 +60,23 @@ git clone git@github.com:omarhernandez/Chat-whatsapp-style.git
 
 ```
 
-Instalar Base de datos
+#Instalar Base de datos
 
 ```
 Importar el archivo bindsme(1).sql ,se encuentra en el directorio principal de la aplicacion
 
+```
+
+#Configuracion de la conexion a la base de datos
+
+Editar en la Conexion de la base de datos que se encuentra en la carpeta class/class.php la linea
+
+```
+ user_db = NOMBRE DE BASE DE DATOS
+ password = CLAVE DE LA BASE DE DATOS
+
+ $conexion = mysql_connect("localhost", "user_db", "password") or
+ 
 ```
  
 
