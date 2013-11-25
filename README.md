@@ -1,8 +1,11 @@
-Chat Whatsapp Stle
-===================
+Chat APPLICATION
+================
 
-El objetivo de esta aplicacion es construir un chat en el cual puedas mantenerte en  contacto con ellos.
+* Primero que nada el DEMO: [bindsme.com](http://bindsme.com/)
+* usuario: pulpo
+* password: nf9ckpg
 
+El objetivo de esta aplicacion es construir un chat en el cual puedas mantenerte en  contacto con las personas que te interesan.
 
 TECNICO
 =======
@@ -24,6 +27,7 @@ respondera con resultados que queramos obtener.
 
 Es decir , hay un objecto AJAX haciendo peticion al servidor cada 1000 MS ( 1 seg) y en espera de una nueva respuesta o 
 nuevos datos.
+
 
 SIMPLIFICADO
 ============
@@ -47,12 +51,6 @@ mantiene un canal bi-direccional abierto usando Websokets y puede transferir dat
 ## Uso
 
 ```
-python
-import vinepy
-
-vine = vinepy.API(username='email@host.com', password='leinternetz')
-user = vine.user
-followers = user.followers()
-timeline = user.timeline()
+code
 
 ```
