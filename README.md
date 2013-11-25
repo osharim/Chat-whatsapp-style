@@ -4,6 +4,7 @@ Chat APPLICATION
 * Primero que nada el DEMO: [bindsme.com](http://bindsme.com/)
 * usuario: pulpo
 * password: nf9ckpg
+* 
 
 El objetivo de esta aplicacion es construir un chat en el cual puedas mantenerte en  contacto con las personas que te interesan.
 
@@ -40,17 +41,13 @@ eso podria sobresaturar el servidor.
 Para un entorno de desarollo ,puedes checar servidores asincronos ,Tornado con python o Node.js con javascript , que este ultimo
 mantiene un canal bi-direccional abierto usando Websokets y puede transferir datos en tiempo real.
 
-
-
-
-
  
 
+## Instalacion
 
-
-## Uso
+Obtener el proyecto mediante git
 
 ```
-code
+git clone git@github.com:omarhernandez/Chat-whatsapp-style.git
 
 ```
