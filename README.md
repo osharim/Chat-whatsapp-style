@@ -1,4 +1,4 @@
-CHAT  APPLICATION
+Chat application
 ================
 
 * Primero que nada el DEMO: [bindsme.com](http://bindsme.com/)
@@ -16,7 +16,7 @@ Compartir Imagenes
 Compartir Videos
 
 
-TECNICO
+Tecnico
 =======
 
 Aplicacion desarrollada en PHP , mysql , Javascript , JQuery  , AJAX , CSS3 , HTML5 , y polling ( tecnica de actualizacion de datos)
