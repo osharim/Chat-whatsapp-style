@@ -1,18 +1,25 @@
-Chat APPLICATION
+CHAT  APPLICATION
 ================
 
 * Primero que nada el DEMO: [bindsme.com](http://bindsme.com/)
 * usuario: pulpo
 * password: nf9ckpg
-* 
+
+para inciar sesion teclea "Enter" , esta funcion reemplaza el boton iniciar sesion :)
 
 El objetivo de esta aplicacion es construir un chat en el cual puedas mantenerte en  contacto con las personas que te interesan.
+
+Caracteristicas Faltantes
+=========================
+
+Compartir Imagenes
+Compartir Videos
+
 
 TECNICO
 =======
 
-Esta aplicacion esta desarrollada con PHP , en la base de datos usa MySQL , en el Front-end utilizamos Javascript , AJAX , 
-Jquey .
+Aplicacion desarrollada en PHP , mysql , Javascript , JQuery  , AJAX , CSS3 , HTML5 , y polling ( tecnica de actualizacion de datos)
 
 IMPORTANTE
 =========
@@ -45,9 +52,24 @@ mantiene un canal bi-direccional abierto usando Websokets y puede transferir dat
 
 ## Instalacion
 
-Obtener el proyecto mediante git
+Obtener el proyecto mediante Git en la carpeta htdocs o www , dependiendo la ruta 
+que tiene establecido tu servidor PHP.
 
 ```
 git clone git@github.com:omarhernandez/Chat-whatsapp-style.git
 
 ```
+
+Instalar Base de datos
+
+```
+Importar el archivo bindsme(1).sql ,se encuentra en el directorio principal de la aplicacion
+
+```
+ 
+
+
+
+
+
+
